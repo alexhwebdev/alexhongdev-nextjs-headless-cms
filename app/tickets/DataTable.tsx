@@ -75,7 +75,9 @@ const DataTable = ({tickets}: Props) => {
               ? tickets.map((ticket) => (
                   <TableRow key={ticket.id} data-href="/">
                     <TableCell>
-                      <Link href={`/tickets/${ticket.id}`}>{ticket.title}</Link>
+                      <Link href={`/tickets/${ticket.id}`}>
+                        {ticket.title}
+                      </Link>
                     </TableCell>
                     <TableCell>
                       <div className="flex justify-center">

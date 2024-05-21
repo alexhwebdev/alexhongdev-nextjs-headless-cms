@@ -17,6 +17,8 @@
   > npx shadcn-ui@latest add label
   > npx shadcn-ui@latest add input
   > npx shadcn-ui@latest add select
+  > npx shadcn-ui@latest add card
+  > npx shadcn-ui@latest add alert-dialog
 
 
 + MySQL
@@ -75,10 +77,12 @@
 
 
 
++ Axios 
+  > npm i axios
 
 
-
-
++ React Markdown
+  > npm i react-markdown
 
 
 

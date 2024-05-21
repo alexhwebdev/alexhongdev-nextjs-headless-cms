@@ -18,11 +18,15 @@ import {
 import { Button } from "./ui/button";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-// import { Ticket } from "@prisma/client";
+import { Ticket } from "@prisma/client";
 
 type TicketFormData = z.infer <typeof ticketSchema>
 
-const TicketForm = () => {
+interface Props {
+  ticket?: Ticket; // NOTES
+}
+
+const TicketForm = ({ticket}: Props) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -32,20 +36,24 @@ const TicketForm = () => {
   })
 
   async function onSubmit(values: z.infer<typeof ticketSchema>) {
-    console.log('values ', values)
+    // console.log('values ', values)
     try {
       setIsSubmitting(true);
       setError("");
 
-      await axios.post("/api/tickets", values);
-      setIsSubmitting(false);
-
-      // if (ticket) {
-      //   await axios.patch("/api/tickets/" + ticket.id, values);
-      // } else {
-      //   await axios.post("/api/tickets", values);
-      // }
+      // await axios.post("/api/tickets", values);
       // setIsSubmitting(false);
+
+      if (ticket) {
+        await axios.patch(
+          "/api/tickets/" + ticket.id, values
+        );
+      } 
+      // Creating new ticket
+      else {
+        await axios.post("/api/tickets", values);
+      }
+      setIsSubmitting(false);
       router.push("/tickets");
       router.refresh(); // NOTES
     } catch (error) {
@@ -62,7 +70,7 @@ const TicketForm = () => {
           <FormField
             control={form.control}
             name="title"
-            // defaultValue={ticket?.title}
+            defaultValue={ticket?.title}
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Ticket Title</FormLabel>
@@ -75,7 +83,7 @@ const TicketForm = () => {
 
           <Controller
             name="description"
-            // defaultValue={ticket?.description}
+            defaultValue={ticket?.description}
             control={form.control}
             render={({ field }) => (
               <SimpleMDE placeholder="Description" {...field} />
@@ -86,7 +94,7 @@ const TicketForm = () => {
             <FormField
               control={form.control}
               name="status"
-              // defaultValue={ticket?.status}
+              defaultValue={ticket?.status}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Status</FormLabel>
@@ -98,7 +106,7 @@ const TicketForm = () => {
                       <SelectTrigger>
                         <SelectValue
                           placeholder="Status..."
-                          // defaultValue={ticket?.status}
+                          defaultValue={ticket?.status}
                         />
                       </SelectTrigger>
                     </FormControl>
@@ -114,7 +122,7 @@ const TicketForm = () => {
             <FormField
               control={form.control}
               name="priority"
-              // defaultValue={ticket?.priority}
+              defaultValue={ticket?.priority}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Priority</FormLabel>
@@ -126,7 +134,7 @@ const TicketForm = () => {
                       <SelectTrigger>
                         <SelectValue
                           placeholder="Priority..."
-                          // defaultValue={ticket?.priority}
+                          defaultValue={ticket?.priority}
                         />
                       </SelectTrigger>
                     </FormControl>
@@ -144,11 +152,11 @@ const TicketForm = () => {
           <Button 
             type="submit" 
             disabled={isSubmitting}
-          >submit
-            {/* {ticket ? 
-              "Update Ticket" : 
-              "Create Ticket"
-            } */}
+          > {
+            ticket ? 
+            "Update Ticket" : 
+            "Create Ticket"
+            }
           </Button>
         </form>
       </Form>
@@ -163,6 +171,10 @@ export default TicketForm
     - https://www.udemy.com/course/nextjs14-ticketapp/learn/lecture/41657538#questions
     - Client side will refresh after 30 seconds
     - So need to refresh to view change immediately
+
+  ticket?: Ticket; :
+    - https://www.udemy.com/course/nextjs14-ticketapp/learn/lecture/41671384#questions
+    - Make the ticket optional
 */
 
 /*
