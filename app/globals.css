@@ -80,3 +80,11 @@
       @apply font-medium text-muted-foreground transition-colors hover:text-primary;
     }
   }
+
+
+
+  body{
+    margin: 0px;
+    /* background-color: #0f0f0f; */
+    /* font-family: 'Avant Garde Book BT'; */
+  }
