@@ -1,93 +1,66 @@
-# --------------------- UDEMY COURSE
-# TypeScript & Next.js 14: Building a Tech Ticketing App
-  + https://www.udemy.com/course/nextjs14-ticketapp/learn/lecture/43024812#overview
+# ------------------------- PORTFOLIO
+
+> npx create-next-app alexhongdev-nextjs-headless-cms
+
++ Contentful GraphiQL :
+  - https://graphql.contentful.com/content/v1/spaces/e28u0mhz7hn5/explore?access_token=AlK0JaH_ZnASOzxKKhdra1Ef6tpnQvU9sHJOTHLKEPE
 
 
-+ Node version
-  > nvm use 22
++ Metadata
+  + Metadata : Basic Fields
+    - https://nextjs.org/docs/app/api-reference/functions/generate-metadata#basic-fields
 
 
-+ shadcn / ui
-  - https://ui.shadcn.com/themes
++ dangerouslySetInnerHTML
 
-  > npx shadcn-ui@latest init
-  > npm i @radix-ui/react-slot
-  > npx shadcn-ui@latest add button
-  > npx shadcn-ui@latest add table
-  > npx shadcn-ui@latest add label
-  > npx shadcn-ui@latest add input
-  > npx shadcn-ui@latest add select
-  > npx shadcn-ui@latest add card
-  > npx shadcn-ui@latest add alert-dialog
+  - 32. Rendering Markdown
+  - https://www.udemy.com/course/nextjs-by-example/learn/lecture/37979322#questions/20746548
 
 
-+ MySQL
-  + https://www.mysql.com/
-
-    + Downloaded
-      - MySQL Community Server
-        - Root user password :
-        - [DukeqHenry19043-12]
-
-      - MySQL Workbench
-
-
-+ Prisma
-  > npm i prisma@5.6.0
-  > npx prisma init
-  > npx prisma format
-  > npx prisma migrate dev
-
-  + Best practice for instantiating Prisma Client with Next.js
-    - https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices
-
-    + Added 'prisma/db.ts'
-      - Allows us to grab Prisma client, that allows us to connect to DB in our app.
-
-      + eg. 
-        DataTable.tsx :
-        import { Ticket } from '@prisma/client';
-
-
-
-+ Zod : 
-  https://zod.dev/
-  - Validation library
-  - Allows us to create a ticket schema and set rules
-  
-  eg. :
-    If your creating a user with password, you might want to set rules like 'has to be more than 8 characters'
-
-  > npm i zod
-
-
-
-+ React Hook Form
-  - https://www.udemy.com/course/nextjs14-ticketapp/learn/lecture/41657324#questions/21664020
-
-  > npm i react-hook-form
-
-
-  > npm i @hookform/resolvers
-    - Allows to use Zod with hook form.
-
-
-  > npm i --save react-simplemde-editor easymde
-    - Allow users to have a description that can be marked up so they can have bold text, italic, links, images
-
-
-
-+ Axios 
-  > npm i axios
-
-
-+ React Markdown
-  > npm i react-markdown
++ robots.txt, sitemap.xml
+  - https://www.udemy.com/course/nextjs-by-example/learn/lecture/37979384#questions/20746548
+  - To generate sitemap.xml
+    - List all available pages
 
 
 
 
 
+# ------------------------- Udemy : 
+# Course : NextJS by Example
+  - https://www.udemy.com/course/nextjs-by-example/learn/lecture/38660294#questions/20746548
+
+  # Section 10 [app] Headless CMS
+  # 58. Preloaded CMS Instance
+
+    + Preconfigured Strapi CMS is used from this point on. 
+      + CMS folder 'next-reviews-cms' used
+      
+      - STOPPED HERE
+      - STOPPED HERE
+      - STOPPED HERE
+
+
+# ------------------------- Udemy : 
+# Course : NextJS 14 & React - The Complete Guide
+
+  - https://www.udemy.com/course/nextjs-react-the-complete-guide/learn/lecture/41159650#overview
+
+  # Section 3
+  # 107. Setting Up A SQLite Database
+
+      - STOPPED HERE
+      - STOPPED HERE
+      - STOPPED HERE
+      - Stopped bc uses SQLite Database
+
+
+
+
+# ------------------------- Udemy : 
+# Course : TS & Next.js 14: Building a Tech Ticketing App
+
+  + https://www.udemy.com/course/nextjs14-ticketapp/learn/lecture/41517248#overview
 
 
 

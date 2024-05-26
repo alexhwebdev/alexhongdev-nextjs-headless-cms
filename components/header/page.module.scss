@@ -1,0 +1,98 @@
+
+.header{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 4;
+  top: 0;
+  padding: 40px;
+
+  .burger{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    
+    &::before, &::after{
+      display: block;
+      content: "";
+      width: 30px;
+      height: 2px;
+      background-color: orange;
+      position: relative;
+      transition: transform 0.3s;
+    }
+    &::after{
+      top: -5px;
+    }
+
+    &::before{
+      top: 5px;
+    }
+  }
+  .burgerActive{
+    &::after{
+      transform: rotate(45deg);
+      top: -1px;
+    }
+    &::before{
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+  }
+}
+/* .header {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 9999;
+  top: 0;
+  padding: 40px;
+}
+
+.header .burger {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  top: 100px;
+}
+
+.header .burger &::before, 
+.header .burger &::after{
+  display: block;
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: red;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+
+.header .burger &::after{
+  top: -5px;
+}
+
+.header .burger &::before{
+  top: 5px;
+}
+
+.header .burger .burgerActive{
+  &::after{
+    transform: rotate(45deg);
+    top: -1px;
+  }
+  &::before{
+    transform: rotate(-45deg);
+    top: 0px;
+  }
+} */

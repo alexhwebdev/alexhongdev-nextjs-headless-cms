@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import MainNav from "@/components/MainNav";
 import { ThemeProvider } from "@/components/theme-provider";
-
-
+import HeaderMenu from "@/components/headerMenu/page";
 // const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "Alex Hong - Next.js Portfolio",
@@ -29,14 +29,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <nav className="">
+          {/* <nav className="" style={{top: "100px", position: 'absolute', zIndex: 9999}}>
             <div className="">
               <MainNav />
             </div>
-          </nav>
-          <main className="">
-            <div className="">{children}</div>
-          </main>
+          </nav> */}
+
+          <div className="">
+            <HeaderMenu />
+            {children}
+          </div>
+
         </ThemeProvider>
       </body>
     </html>
