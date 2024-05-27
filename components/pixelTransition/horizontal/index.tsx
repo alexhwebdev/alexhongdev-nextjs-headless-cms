@@ -86,7 +86,7 @@ export default function HoriPixel({menuIsActive}: Props) {
           variants={anim}
           initial="initial"
           animate={menuIsActive ? "open" : "closed"}
-          custom={[indexOfColum + randomIndex, (30 - indexOfColum + randomIndex)]}
+          custom={[indexOfColum + randomIndex, (20 - indexOfColum + randomIndex)]}
         />
       )
     })
@@ -100,7 +100,7 @@ export default function HoriPixel({menuIsActive}: Props) {
       `}
     >
       {
-        [...Array(30)].map( (_, index) => {
+        [...Array(20)].map( (_, index) => {
           return <div key={index} className={styles.column}>
             { getBlocks(index) }
           </div>
