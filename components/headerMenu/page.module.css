@@ -1,0 +1,8 @@
+.headerMenuWrapper {
+  width: 100vw;
+  border: 2px solid red;
+  height: 0;
+  background-color: gray;
+  position: fixed;
+  z-index: 10005;
+}

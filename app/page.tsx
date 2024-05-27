@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main 
       // className={styles.main}
-      style={{top: '100px', position: 'absolute', color: 'black'}}
+      // style={{top: '100px', position: 'absolute', color: 'black'}}
     >
       <div style={{border: '2px solid red', top: '200px', position: 'absolute', color: 'black'}}>Homehg</div>
     </main>

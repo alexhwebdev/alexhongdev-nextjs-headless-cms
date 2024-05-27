@@ -1,7 +1,7 @@
 'use client';
-// import styles from './page.module.scss'
+import styles from './page.module.css'
 import { useState } from 'react';
-import Header from '../header/page';
+import Hamburger from '../hamburger/page';
 import Menu from '../menu/page';
 // import CenteredPixelTransition from '../components/pixelTransition/centered';
 import HorizontalPixelTransition from '../pixelTransition/horizontal';
@@ -11,10 +11,8 @@ import HorizontalPixelTransition from '../pixelTransition/horizontal';
 export default function HeaderMenu() {
   const [menuIsActive, setMenuIsActive] = useState<boolean>(false);
   return (
-    < 
-      // className={styles.div}
-    >
-      <Header 
+    <div className={styles.headerMenuWrapper}>
+      <Hamburger 
         menuIsActive={menuIsActive} 
         setMenuIsActive={setMenuIsActive}
       />
@@ -24,6 +22,6 @@ export default function HeaderMenu() {
       {/* <CenteredPixelTransition menuIsActive={menuIsActive}/> */}
       <HorizontalPixelTransition menuIsActive={menuIsActive}/>
       {/* <VerticalPixelTransition menuIsActive={menuIsActive}/> */}
-    </>
+    </div>
   )
 }

@@ -5,14 +5,14 @@ interface Props {
   setMenuIsActive: (isActive: boolean) => void; // This defines setMenuIsActive as a function that takes a boolean parameter and returns void;
 }
 
-export default function Header({menuIsActive, setMenuIsActive}: Props) {
+export default function Hamburger({menuIsActive, setMenuIsActive}: Props) {
   return (
-    <div className={styles.header}>
+    <div className={styles.hamburger}>
       <div 
         onClick={() => {setMenuIsActive(!menuIsActive)}} 
         className={`
-          ${styles.burger} ${menuIsActive ? 
-          styles.burgerActive : 
+          ${styles.hamburgerLines} ${menuIsActive ? 
+          styles.hamburgerActive : 
           ""}
         `}
       ></div>

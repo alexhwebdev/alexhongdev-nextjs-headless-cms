@@ -1,6 +1,11 @@
 
 .contact {
+  border: 2px solid blue;
+  width: 100vw;
   height: 100vh;
+  position: relative;
+  z-index: 10000;
+  top: 0;
 }
 
 .mask, .body {

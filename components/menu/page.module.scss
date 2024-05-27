@@ -1,13 +1,15 @@
-.menu{
-  position: fixed;
+.menu {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 0vh;
   width: 100%;
-  z-index: 3;
-  p{
+  z-index: 10001;
+  top: 100px;
+  
+  p {
     font-size: 5vw;
     margin: 5px;
   }

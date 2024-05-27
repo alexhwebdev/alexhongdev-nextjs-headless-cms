@@ -1,23 +1,23 @@
-
-.header{
-  position: fixed;
+.hamburger {
+  position: absolute;
   display: flex;
-  width: 100%;
+  width: 100px;
   justify-content: flex-end;
-  padding: 10px;
   box-sizing: border-box;
-  z-index: 4;
+  z-index: 10005;
   top: 0;
+  right: 0;
   padding: 40px;
 
-  .burger{
+  .hamburgerLines {
     position: relative;
     display: flex;
     flex-direction: column;
     position: relative;
     cursor: pointer;
     
-    &::before, &::after{
+    &::before, 
+    &::after{
       display: block;
       content: "";
       width: 30px;
@@ -34,7 +34,7 @@
       top: 5px;
     }
   }
-  .burgerActive{
+  .hamburgerActive{
     &::after{
       transform: rotate(45deg);
       top: -1px;

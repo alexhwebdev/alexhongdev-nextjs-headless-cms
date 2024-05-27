@@ -75,8 +75,9 @@ export default function HoriPixel({menuIsActive}: Props) {
     if (!windowSize.width || !windowSize.height) return []; // If window size is not available, return an empty array
     // const { innerWidth, innerHeight } = window;
     const blockSize = innerWidth * 0.05;
-    const nbOfBlocks = Math.ceil(innerHeight / blockSize);
-    const shuffledIndexes = shuffle([...Array(nbOfBlocks)].map( (_, i) => i))
+    const numOfBlocks = Math.ceil(innerHeight / blockSize);
+    const shuffledIndexes = shuffle([...Array(numOfBlocks)].map( (_, i) => i));
+
     return shuffledIndexes.map( (randomIndex: number, index: number) => {
       return (
         <motion.div 
@@ -85,16 +86,21 @@ export default function HoriPixel({menuIsActive}: Props) {
           variants={anim}
           initial="initial"
           animate={menuIsActive ? "open" : "closed"}
-          custom={[indexOfColum + randomIndex, (20 - indexOfColum + randomIndex)]}
+          custom={[indexOfColum + randomIndex, (30 - indexOfColum + randomIndex)]}
         />
       )
     })
   }
 
   return (
-    <div className={styles.pixelBackground}>
+    <div 
+      className={`
+        ${styles.pixelBkgd} 
+        ${menuIsActive ? styles.pixelBkgdActive : ''}
+      `}
+    >
       {
-        [...Array(20)].map( (_, index) => {
+        [...Array(30)].map( (_, index) => {
           return <div key={index} className={styles.column}>
             { getBlocks(index) }
           </div>
@@ -158,7 +164,7 @@ export default function HoriPixel({menuIsActive}) {
   }
 
   return (
-    <div className={styles.pixelBackground}>
+    <div className={styles.pixelBkgd}>
       {
         [...Array(20)].map( (_, index) => {
           return <div key={index} className={styles.column}>
