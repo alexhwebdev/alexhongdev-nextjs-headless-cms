@@ -4,6 +4,8 @@ import Hero from "../components/horiScrollHero/page";
 import ScrollSection from "../components/horiScrollSection/page";
 import HoriFooter from "../components/horiFooter/page";
 
+import ScrollZoomParallax from "../components/scrollZoomParallax/page";
+
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <Hero />
       <ScrollSection />
       <HoriFooter />
+
+      <ScrollZoomParallax />
     </main>
   )
 }
