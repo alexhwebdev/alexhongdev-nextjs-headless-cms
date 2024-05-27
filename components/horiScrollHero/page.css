@@ -1,0 +1,18 @@
+.hero__header {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.hero__header h1 {
+  font-family: "raleway", sans-serif;
+}
+
+.hero__header h2 {
+  text-transform: uppercase;
+}
