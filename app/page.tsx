@@ -6,11 +6,14 @@ import HoriFooter from "../components/horiFooter/page";
 
 import ScrollZoomParallax from "../components/scrollZoomParallax/page";
 import UpDownParallax from "@/components/upDownParallax/page";
+import VerticalInfiniteScroll from "@/components/verticalInfiniteScroll/page";
+
 
 export default function Home() {
   return (
     <main >
-      <InfiniteScroll />
+      <VerticalInfiniteScroll />
+      {/* <InfiniteScroll /> */}
 
       <Hero />
       <ScrollSection />
@@ -19,6 +22,16 @@ export default function Home() {
       <ScrollZoomParallax />
 
       <UpDownParallax />
+
+      {/* <div style={{
+        border: '5px solid orange', 
+        width: '100vw', 
+        height: '100vh',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <VerticalInfiniteScroll />
+      </div> */}
     </main>
   )
 }

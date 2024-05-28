@@ -21,9 +21,16 @@ const Column = ({images, y}: ImageProps) => {
       style={{y}}
     >
       { images.map( (src, i) => {
-          return <div key={i} className={styles.imageContainer}>
-            <Image src={`/images/updownparallax/${src}`} alt='image' fill />
-          </div>
+          return (
+            <div key={i} className={styles.imageContainer}>
+              <Image 
+                src={`/images/updownparallax/${src}`} 
+                alt='image' 
+                fill 
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+              />
+            </div>
+          )
         })
       }
     </motion.div>
@@ -53,7 +60,10 @@ export default function UpDownParallax() {
     }
 
     const resize = () => {
-      setDimension({width: window.innerWidth, height: window.innerHeight})
+      setDimension({
+        width: window.innerWidth, 
+        height: window.innerHeight
+      })
     }
     window.addEventListener("resize", resize)
     requestAnimationFrame(raf);
@@ -65,10 +75,12 @@ export default function UpDownParallax() {
   }, [])
 
   return (
-    <main className={styles.main}>
+    <div className={styles.upDownParallaxWrapper}>
       <div className={styles.spacer}></div>
 
-      <div ref={gallery} className={styles.gallery}>
+      <div ref={gallery} 
+        className={styles.gallery}
+      >
         <Column images={[images[0], images[1], images[2]]} y={y}/>
         <Column images={[images[3], images[4], images[5]]} y={y2}/>
         <Column images={[images[6], images[7], images[8]]} y={y3}/>
@@ -76,7 +88,7 @@ export default function UpDownParallax() {
       </div>
       
       <div className={styles.spacer}></div>
-    </main>
+    </div>
   )
 }
 

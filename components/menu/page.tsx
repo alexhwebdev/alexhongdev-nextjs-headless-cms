@@ -1,9 +1,92 @@
+// "use client";
+
+// import React, { useState, useRef, useEffect, MutableRefObject } from 'react'
+// import Link from 'next/link'
+// import { gsap } from 'gsap';
+// import { useGSAP } from '@gsap/react';
+// // import styles from './menu.module.css'
+// import './page.css'
+// import { motion } from 'framer-motion';
+
+// export interface Props {
+//   menuIsActive: boolean;
+// }
+
+// const menuLinks = [
+//   { path: "/", label: "Home" },
+//   { path: "/work", label: "Work" },
+//   { path: "/about", label: "About" },
+//   { path: "/contact", label: "Contact" },
+//   { path: "/lab", label: "Lab" },
+// ];
+
+// export default function Menu({menuIsActive}: Props) {
+//   const container = useRef(null);
+//   const [isMenuOpen, setIsMenuOpen] = useState(menuIsActive);
+//   const tl = useRef<gsap.core.Timeline | null>(null);
+  
+//   const toggleMenu = () => {
+//     setIsMenuOpen(!isMenuOpen)
+//   }
+
+//   useGSAP(() => {
+//     gsap.set(".menu-link-item-holder", { y: 75 });
+
+//     tl.current = gsap.timeline({ paused: true })
+//       .to(".menu-link-item-holder", {
+//         y: 0,
+//         duration: 1,
+//         stagger: 0.1,
+//         ease: "power4.inOut",
+//         delay: -0.75,
+//       })
+//   }, { scope: container })
+
+//   useEffect(() => {
+//     if (tl.current !== null) { // Check if tl.current is not null
+//       if (menuIsActive) {
+//         tl.current.play();
+//       } else {
+//         tl.current.reverse();
+//       }
+//     }
+//   }, [menuIsActive])
+
+//   return (
+//     <div className="menu-container" ref={container}>
+//       <div className="menu-copy">
+//         <div className="menu-links">
+//           {menuLinks.map((link, index) => (
+//             <div className="menu-link-item" key={index}>
+//               <div className="menu-link-item-holder" 
+//                 onClick={toggleMenu}
+//               >
+//                 <Link href={link.path} className="menu-link">
+//                   {link.label}                      
+//                 </Link>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
+
+// // export default Menu
+
+
+
+/**/
 import React from 'react'
-import styles from './page.module.scss';
+import Link from 'next/link'
+// import styles from './page.module.scss';
+import './page.css';
 import { motion } from 'framer-motion';
 
 export interface Props {
   menuIsActive: boolean;
+  setMenuIsActive: (isActive: boolean) => void;
 }
 
 const anim = {
@@ -12,21 +95,21 @@ const anim = {
   exit: { opacity: 0 }
 }
 
-export default function Menu({menuIsActive}: Props) {
+export default function Menu({menuIsActive, setMenuIsActive}: Props) {
+  const handleButtonClick = () => {
+    setMenuIsActive(!menuIsActive); // Toggles the menuIsActive state
+  };
+
   return (
     <motion.div 
-      className={styles.menu}
+      // className={styles.menu}
+      className="menu"
       variants={anim}
       initial="initial"
       animate={menuIsActive ? "open" : "closed"}
     >
-      <p>Home</p>
-      <p>About</p>
-      <p>Contact</p>
+      <Link href="/" onClick={handleButtonClick}><p>Home</p></Link>
+      <Link href="/contact" onClick={handleButtonClick}><p>Contact</p></Link>
     </motion.div>
   )
 }
-
-
-
-

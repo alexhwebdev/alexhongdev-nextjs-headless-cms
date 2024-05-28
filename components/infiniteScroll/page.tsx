@@ -52,6 +52,7 @@ export default function InfiniteScroll() {
           src="/images/background.jpg"
           fill={true}
           alt="background"
+          priority
         />
 
         <div className={styles.sliderContainer}>
