@@ -69,13 +69,13 @@ export default function ScrollZoomParallax() {
                 className={styles.el}
               >
                 <div className={styles.imageContainer}>
-                  {/* <Image
+                  <Image
                     src={src}
                     fill
                     alt="image"
                     placeholder='blur'
                     sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                  /> */}
+                  />
                 </div>
               </motion.div>
             )

@@ -15,12 +15,12 @@ export default function Home() {
       <VerticalInfiniteScroll />
       {/* <InfiniteScroll /> */}
 
-      {/* <Hero /> */}
+      <Hero />
       <ScrollSection />
-      {/* <HoriFooter /> */}
+      <HoriFooter />
 
       <ScrollZoomParallax />
-
+      
       <UpDownParallax />
 
       {/* <div style={{

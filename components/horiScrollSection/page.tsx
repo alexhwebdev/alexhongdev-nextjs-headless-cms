@@ -19,7 +19,7 @@ function ScrollSection() {
         translateX: 0,
       },
       {
-        translateX: "-200vw",
+        translateX: "-300vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -56,6 +56,9 @@ function ScrollSection() {
           </div>
           <div className="scrollSection">
             <h3>Section 3</h3>
+          </div>
+          <div className="scrollSection">
+            <h3>Section 4</h3>
           </div>
         </div>
       </div>
