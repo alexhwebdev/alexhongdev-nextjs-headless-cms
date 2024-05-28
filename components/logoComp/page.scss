@@ -1,0 +1,254 @@
+
+.buckSkinLogo__container {
+  overflow: hidden;
+}
+
+/* // @keyframes pop-up-outer {
+//   0% { top: 0; left: 0; opacity: 0; transform: scaleX(0.2) scaleY(0.2); }
+//   10% { top: 0; left: 0; opacity: 0; transform: scaleX(0.2) scaleY(0.2); }   
+//   20% { opacity: 1; transform: scaleX(1.1) scaleY(1.1);     } 
+//   30% { top: 0; left: 0; opacity: 1; transform: scaleX(1) scaleY(1);        }
+//   100% { top: 0; left: 0; opacity: 1; transform: scaleX(1) scaleY(1);        }
+// }
+  
+// @keyframes pop-up-middle {
+//   0% { top: 12px; left: 12px; opacity: 0; transform: scaleX(0.2) scaleY(0.2); }      
+//   5% { top: 12px; left: 12px; opacity: 0; transform: scaleX(0.2) scaleY(0.2); }   
+//   15% { opacity: 1; transform: scaleX(1.1) scaleY(1.1);     }   
+//   25% { top: 12px; left: 12px; opacity: 1; transform: scaleX(1) scaleY(1);        }  
+//   100% { top: 12px; left: 12px; opacity: 1; transform: scaleX(1) scaleY(1);        }
+// }
+
+// @keyframes pop-up-inner {
+//   0% { top: 64px; left: 64px; opacity: 0; transform: scaleX(0.2) scaleY(0.2); }   
+//   10% { opacity: 1; transform: scaleX(1.1) scaleY(1.1);     }   
+//   20% { top: 64px; left: 64px; opacity: 1; transform: scaleX(1) scaleY(1);        }  
+//   100% { top: 64px; left: 64px; opacity: 1; transform: scaleX(1) scaleY(1);        }
+// }
+
+// @keyframes pop-up-main-text {
+//   0% { opacity: 0; top: 50%; left: 50%; font-size: 1px; transform: translateX(-50%) translateY(-50%) rotateZ(0deg); } 
+//   15% { opacity: 0; top: 50%; left: 50%; font-size: 1px; transform: translateX(-50%) translateY(-50%) rotateZ(0deg); }   
+//   20% { opacity: 1; top: 50%; left: 50%; font-size: 160px; transform: translateX(-50%) translateY(-50%) rotateZ(40deg);    }   
+//   32% { opacity: 1; top: 50%; left: 50%; font-size: 138px; transform: translateX(-50%) translateY(-50%) rotateZ(-10deg);    }  
+//   100% { opacity: 1; top: 50%; left: 50%; font-size: 138px; transform: translateX(-50%) translateY(-50%) rotateZ(-10deg);    }
+// }
+
+// @keyframes pop-up-top-text {
+//   0% { opacity: 0; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(-120deg); } 
+//   25% { opacity: 0; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(-120deg); } 
+//   35% { opacity: 1; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(-50deg); }   
+//   40% { opacity: 1; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(-70deg); }    
+//   100% { opacity: 1; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(-70deg); }
+// }
+
+// @keyframes pop-up-bottom-text {
+//   0% { opacity: 0; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(0deg); } 
+//   30% { opacity: 0; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(50deg); } 
+//   40% { opacity: 1; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(-20deg); }   
+//   45% { opacity: 1; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(0deg); }    
+//   100% { opacity: 1; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotateZ(0deg); }
+// } */
+
+.abs_center {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.logo_cont {
+  width: 400px;
+  height: 400px;
+}
+
+.logo_box {
+  position: relative;
+  /* // width: 400px;
+  // height: 400px; */
+  -webkit-backface-visibility: hidden;
+}
+
+.outer_ring, 
+.inner_ring, 
+.middle_ring {
+  border-radius: 50%;
+}
+
+.outer_ring {
+  /* // border: 2px solid rgba(244, 125, 34, 0.8);	//	orange - #f47d22 */
+  border: 6px solid rgba(9, 24, 48, 0.8);			
+  /* //	blue - #091830 */
+  width: 396px;
+  height: 396px;
+  /* // animation: pop-up-outer 10s 0s infinite; */
+
+	top: 0; 
+	left: 0; 
+	opacity: 1; 
+	transform: scaleX(1) scaleY(1);
+}
+
+.middle_ring {
+  /* // border: 3px dashed rgba(9, 24, 48, 0.8);	//	blue - #091830 */
+  /* // border: 3px dashed rgba(255, 255, 255, 0.8);	//	white */
+
+  /* // border: 3px dashed rgba(9, 24, 48, 0.8);				// blue - #091830 */
+  /* // border: 3px dashed rgba(255, 255, 255, 0.8);		// white */
+  border: 3px dashed rgba(244, 125, 34, 0.8);
+  /* // border: 3px dashed rgba(184, 228, 214, 0.8);		// mint - #b8e4d6 */
+
+  width: 370px;
+  height: 370px;  
+  /* // animation: pop-up-middle 10s 0s infinite; */
+
+	top: 13px; 
+	left: 13px; 
+	opacity: 1; 
+	transform: scaleX(1) scaleY(1);
+}
+  
+.inner_ring {
+  /* // border: 6px solid rgba(184, 228, 214, 0.8);	//	mint - #b8e4d6 */
+  /* // border: 6px solid rgba(9, 24, 48, 0.8);	//	blue - #091830 */
+  border: 4px solid rgba(255, 255, 255, 0.8); // white
+  width: 260px;
+  height: 260px;
+  /* // animation: pop-up-inner 10s 0s infinite; */
+
+  opacity: 1; 
+  transform: scaleX(1) scaleY(1);
+	top: 64px; 
+	left: 64px; 
+}
+
+
+
+
+/* //  L O G O   T E X T   :   B u c k s k i n */
+.Buckskin {
+  color: #fff;
+  font-family: 'Great Vibes', cursive;
+  font-size: 138px;
+  letter-spacing: 0;
+  margin-top: 200px;
+  // opacity: 0;
+  opacity: 1; 
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%) rotateZ(-10deg);
+  top: 50%; 
+  left: 50%; 
+
+  /* // animation: pop-up-main-text 10s 0s infinite;
+  // animation-fill-mode: forwards; */
+}
+
+
+/* //  C U R V E D   T E X T   :   Lower Antelope Cyn */
+.curve_text {
+  width: 40px;
+  height: 345px;  
+  // margin-top: 190px;
+  opacity: 0;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+
+  .letter {
+    width: 20px;
+    height: 170px;
+    color: #fff;
+    // font-family: 'Josefin Slab', serif;
+    font-family: Tulpen One, cursive;
+    font-size: 24px;
+    position: absolute;
+    text-align: center;
+    transform-origin: 50% 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+.curve_text.top {
+  /* // transform: translateX(-50%) translateY(-50%) rotateZ(-70deg);
+  // transform: translateX(-26%) translateY(-30%) rotateZ(-70deg);
+  // animation: pop-up-top-text 10s infinite;
+  // animation-fill-mode: forwards; */
+
+  margin-top: 185px;
+	opacity: 1; 
+  transform: translateX(-50%) translateY(-50%) rotateZ(-70deg);
+	top: 50%; 
+	left: 50%; 
+
+  /* //  T O P   T E X T   L E T T E R S */
+  .letter:nth-child(1) { transform: rotateZ(-4deg); }
+  .letter:nth-child(2) { transform: rotateZ(4deg); }
+  .letter:nth-child(3) { transform: rotateZ(12deg); }
+  .letter:nth-child(4) { transform: rotateZ(20deg); }
+  .letter:nth-child(5) { transform: rotateZ(28deg); }
+  .letter:nth-child(6) { transform: rotateZ(36deg); }
+  .letter:nth-child(7) { transform: rotateZ(44deg); }
+  .letter:nth-child(8) { transform: rotateZ(52deg); }
+  .letter:nth-child(9) { transform: rotateZ(60deg); }
+  .letter:nth-child(10) { transform: rotateZ(68deg); }
+  .letter:nth-child(11) { transform: rotateZ(76deg); }
+  .letter:nth-child(12) { transform: rotateZ(84deg); }
+  .letter:nth-child(13) { transform: rotateZ(92deg); }
+  .letter:nth-child(14) { transform: rotateZ(100deg); }
+  .letter:nth-child(15) { transform: rotateZ(108deg); }
+  .letter:nth-child(16) { transform: rotateZ(116deg); }
+  .letter:nth-child(17) { transform: rotateZ(124deg); }
+  .letter:nth-child(18) { transform: rotateZ(132deg); }
+  .letter:nth-child(19) { transform: rotateZ(140deg); }
+}
+
+
+
+
+/* //  C U R V E D   T E X T   :   Uth / Az Border */
+.curve_text.bottom {
+  /* // transform: translateX(-50%) translateY(-50%) rotateZ(0deg);  
+  // animation: pop-up-bottom-text 10s infinite; */
+
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%) rotateZ(0deg); 
+  top: 50%;
+  left: 50%;
+
+  .letter {
+    width: 30px;
+    line-height: 320px;
+    margin-top: 196px;
+    transform-origin: 50% 0;
+    top: 165px;
+  }
+
+  /* //  B O T T O M   T E X T   L E T T E R S */
+  .letter:nth-child(1) { transform: rotateZ(54deg); }
+  .letter:nth-child(2) { transform: rotateZ(46deg); }
+  .letter:nth-child(3) { transform: rotateZ(38deg); }
+  .letter:nth-child(4) { transform: rotateZ(30deg); }
+  .letter:nth-child(5) { transform: rotateZ(22deg); }
+  .letter:nth-child(6) { transform: rotateZ(14deg); }
+  .letter:nth-child(7) { transform: rotateZ(6deg); }
+  .letter:nth-child(8) { transform: rotateZ(-2deg); }
+  .letter:nth-child(9) { transform: rotateZ(-10deg); }
+  .letter:nth-child(10) { transform: rotateZ(-18deg); }
+  .letter:nth-child(11) { transform: rotateZ(-26deg); }
+  .letter:nth-child(12) { transform: rotateZ(-34deg); }
+  .letter:nth-child(13) { transform: rotateZ(-42deg); }
+  .letter:nth-child(14) { transform: rotateZ(-50deg); }
+  .letter:nth-child(15) { transform: rotateZ(-58deg); }
+}
+
+
+
+
+
+
+
+
+
+

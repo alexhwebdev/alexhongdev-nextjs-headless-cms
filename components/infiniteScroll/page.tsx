@@ -56,8 +56,8 @@ export default function InfiniteScroll() {
 
         <div className={styles.sliderContainer}>
           <div ref={slider} className={`${styles.slider} ${raleway.className}`}>
-            <p ref={firstText}>JAVASCRIPT DEVELOPER -</p>
-            <p ref={secondText}>JAVASCRIPT DEVELOPER -</p>
+            <p ref={firstText}>JavaScript Developer -</p>
+            <p ref={secondText}>JavaScript Developer -</p>
           </div>
         </div>        
       </div>

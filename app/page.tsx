@@ -5,7 +5,7 @@ import ScrollSection from "../components/horiScrollSection/page";
 import HoriFooter from "../components/horiFooter/page";
 
 import ScrollZoomParallax from "../components/scrollZoomParallax/page";
-
+import UpDownParallax from "@/components/upDownParallax/page";
 
 export default function Home() {
   return (
@@ -17,6 +17,8 @@ export default function Home() {
       <HoriFooter />
 
       <ScrollZoomParallax />
+
+      <UpDownParallax />
     </main>
   )
 }
