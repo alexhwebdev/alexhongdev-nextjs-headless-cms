@@ -1,6 +1,16 @@
+.heroWrapper {
+  position: relative;
+  z-index: 10004;
+}
+
+.backgroundImage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../public/images/background.jpg);
+}
+
 section {
-  padding-top: 85vh;
-  padding-bottom: 85vh;
+  height: 100vh;
   position: relative;
 }
 
@@ -21,6 +31,11 @@ img {
   height: 5px;
   background: var(--accent);
   bottom: 100px;
+}
+
+.parallaxTextWrapper {
+  position: relative;
+  top: 50%;
 }
 
 .parallax {

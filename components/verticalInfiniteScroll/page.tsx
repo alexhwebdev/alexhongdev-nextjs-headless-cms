@@ -1,5 +1,5 @@
 "use client";
-
+import Image from 'next/image'
 import "./page.css";
 import { useRef } from "react";
 import {
@@ -77,9 +77,18 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export default function App() {
   return (
-    <section>
-      <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
-      <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText>
+    <section className="heroWrapper">
+      <Image 
+        className="backgroundImage"
+        src="/images/background.jpg"
+        fill
+        alt="background"
+        priority
+      />
+      <div className="parallaxTextWrapper">
+        <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
+        <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText>
+      </div>
     </section>
   );
 }
