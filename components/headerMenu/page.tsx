@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import { useState } from 'react';
 import Hamburger from '../hamburger/page';
 import Menu from '../menu/page';
+import ToggleMode from "../ToggleMode";
 // import CenteredPixelTransition from '../components/pixelTransition/centered';
 import HorizontalPixelTransition from '../pixelTransition/horizontal/page';
 // import VerticalPixelTransition from '../components/pixelTransition/vertical';
@@ -21,6 +22,7 @@ export default function HeaderMenu() {
         menuIsActive={menuIsActive} 
         setMenuIsActive={setMenuIsActive}
       />
+      <ToggleMode />
       
       <Menu 
         menuIsActive={menuIsActive}

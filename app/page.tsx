@@ -7,20 +7,27 @@ import HoriFooter from "../components/horiFooter/page";
 import ScrollZoomParallax from "../components/scrollZoomParallax/page";
 import UpDownParallax from "@/components/upDownParallax/page";
 import VerticalInfiniteScroll from "@/components/verticalInfiniteScroll/page";
+import Projects from "@/components/scrollTextFill/page";
+import TextClipMask from "@/components/textClipMaskText/page";
 
 
 export default function Home() {
   return (
     <main >
+      
       <VerticalInfiniteScroll />
       {/* <InfiniteScroll /> */}
+
+      <Projects />
+
+      <TextClipMask />
 
       <Hero />
       <ScrollSection />
       <HoriFooter />
 
       <ScrollZoomParallax />
-      
+
       <UpDownParallax />
 
       {/* <div style={{

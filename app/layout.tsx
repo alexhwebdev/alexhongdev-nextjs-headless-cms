@@ -29,7 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <nav className="" style={{top: "100px", position: 'absolute', zIndex: 9999}}>
+          {/* <nav className="" style={{top: "100px", position: 'absolute', zIndex: 10005}}>
             <div className="">
               <MainNav />
             </div>
