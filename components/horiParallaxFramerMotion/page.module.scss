@@ -1,0 +1,40 @@
+.slidingImages {
+  // width: 100vw;
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+  position: relative;
+  background-color: white;
+  z-index: 1;
+  left: 0vw;
+
+  .slider {
+    border: 2px solid red;
+    display: flex;
+    position: relative;
+    gap: 3vw;
+    width: 120vw;
+    // left: -10vw;
+    left: 75vw;
+
+    .project {
+      border: 2px solid teal;
+      width: 25%;
+      height: 20vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .imageContainer {
+        position: relative;
+        width: 80%;
+        height: 80%;
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

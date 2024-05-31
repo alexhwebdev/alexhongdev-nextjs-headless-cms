@@ -49,7 +49,7 @@ export default function TextClipMask() {
       <div ref={container} className={styles.container}>
         <div ref={stickyMask} className={styles.stickyMask}>
           <video autoPlay muted loop>
-            <source src="/medias/wave3.mp4" type="video/mp4" />
+            <source src="/medias/wave2.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

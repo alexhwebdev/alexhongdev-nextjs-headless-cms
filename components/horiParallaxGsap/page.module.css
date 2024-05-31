@@ -1,0 +1,59 @@
+.horiParallaxGsapContainer {
+  /* border: 5px solid pink; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.panel {
+  font-weight: 300;
+}
+
+.boxContainer {
+  /* border: 5px solid purple; */
+  display: flex;
+  gap: 2vw;
+}
+.box {
+  /* border: 5px solid orange; */
+  width: 400px;
+  height: 500px;
+  background: #fff;
+  bottom: 50px;
+  position: relative;
+  text-align: center;
+  will-change: transform;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.horiParallaxGsapContainer .boxContainer .box h5 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: absolute;
+  top: 45px;
+}
+.horiParallaxGsapContainer .boxContainer .box h3 {
+  font-size: 4rem;
+  letter-spacing: -5px;
+}
+.box img {
+  /* width: 200px; */
+  /* height: 300px; */
+  position: relative;
+  top: -20px;
+}
+.horiParallaxGsapContainer .boxContainer .box p {
+  width: 85%;
+  font-size: 14px;
+  line-height: 115%;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 35px;
+}
+

@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image'
-import styles from "./page.module.css";
+import "./page.css";
 import { useRef } from "react";
 import {
   motion,
@@ -12,14 +12,10 @@ import {
   useAnimationFrame
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-import { montserrat } from '@/app/fonts';
 
 interface ParallaxProps {
   children: string;
   baseVelocity: number;
-}
-interface VerticalInfiniteScrollProps {
-  children: string;
 }
 
 function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
@@ -68,8 +64,8 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
    * dynamically generated number of children.
    */
   return (
-    <div className={styles.scrollTextContainer}>
-      <motion.div className={styles.scrollMotionDiv} style={{ x }}>
+    <div className="parallax">
+      <motion.div className="scroller" style={{ x }}>
         <span>{children} </span>
         <span>{children} </span>
         <span>{children} </span>
@@ -79,30 +75,20 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   );
 }
 
-export default function VerticalInfiniteScroll({children}: VerticalInfiniteScrollProps) {
+export default function App() {
   return (
-    <section className={styles.parallaxTextWrapper}>
-      {/* <Image 
+    <section className="heroWrapper">
+      <Image 
         className="backgroundImage"
         src="/images/background.jpg"
         fill
         alt="background"
         priority
-      /> */}
-
-      <div className={`${styles.parallaxTextContainer} ${montserrat.className}`}>
-        <ParallaxText 
-          // baseVelocity={-3}
-          baseVelocity={0}
-        >
-          {/* Projects&nbsp;&nbsp;&nbsp;Projects&nbsp;
-           */}
-           {children}
-        </ParallaxText>
-        {/* <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText> */}
-      </div>        
-
-
+      />
+      <div className="parallaxTextWrapper">
+        <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
+        <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText>
+      </div>
     </section>
   );
 }

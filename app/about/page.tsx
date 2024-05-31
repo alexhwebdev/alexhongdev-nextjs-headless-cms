@@ -1,4 +1,4 @@
-import TextClipMask from '@/components/textClipMaskText/page'
+import TextClipMask from '@/components/textClipMask/page'
 import React from 'react'
 
 const AboutPage = () => {

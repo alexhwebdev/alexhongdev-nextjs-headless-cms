@@ -22,5 +22,5 @@
   color: var(--primaryTextColor);
   letter-spacing: var(--headlineMedium);
   font-size: var(--headlineMedium);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
