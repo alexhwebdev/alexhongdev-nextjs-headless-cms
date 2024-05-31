@@ -12,6 +12,7 @@ const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
   const sectionCharRef = useRef(null);
   
   useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
     const splitText = (selector: string) => {
       const elem = document.querySelector(selector) as HTMLElement;
