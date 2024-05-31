@@ -23,7 +23,7 @@ const anim = {
   }),
   closed: (delay: number[]) => ({
     opacity: 0,
-    transition: {duration: 0, delay: 0.02 * delay[1]}
+    transition: {duration: 0.3, delay: 0.02 * delay[1]}
   })
 }
 
