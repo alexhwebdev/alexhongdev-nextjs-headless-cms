@@ -58,7 +58,7 @@ export default function HoriParallaxGsap() {
           //snap: directionalSnap(1 / (sections.length - 1)),
           start: "bottom bottom",
           end: "+=3000 bottom",      // This allows horizontal scroll
-          markers: true
+          // markers: true
         }
       }
     );

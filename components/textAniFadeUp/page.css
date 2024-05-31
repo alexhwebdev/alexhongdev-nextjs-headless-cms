@@ -1,0 +1,22 @@
+
+.textAniFadeUpWrapper {
+  /* border: 10px solid teal; */
+  width: 180vw;
+  /* height: 100vh; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.textAniFadeUpContainer {
+  /* border: 10px solid red; */
+  height: 350px;
+  overflow: hidden;
+}
+
+.textAniFadeUpContainer h2 {
+  /* width: 180vw; */
+  height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}

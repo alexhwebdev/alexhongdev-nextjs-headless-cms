@@ -50,7 +50,7 @@
 } */
 .scrollSection.sectionTwo {
   border: 5px solid red;
-  width: 200vw;
+  width: 160vw;
   background-color: #efefef;
 }
 
@@ -66,6 +66,8 @@
   /* border: 5px solid black; */
   width: 50vw;
   margin-left: 13vw;
+  position: absolute;
+  bottom: 100px;
 }
 .sectionTwoCopy h5:nth-of-type(1) {
   font-size: 0.9rem;

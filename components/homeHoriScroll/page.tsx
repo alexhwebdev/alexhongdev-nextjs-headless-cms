@@ -11,6 +11,7 @@ import { montserrat } from '@/app/fonts';
 import { inter } from '@/app/fonts';
 // import HoriParallax from "../horiParallaxFramerMotion/page";
 import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
+import TextAniFadeUp from "../textAniFadeUp/page";
 
 export default function HomeHoriScroll() {
   const sectionRef = useRef(null);
@@ -70,7 +71,10 @@ export default function HomeHoriScroll() {
               ${styles.sectionTwo}
               ${inter.className}
           `}>
-            <h2>Portfolio of Projects</h2>
+
+            <TextAniFadeUp>
+              Portfolio of Projects
+            </TextAniFadeUp>
             
             <div className={`${styles.sectionTwoCopy} ${montserrat.className}`}>
               <h5>Research & Innovation</h5>
@@ -81,12 +85,8 @@ export default function HomeHoriScroll() {
               <h5>Raw Materials and Innovative Technologies</h5>
 
               <div className={styles.pContainer}>
-                <p>
-                  We develop prestigious and at the same time sustainable projects, because Sustainability also means protecting what’s beautiful, detail and traditional expert craftsmanship. 
-                </p>
-                <p>
-                  That’s why we are committed to always finding the most exclusive but also the most eco-friendly techniques and materials.
-                </p>
+                <p>We develop prestigious and at the same time sustainable projects, because Sustainability also means protecting what’s beautiful, detail and traditional expert craftsmanship.</p>
+                <p>That’s why we are committed to always finding the most exclusive but also the most eco-friendly techniques and materials.</p>
               </div>
             </div>
 
