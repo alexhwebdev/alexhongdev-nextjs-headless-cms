@@ -67,6 +67,7 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
                 <Link className="menu-link" 
                   href={link.path}
                   onClick={handleButtonClick}
+                  prefetch={true}
                 >
                   {link.label}                      
                 </Link>
@@ -74,6 +75,9 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
             </div>
           ))}
         </div>
+        {/* <Link href="/about" prefetch={true}>
+          About Prefetching
+        </Link> */}
       </div>
     </div>
   )
