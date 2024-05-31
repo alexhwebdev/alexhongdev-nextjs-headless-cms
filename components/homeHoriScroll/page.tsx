@@ -11,7 +11,7 @@ import { montserrat } from '@/app/fonts';
 import { inter } from '@/app/fonts';
 // import HoriParallax from "../horiParallaxFramerMotion/page";
 import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
-import TextAniFadeUp from "../textAniFadeUp/page";
+import TextAniFadeUpJS from "../textAniFadeUpJS/page";
 
 export default function HomeHoriScroll() {
   const sectionRef = useRef(null);
@@ -72,9 +72,9 @@ export default function HomeHoriScroll() {
               ${inter.className}
           `}>
 
-            <TextAniFadeUp>
-              Portfolio of Projects
-            </TextAniFadeUp>
+            <TextAniFadeUpJS>
+              Portfolio&nbsp;of&nbsp;Projects
+            </TextAniFadeUpJS>
             
             <div className={`${styles.sectionTwoCopy} ${montserrat.className}`}>
               <h5>Research & Innovation</h5>

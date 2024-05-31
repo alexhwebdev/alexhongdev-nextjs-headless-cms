@@ -92,8 +92,8 @@ export default function VerticalInfiniteScroll({children}: VerticalInfiniteScrol
 
       <div className={`${styles.parallaxTextContainer} ${montserrat.className}`}>
         <ParallaxText 
-          // baseVelocity={-3}
-          baseVelocity={0}
+          baseVelocity={-3}
+          // baseVelocity={0}
         >
           {/* Projects&nbsp;&nbsp;&nbsp;Projects&nbsp;
            */}
