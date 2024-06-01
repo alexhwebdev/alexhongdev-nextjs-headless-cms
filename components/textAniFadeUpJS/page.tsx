@@ -60,7 +60,7 @@ const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
           trigger: sectionCharRef.current,
           start: "30% 10%",
           // end: "100% 10%",
-          markers: true
+          // markers: true
         }
       });
     };

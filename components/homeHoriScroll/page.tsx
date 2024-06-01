@@ -12,6 +12,8 @@ import { inter } from '@/app/fonts';
 // import HoriParallax from "../horiParallaxFramerMotion/page";
 import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
 import TextAniFadeUpJS from "../textAniFadeUpJS/page";
+import WorksSection from "../worksSection/page";
+import './page.css'
 
 export default function HomeHoriScroll() {
   const sectionRef = useRef(null);
@@ -45,6 +47,21 @@ export default function HomeHoriScroll() {
     };
   }, []);
 
+  useGSAP( () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(".boxTest", 
+    {
+      opacity: 0
+    },
+    {
+      duration: 1, // Duration of animation
+      opacity: 1, // Target opacity
+      x: 100, // Move from left
+      stagger: 0.2 // Stagger the animations
+    });
+  }, [])
+
   return (
     <section className={styles.scrollSectionOuter}>
       {/* The section up act just as a wrapper. If the trigger (below) is the
@@ -56,8 +73,14 @@ export default function HomeHoriScroll() {
         <div className={styles.scrollSectionInner}
           ref={sectionRef}
         >
-          <div className={styles.scrollSection}>
+          <div className={`${styles.scrollSection} ${styles.sectionOne}`}>
             <h3>Section 1</h3>
+
+
+<div className="boxTest"></div>
+<div className="boxTest"></div>
+<div className="boxTest"></div>
+
           </div>
 
 
@@ -95,13 +118,19 @@ export default function HomeHoriScroll() {
             </div>
           </div>
 
-
+          {/* 
           <VerticalInfiniteScroll>
-            Section 3&nbsp;&nbsp;&nbsp;Section 3&nbsp;
-          </VerticalInfiniteScroll>
-          <div className="scrollSection">
-            <h3>Section 3</h3>
+            WORK&nbsp;&nbsp;&nbsp;WORK&nbsp;&nbsp;&nbsp;WORK&nbsp;
+          </VerticalInfiniteScroll> 
+          */}
+
+          {/* SECTION 3 : WORKS */}
+          <div className={styles.worksSectionWrapper}>
+            <WorksSection />
           </div>
+
+
+
           <div className="scrollSection">
             <h3>Section 4</h3>
           </div>

@@ -1,0 +1,158 @@
+.worksSectionContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-width: 1015px;
+  overflow: hidden;
+
+
+  .titleContainer {
+    background: #16181d;
+    padding: 10px 40px;
+
+    h3 {
+      color: white;
+      font-size: 1.8em;
+      font-weight: 700;
+      flex-wrap: nowrap;
+      letter-spacing: 0px;
+      /* line-height: 175%; */
+      text-transform: uppercase;
+    }
+  }
+  .companiesContainer {
+    // overflow-y: scroll;
+
+    .companiesInnerContainer {
+      .companies {
+        // border-bottom: 1px solid silver;
+        padding: 15px 75px;
+        position: relative;
+
+        h5 {
+          color: lightpink;
+          font-size: 0.9em;
+          font-weight: 600;
+          letter-spacing: -0.5px;
+        }
+        h4 {
+          font-size: 1.2em;
+          font-weight: 600;
+          letter-spacing: -0.5px;
+          padding: 5px 0;
+        }
+        h5:nth-of-type(2):before {
+          width: 25px;
+          height: 1px;
+          position: relative;
+          display: block;
+          content: "";
+          background-color: #aaa;
+
+          top: 12px;
+        }
+        h5:nth-of-type(2) {
+          color: #aaa;
+          
+          span {
+            font-weight: 400;
+            padding-left: 30px;
+          }
+        }
+        .workPosition {
+          height: 100%;
+          color: #aaa;
+          position: absolute;
+          top: 0;
+          right: 75px;
+
+          display: flex;
+          align-items: center;
+
+          h4 {
+            font-size: 1em;
+            font-weight: 500;
+            letter-spacing: 0px;
+
+            span {
+              // font-size: 0.8em;
+            }
+          }
+        }
+      }
+      .line {
+        border-bottom: 1px solid silver;
+      }
+    }
+    .companiesInnerContainer:nth-of-type(5) {
+      .line {
+        border: none;
+      }
+    }
+  }
+}
+
+
+
+
+// EXPERIENCE EXPERIENCE EXPERIENCE
+.worksSectionContainer .scrollContainer {
+  border: 1px solid silver;
+  width: 100%;
+  display: flex;
+  background: white;
+  padding: 15px 0;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+
+.worksSectionContainer .scrollContainer div {
+  color: lightpink;
+  font-weight: 700;
+  font-size: 4em;
+  flex-wrap: nowrap;
+  letter-spacing: 2px;
+  line-height: 175%;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  animation: animate 40s linear infinite;
+  animation-delay: -40s;
+}
+
+.worksSectionContainer .scrollContainer div:nth-child(2) {
+  animation: animate2 40s linear infinite;
+  animation-delay: -20s;
+}
+
+.worksSectionContainer .scrollContainer div span {
+  -webkit-text-stroke: 2px #000;
+  color: transparent;
+}
+
+@keyframes animate {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+section .scrollContainer.text1 {
+  transform: rotate(30deg) translateY(200px) translateX(-200px);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  width: 100%;
+}
+
+

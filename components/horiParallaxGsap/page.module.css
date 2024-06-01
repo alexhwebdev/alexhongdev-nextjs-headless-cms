@@ -4,6 +4,7 @@
   height: 100%;
   display: flex;
   flex-wrap: nowrap;
+  overflow: hidden;
   position: relative;
 }
 
@@ -21,7 +22,7 @@
   width: 400px;
   height: 500px;
   background: #fff;
-  bottom: 50px;
+  /* bottom: 50px; */
   position: relative;
   text-align: center;
   will-change: transform;

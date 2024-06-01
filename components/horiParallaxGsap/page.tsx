@@ -1,3 +1,4 @@
+// SECTION : Portfolio of Projects 
 "use client";
 
 // import { useRef } from 'react';
@@ -49,7 +50,7 @@ export default function HoriParallaxGsap() {
       { translateX: 1500 },
       {
         // xPercent: -100 * (sectionRef.current - 1),
-        translateX: "-10vw",
+        translateX: "-50vw",
         ease: "none",
         scrollTrigger: {
           trigger:  triggerRef.current,

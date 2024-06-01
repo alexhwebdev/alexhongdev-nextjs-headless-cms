@@ -13,13 +13,13 @@ interface WindowSize {
   height?: number; // optional properties
 }
 
-const anim = {
+const animation = {
   initial: {
     opacity: 0
   },
   open: (delay: number[]) => ({
     opacity: 1,
-    transition: {duration: 0, delay: 0.02 * delay[0]}
+    transition: {duration: 0.3, delay: 0.02 * delay[0]}
   }),
   closed: (delay: number[]) => ({
     opacity: 0,
@@ -83,7 +83,7 @@ export default function HoriPixel({menuIsActive}: Props) {
         <motion.div 
           key={index} 
           className={styles.block}
-          variants={anim}
+          variants={animation}
           initial="initial"
           animate={menuIsActive ? "open" : "closed"}
           custom={[indexOfColum + randomIndex, (20 - indexOfColum + randomIndex)]}

@@ -1,0 +1,9 @@
+.boxTest {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: dodgerblue;
+  margin: 10px;
+  opacity: 0;
+  /* transform: translateX(100px); */
+}

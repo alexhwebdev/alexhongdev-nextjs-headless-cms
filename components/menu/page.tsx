@@ -58,7 +58,7 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
   return (
     <div className="menu-container" ref={container}>
       <div className="menu-copy">
-        {/* <div className="menu-links">
+        <div className="menu-links">
           {menuLinks.map((link, index) => (
             <div className="menu-link-item" key={index}>
               <div className="menu-link-item-holder" 
@@ -74,18 +74,18 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
               </div>
             </div>
           ))}
-        </div> */}
-        <div className="menu-links">
-          <Link href="/">
+        </div>
+        {/* <div className="menu-links">
+          <Link href="/" onClick={toggleMenu}>
             Home
           </Link>
-          <Link href="/about" prefetch={true}>
+          <Link href="/about" prefetch={true} onClick={toggleMenu}>
             About Prefetching
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" onClick={toggleMenu}>
             Contact
           </Link>          
-        </div>
+        </div> */}
 
       </div>
     </div>

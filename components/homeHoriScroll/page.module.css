@@ -7,7 +7,7 @@
 
 .scrollSectionInner {
   height: 100vh;
-  width: 600vw;
+  width: 700vw;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -28,8 +28,16 @@
   font-size: 10em;
   font-weight: 400;
   letter-spacing: -12px;
-  margin: 5% 0 100px;
-  padding-left: 12vw;
+  margin: 100px 0;
+  /* padding-left: 12vw; */
+  padding-left: 150px;
+  position: relative;
+}
+
+.worksSectionWrapper {
+  border: 5px solid blue;
+  width: 80vw;
+  height: 100vh;
   position: relative;
 }
 
@@ -38,20 +46,23 @@
 
 
 
-/* .scrollSection h3 {
-  color: var(--primaryTextColor);
-  letter-spacing: var(--headlineMedium);
-  font-size: var(--headlineMedium);
-  text-transform: uppercase;
-} */
+/* ---------- SECTION 1 ---------- */
+.sectionOne {
+  max-width: 1280px;
+}
 
-/* .scrollSection.sectionTwo:nth-of-type(2) {
-  width: 150vw;
-} */
+
+
+
+
+
+/* ---------- SECTION 2 ---------- */
 .scrollSection.sectionTwo {
   border: 5px solid red;
   width: 160vw;
   background-color: #efefef;
+  max-width: 2025px;
+  position: relative;
 }
 
 .imagesContainer {
@@ -65,7 +76,8 @@
 .sectionTwoCopy {
   /* border: 5px solid black; */
   width: 50vw;
-  margin-left: 13vw;
+  /* margin-left: 13vw; */
+  margin-left: 165px;
   position: absolute;
   bottom: 100px;
 }
