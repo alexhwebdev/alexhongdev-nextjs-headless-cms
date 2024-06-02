@@ -34,12 +34,7 @@
   position: relative;
 }
 
-.worksSectionWrapper {
-  border: 5px solid blue;
-  width: 80vw;
-  height: 100vh;
-  position: relative;
-}
+
 
 
 
@@ -56,7 +51,7 @@
 
 
 
-/* ---------- SECTION 2 ---------- */
+/* ---------- PORTFOLIO OF PROJECTS ---------- */
 .scrollSection.sectionTwo {
   border: 5px solid red;
   width: 160vw;
@@ -119,12 +114,23 @@
 
 
 
+/* ---------- WORKS SECTION ---------- */
+.worksSectionWrapper {
+  border: 5px solid blue;
+  width: 80vw;
+  height: 100vh;
+  position: relative;
+}
 
 
 
 
-
-
-
+/* ---------- HOVER MODAL WORKS SECTION ---------- */
+.hoverModalWrapper {
+  border: 5px solid blue;
+  width: 100vw;
+  /* height: 100vh; */
+  position: relative;
+}
 
 

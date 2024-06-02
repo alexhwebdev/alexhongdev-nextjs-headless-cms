@@ -9,6 +9,7 @@
   .titleContainer {
     background: #16181d;
     padding: 10px 40px;
+    position: relative;
 
     h3 {
       color: white;
@@ -19,6 +20,33 @@
       /* line-height: 175%; */
       text-transform: uppercase;
     }
+    .resumeContainer {
+      a {
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 40px;
+        bottom: 0;
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        p {
+          color: #fff;
+          font-size: 0.8em;
+          padding-right: 10px;
+          text-transform: uppercase;
+        }
+        .resumeIcon {
+          color: #fff;
+          font-size: 25px;
+        }        
+      }
+
+
+    }
+
   }
   .companiesContainer {
     // overflow-y: scroll;
@@ -63,11 +91,13 @@
           height: 100%;
           color: #aaa;
           position: absolute;
+          text-align: right;
           top: 0;
           right: 75px;
 
           display: flex;
-          align-items: center;
+          flex-direction: column;
+          justify-content: center;
 
           h4 {
             font-size: 1em;
@@ -77,6 +107,9 @@
             span {
               // font-size: 0.8em;
             }
+          }
+          h5 {
+            color: black;
           }
         }
       }

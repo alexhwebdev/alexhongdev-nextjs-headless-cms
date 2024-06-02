@@ -37,6 +37,7 @@ export default function TextClipMask() {
   const getScrollProgress = () => {
     if (stickyMask.current && container.current) {
       const scrollProgress = stickyMask.current.offsetTop / (container.current.getBoundingClientRect().height - window.innerHeight);
+      console.log('scrollProgress ', scrollProgress)
       const delta = scrollProgress - easedScrollProgress;
       easedScrollProgress += delta * easing;
       return easedScrollProgress;

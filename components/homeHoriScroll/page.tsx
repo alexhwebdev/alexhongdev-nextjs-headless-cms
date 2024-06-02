@@ -14,6 +14,9 @@ import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
 import TextAniFadeUpJS from "../textAniFadeUpJS/page";
 import WorksSection from "../worksSection/page";
 import './page.css'
+// import HoverCursorImgChange from "../hoverCursorImgChange/page";
+import MouseHoverImgChange from "../mouseHoverImgChange/page";
+
 
 export default function HomeHoriScroll() {
   const sectionRef = useRef(null);
@@ -47,20 +50,20 @@ export default function HomeHoriScroll() {
     };
   }, []);
 
-  useGSAP( () => {
-    gsap.registerPlugin(ScrollTrigger);
+  // useGSAP( () => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(".boxTest", 
-    {
-      opacity: 0
-    },
-    {
-      duration: 1, // Duration of animation
-      opacity: 1, // Target opacity
-      x: 100, // Move from left
-      stagger: 0.2 // Stagger the animations
-    });
-  }, [])
+  //   gsap.fromTo(".boxTest", 
+  //   {
+  //     opacity: 0
+  //   },
+  //   {
+  //     duration: 1, // Duration of animation
+  //     opacity: 1, // Target opacity
+  //     x: 100, // Move from left
+  //     stagger: 0.2 // Stagger the animations
+  //   });
+  // }, [])
 
   return (
     <section className={styles.scrollSectionOuter}>
@@ -76,10 +79,10 @@ export default function HomeHoriScroll() {
           <div className={`${styles.scrollSection} ${styles.sectionOne}`}>
             <h3>Section 1</h3>
 
-
-<div className="boxTest"></div>
-<div className="boxTest"></div>
-<div className="boxTest"></div>
+            {/* 
+            <div className="boxTest"></div>
+            <div className="boxTest"></div>
+            <div className="boxTest"></div> */}
 
           </div>
 
@@ -131,8 +134,8 @@ export default function HomeHoriScroll() {
 
 
 
-          <div className="scrollSection">
-            <h3>Section 4</h3>
+          <div className={styles.hoverModalWrapper}>
+            <MouseHoverImgChange />
           </div>
         </div>
       </div>
