@@ -78,7 +78,6 @@ export default function HomeHoriScroll() {
         >
           <div className={`${styles.scrollSection} ${styles.sectionOne}`}>
             <h3>Section 1</h3>
-
             {/* 
             <div className="boxTest"></div>
             <div className="boxTest"></div>
@@ -133,10 +132,9 @@ export default function HomeHoriScroll() {
           </div>
 
 
-
-          <div className={styles.hoverModalWrapper}>
+          {/* <div className={styles.hoverModalWrapper}>
             <MouseHoverImgChange />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

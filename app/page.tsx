@@ -26,13 +26,14 @@ export default function Home() {
       <main >
 
         {/* <HoriParallax /> */}
+
         <HomeHoriScroll />
+        {/* <UpDownParallax /> */}
+        {/* <ScrollSplitImg /> */}
 
         {/* <InfiniteScroll /> */}
 
         {/* <Projects />
-
-        <ScrollSplitImg />
 
         <ScrollTextGradient />
 
@@ -44,7 +45,7 @@ export default function Home() {
 
         <ScrollZoomParallax /> */}
 
-        {/* <UpDownParallax /> */}
+        
 
         {/* <div style={{
           border: '5px solid orange', 

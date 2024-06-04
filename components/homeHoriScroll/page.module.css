@@ -43,7 +43,7 @@
 
 /* ---------- SECTION 1 ---------- */
 .sectionOne {
-  max-width: 1280px;
+  /* max-width: 1280px; */
 }
 
 
@@ -119,7 +119,10 @@
   border: 5px solid blue;
   width: 80vw;
   height: 100vh;
+  /* max-width: 1280px; */
   position: relative;
+
+  /* left: -400px; */
 }
 
 
