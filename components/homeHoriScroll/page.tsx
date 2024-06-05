@@ -12,10 +12,13 @@ import { inter } from '@/app/fonts';
 // import HoriParallax from "../horiParallaxFramerMotion/page";
 import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
 import TextAniFadeUpJS from "../textAniFadeUpJS/page";
+import WhatIDoAniFadeUpJS from "../whatIDoAniFadeUpJS/page";
 import WorksSection from "../worksSection/page";
 import './page.css'
 // import HoverCursorImgChange from "../hoverCursorImgChange/page";
 import MouseHoverImgChange from "../mouseHoverImgChange/page";
+import EduSection from "../eduSection/page";
+import WhatIDo from "../whatIDoSection/page";
 
 
 export default function HomeHoriScroll() {
@@ -31,7 +34,7 @@ export default function HomeHoriScroll() {
         translateX: 0,
       },
       {
-        translateX: "-400vw",
+        translateX: "-500vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -110,8 +113,8 @@ export default function HomeHoriScroll() {
               <h5>Raw Materials and Innovative Technologies</h5>
 
               <div className={styles.pContainer}>
-                <p>We develop prestigious and at the same time sustainable projects, because Sustainability also means protecting what’s beautiful, detail and traditional expert craftsmanship.</p>
-                <p>That’s why we are committed to always finding the most exclusive but also the most eco-friendly techniques and materials.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                {/* <p>That’s why we are committed to always finding the most exclusive but also the most eco-friendly techniques and materials.</p> */}
               </div>
             </div>
 
@@ -129,6 +132,27 @@ export default function HomeHoriScroll() {
           {/* SECTION 3 : WORKS */}
           <div className={styles.worksSectionWrapper}>
             <WorksSection />
+          </div>
+
+
+          {/* SECTION 4 : EDUCATION */}
+          <div className={styles.eduSectionWrapper}>
+            <EduSection />
+          </div>
+
+
+          {/* SECTION 4 : TECH WORKED WITH */}
+          <div 
+            className={`
+              ${styles.whatIDoSectionWrapper} 
+              ${inter.className}
+            `}
+          >
+            <WhatIDoAniFadeUpJS>
+              What&nbsp;I&nbsp;do&nbsp;:
+            </WhatIDoAniFadeUpJS>
+
+            <WhatIDo />
           </div>
 
 

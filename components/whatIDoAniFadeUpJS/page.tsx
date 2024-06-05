@@ -4,12 +4,12 @@ import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-interface TextAniFadeUpProps {
+interface WhatIDoAniFadeUpProps {
   children: React.ReactNode;
 }
 
-const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
-  const sectionCharRef = useRef(null);
+const WhatIDoAniFadeUpJS = ({children}: WhatIDoAniFadeUpProps) => {
+  const whatIDoRef = useRef(null);
   
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -45,7 +45,7 @@ const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
     };
     
     const animate = function (text: string) {
-      const chars = splitText(".portOfProjectsH2");
+      const chars = splitText(".whatIDoRefH2");
       return gsap.from(chars, {
         // duration: 0.2,
         duration: 1,
@@ -56,21 +56,21 @@ const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
         stagger: 0.05,
         // delay: 1,
         scrollTrigger: {
-          trigger: sectionCharRef.current,
-          start: "30% 10%",
-          // end: "100% 10%",
-          // markers: true
+          trigger: whatIDoRef.current,
+          start: "100%+=1800 50%", // start, scroller-start
+          // end: "100%+=2700 10%",   // end, scroller-end
+          markers: true
         }
       });
     };
     
-    animate(".portOfProjectsH2");
+    animate(".whatIDoRefH2");
   }, []);
 
   return (
-    <div className="textAniFadeUpWrapper">
-      <div className="textAniFadeUpContainer">
-        <h2 ref={sectionCharRef}  className="portOfProjectsH2">
+    <div className="whatIDoFadeUpWrapper">
+      <div className="whatIDoFadeUpContainer">
+        <h2 ref={whatIDoRef} className="whatIDoRefH2">
           {children}
         </h2>
       </div>
@@ -78,4 +78,4 @@ const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
   )
 }
 
-export default TextAniFadeUpJS
+export default WhatIDoAniFadeUpJS

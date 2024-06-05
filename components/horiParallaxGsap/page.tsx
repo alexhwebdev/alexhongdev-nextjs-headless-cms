@@ -54,7 +54,7 @@ export default function HoriParallaxGsap() {
         ease: "none",
         scrollTrigger: {
           trigger:  triggerRef.current,
-          pin: true,
+          // pin: true,
           scrub: 0.1,
           //snap: directionalSnap(1 / (sections.length - 1)),
           start: "bottom bottom",
@@ -63,10 +63,10 @@ export default function HoriParallaxGsap() {
         }
       }
     );
-    return () => {
-      {/* A return function for killing the animation on component unmount */ }
-      pin.kill();
-    };
+    // return () => {
+    //   {/* A return function for killing the animation on component unmount */ }
+    //   pin.kill();
+    // };
   
     // gsap.set(".box-2", {y: 100});
     // ScrollTrigger.defaults({markers: {startColor: "red", endColor: "red"}});

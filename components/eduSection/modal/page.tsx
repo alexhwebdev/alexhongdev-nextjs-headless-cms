@@ -9,12 +9,12 @@ import gsap from 'gsap';
 
 interface ModalProps {
   modal: { active: boolean; index: number };
-  projects: {
-    company: string;
+  educations: {
+    school: string;
     date: string;
     location: string;
-    position: string;
-    tech: string;
+    major: string;
+    degree: string;
     src: string;
     color: string;
   }[];
@@ -43,7 +43,7 @@ const modalVariants = {
   }
 }
 
-export default function Modal({modal, projects}: ModalProps) {
+export default function Modal({modal, educations}: ModalProps) {
   const { active, index } = modal;
   const modalContainer = useRef<HTMLDivElement>(null);
 
@@ -59,7 +59,7 @@ export default function Modal({modal, projects}: ModalProps) {
       {duration: 0.8, ease: "power3"}
     )
 
-    var workSectionID = document.getElementById("worksSectionID");
+    var workSectionID = document.getElementById("eduSectionID");
     var initialElementWidth = workSectionID!.offsetWidth;
 
     workSectionID!.addEventListener('mousemove', (e) => {
@@ -84,7 +84,7 @@ export default function Modal({modal, projects}: ModalProps) {
           style={{top: index * -100 + "%"}}
         >
         {
-          projects.map( (project, index) => {
+          educations.map( (project, index) => {
             const { src, color } = project;
 
             return (
@@ -93,7 +93,7 @@ export default function Modal({modal, projects}: ModalProps) {
                 key={`modal_${index}`}
               >
                 <Image 
-                  src={`/images/company/${src}`} 
+                  src={`/images/schools/${src}`} 
                   width={250} 
                   height={0} alt="image"/>
               </div>

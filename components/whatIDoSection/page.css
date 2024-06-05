@@ -1,0 +1,43 @@
+.whatIDoContainer {
+  border: 2px solid blue;
+  position: absolute;
+  padding-left: 70px;
+  overflow: hidden;
+  left: 25%;
+}
+
+.whatIDoContainer .box {
+  /* border-bottom: 5px solid red; */
+  height: 0vw;
+  display: inline-block;
+  background: teal;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  z-index: -1;
+}
+
+.whatIDoContainer .whatIDo {
+  /* color: white; */
+  display: inline-block;
+  padding-right: 50px;
+}
+
+.whatIDoContainer .text {
+  /* color: #141414; */
+  font-size: 5em;
+  font-weight: 400;
+  letter-spacing: -5px;
+  margin: 100px 0;
+  position: relative;
+}
+.whatIDoContainer .cursor {
+  /* color: #141414; */
+  font-size: 5em;
+  font-weight: 400;
+  letter-spacing: -12px;
+  margin: 100px 0;
+  /* padding-left: 12vw; */
+  position: relative;
+}

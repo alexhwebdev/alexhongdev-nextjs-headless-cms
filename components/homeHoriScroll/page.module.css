@@ -64,13 +64,14 @@
   border: 5px solid blue;
   width: 100%;
   position: absolute;
-  top: 0;
+  /* top: 0; */
+  bottom: 30px;
 }
 
 
 .sectionTwoCopy {
   /* border: 5px solid black; */
-  width: 50vw;
+  width: 40vw;
   /* margin-left: 13vw; */
   margin-left: 165px;
   position: absolute;
@@ -116,7 +117,7 @@
 
 /* ---------- WORKS SECTION ---------- */
 .worksSectionWrapper {
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   width: 80vw;
   height: 100vh;
   /* max-width: 1280px; */
@@ -125,6 +126,31 @@
   /* left: -400px; */
 }
 
+
+
+/* ---------- EDUCATION SECTION ---------- */
+.eduSectionWrapper {
+  /* border: 5px solid purple; */
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  width: 80vw;
+  height: 100vh;
+  /* max-width: 1280px; */
+  position: relative;
+
+  /* left: -400px; */
+}
+
+
+
+/* ---------- WHAT I DO SECTION ---------- */
+.whatIDoSectionWrapper {
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
 
 
 

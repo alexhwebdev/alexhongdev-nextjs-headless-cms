@@ -8,19 +8,19 @@ import styles from './page.module.css';
 interface ProjectProps {
   index: number;
   setModal: React.Dispatch<React.SetStateAction<{ active: boolean; index: number }>>;
-  work: {
-    company: string;
+  education: {
+    school: string;
     date: string;
     location: string;
-    position: string;
-    tech: string;
+    major: string;
+    degree: string;
     src: string;
     color: string;
   };
 }
 
 const Project: React.FC<ProjectProps> = (
-  {index, setModal, work}
+  {index, setModal, education}
 ) => {
 
   useGSAP(() => {
@@ -28,7 +28,7 @@ const Project: React.FC<ProjectProps> = (
 
     // const pin = 
     gsap.fromTo(
-      ".transitionRight",
+      ".animateSchoolsRight",
       {
         opacity: 0,
         translateX: '-300px',
@@ -39,9 +39,9 @@ const Project: React.FC<ProjectProps> = (
         translateX: '0px',
         stagger: 0.2,
         scrollTrigger: {
-          trigger: ".transitionRight",
-          start: "100%+=1700 50%", // start, scroller-start
-          end: "100%+=1700 10%",   // end, scroller-end
+          trigger: ".animateSchoolsRight",
+          start: "100%+=2000 50%", // start, scroller-start
+          end: "100%+=2000 10%",   // end, scroller-end
           scrub: 0.6,
           // pin: true,
           // markers: true
@@ -56,8 +56,7 @@ const Project: React.FC<ProjectProps> = (
 
   return (
     <div key={index} 
-      // className="companiesInnerContainer"
-      className={`${styles.project} companiesInnerContainer`}
+      className={`${styles.project} edusInnerContainer`}
       onMouseEnter={() => {
         setModal({active: true, index})}
       } 
@@ -65,19 +64,19 @@ const Project: React.FC<ProjectProps> = (
         setModal({active: false, index})}
       } 
     >
-      <div className={`companies ${raleway.className}`} 
+      <div className={`schools ${raleway.className}`} 
         // ref={testingRef}
         // setModal={setModal} 
       >
-        <h5 className="transitionRight">{work.date}</h5>
-        <h4 className="transitionRight">{work.company}</h4>
-        <h5 className="transitionRight"><span>{work.location}</span></h5>                  
-        <div className="workPosition">
-          <h4 className="transitionRight">{work.position}</h4>
-          <h5 className="transitionRight">{work.tech}</h5>
+        <h5 className="animateSchoolsRight">{education.date}</h5>
+        <h4 className="animateSchoolsRight">{education.school}</h4>
+        <h5 className="animateSchoolsRight"><span>{education.location}</span></h5>                  
+        <div className="majorDegreeContaine">
+          <h4 className="animateSchoolsRight">{education.major}</h4>
+          <h5 className="animateSchoolsRight">{education.degree}</h5>
         </div>
       </div>
-      <div className="transitionRight line"></div>
+      <div className="animateSchoolsRight line"></div>
     </div>
   )
 }

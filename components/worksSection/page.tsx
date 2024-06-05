@@ -14,10 +14,6 @@ import { GrDocumentDownload } from "react-icons/gr";
 import Project from './project/page'
 import Modal from './modal/page'
 
-interface Props {
-  children: ReactNode;
-}
-
 const projects = [
   { 
     company: "Dow Jones - Investor's Business Daily",
@@ -25,7 +21,8 @@ const projects = [
     location: "Los Angeles, California",
     position: "Frontend / Wordpress Developer",
     tech: "React, GatsbyJS, NextJS, Wordpress",
-    src: "ibd-blue.svg",
+    src: "ibd-blue2.svg",
+    color: ""
   },
   { 
     company: "MGA Entertainment",
@@ -34,6 +31,7 @@ const projects = [
     position: "Frontend Developer",
     tech: "React, AngularJS, EmberJS",
     src: "mga.png",
+    color: ""
   },
   { company: "Webpromo",
     date: "Feb 2016 - Dec 2017",
@@ -41,6 +39,7 @@ const projects = [
     position: "Frontend / Wordpress Developer",
     tech: "AngularJS, Wordpress",
     src: "webpromo.png",
+    color: ""
   },
   { 
     company: "Thunderbolt Studios",
@@ -49,6 +48,7 @@ const projects = [
     position: "Front End Developer",
     tech: "AngularJS, SailsJS",
     src: "thunderbolt.png",
+    color: ""
   },
   { 
     company: "GPS / Charta Global",
@@ -57,6 +57,7 @@ const projects = [
     position: "SAP WM Engineer",
     tech: "SAP WMS",
     src: "chartaglobal.png",
+    color: "back"
   },
   // { 
   //   company: "SAP - Korea",
@@ -66,87 +67,14 @@ const projects = [
   // },
 ]
 
-
 // const WorksSection = () => {
 export default function WorksSection() {
   const [modal, setModal] = useState(
     {active: false, index: 0}
   )
-  const testingRef = useRef(null);
-  const [passVisibleWidth, setVisibleWidth] = useState(0);
-
-  // useGSAP(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   // const pin = 
-  //   gsap.fromTo(
-  //     ".transitionRight",
-  //     {
-  //       opacity: 0,
-  //       translateX: '-300px',
-  //     },
-  //     {
-  //       duration: 1,
-  //       opacity: 1,
-  //       translateX: '0px',
-  //       stagger: 0.2,
-  //       scrollTrigger: {
-  //         trigger: ".transitionRight",
-  //         start: "100%+=1800 50%", // start, scroller-start
-  //         end: "100%+=1800 10%",   // end, scroller-end
-  //         scrub: 0.6,
-  //         // pin: true,
-  //         // markers: true
-  //       },
-  //     }
-  //   );
-  //   // return () => {
-  //   //   {/* A return function for killing the animation on component unmount */ }
-  //   //   pin.kill();
-  //   // };
-  // }, [])
-  
-  useEffect( () => {
-    // var element = document.getElementById('testelement');  
-    // document.addEventListener('mousemove', function(event) {
-    //     var width = element.offsetWidth;
-    //     console.log('Element Width:', width);
-    // });
-
-    // var windowWidth = window.innerWidth;
-    // console.log('Window Width:', windowWidth);
-
-    function getVisibleWidth(element) {
-      var rect = element.getBoundingClientRect();
-      var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-      var visibleWidth = Math.min(rect.right, viewportWidth) - Math.max(rect.left, 0);
-      return visibleWidth;
-    }
-    
-    function updateVisibleWidth() {
-      var element = document.getElementById('testelement');
-      var visibleWidth = getVisibleWidth(element);
-      setVisibleWidth(visibleWidth);
-      console.log('Element width:', visibleWidth);
-    }
-
-    // Initial calculation
-    updateVisibleWidth();
-
-    // Update visibleWidth when scrolling
-    window.addEventListener('scroll', updateVisibleWidth);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('scroll', updateVisibleWidth);
-    };
-
-  }, [])
-
-  // console.log('passVisibleWidth:', passVisibleWidth);
 
   return (
-    <div id="testelement" className="worksSectionContainer">
+    <div id="worksSectionID" className="worksSectionContainer">
       <div className={`titleContainer ${montserrat.className}`} >
         <h3>Work</h3>
 
@@ -173,55 +101,12 @@ export default function WorksSection() {
           })
         }
       </div>
-      <Modal modal={modal} projects={projects} 
-        passVisibleWidth={passVisibleWidth}
-      />
-
-
-{/* 
-      <div className="companiesContainer">
-        {
-          projects.map((work, index) => {
-            return (
-              <div key={index} className="companiesInnerContainer">
-                <div className={`companies ${raleway.className}`} 
-                  // ref={testingRef}
-                  // setModal={setModal} 
-                >
-                  <h5 className="transitionRight">{work.date}</h5>
-                  <h4 className="transitionRight">{work.company}</h4>
-                  <h5 className="transitionRight"><span>{work.location}</span></h5>                  
-                  <div className="workPosition">
-                    <h4 className="transitionRight">{work.position}</h4>
-                    <h5 className="transitionRight">{work.tech}</h5>
-                  </div>
-                </div>
-                <div className="transitionRight line"></div>
-              </div>
-            )
-          })
-        }
-      </div> */}
-
+      <Modal modal={modal} projects={projects} />
 
       <div className="scrollContainer text2">
-        <div>Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp;</div>
-        <div>Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp;</div>
+        <div className="transitionLeft">Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp;</div>
+        <div className="transitionLeft">Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp; Experience&nbsp;&nbsp;</div>
       </div>
-
-
-
-
-      {/* 
-      <div className="scroll text1">
-        <div>
-              Special Offer!<span> Blah Blah Blah Blah! </span>Special Offer!<span> Blah Blah Blah Blah! Blah!</span>
-        </div>
-        <div>
-              Special Offer!<span> Blah Blah Blah Blah! </span>Special Offer!<span>Blah Blah Blah Blah! Blah! </span>
-        </div>
-      </div> 
-      */}
     </div>
   )
 }
@@ -230,3 +115,36 @@ export default function WorksSection() {
 // https://codepen.io/briancedillo/pen/qBWmXoW
 
 
+
+
+
+
+  // SAVE THIS CODE : passVisibleWidth
+  // const [passVisibleWidth, setVisibleWidth] = useState(0);
+  // useEffect( () => {
+  //   function getVisibleWidth(element) {
+  //     var rect = element.getBoundingClientRect();
+  //     var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  //     var visibleWidth = Math.min(rect.right, viewportWidth) - Math.max(rect.left, 0);
+  //     return visibleWidth;
+  //   }
+    
+  //   function updateVisibleWidth() {
+  //     var element = document.getElementById('worksSectionID');
+  //     var visibleWidth = getVisibleWidth(element);
+  //     setVisibleWidth(visibleWidth);
+  //     console.log('Element width:', visibleWidth);
+  //   }
+
+  //   // Initial calculation
+  //   updateVisibleWidth();
+
+  //   // Update visibleWidth when scrolling
+  //   window.addEventListener('scroll', updateVisibleWidth);
+
+  //   // Cleanup
+  //   return () => {
+  //     window.removeEventListener('scroll', updateVisibleWidth);
+  //   };
+
+  // }, [])
