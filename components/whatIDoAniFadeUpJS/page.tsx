@@ -59,7 +59,7 @@ const WhatIDoAniFadeUpJS = ({children}: WhatIDoAniFadeUpProps) => {
           trigger: whatIDoRef.current,
           start: "100%+=1800 50%", // start, scroller-start
           // end: "100%+=2700 10%",   // end, scroller-end
-          markers: true
+          // markers: true
         }
       });
     };

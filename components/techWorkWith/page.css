@@ -1,0 +1,76 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap'); */
+
+.techWorkWithContainer p {
+  display:block;
+  white-space:nowrap;
+  margin-bottom: .25em;
+  margin-top: 0;
+}
+
+.techWorkWithContainer span {
+  opacity: 0.6;
+}
+
+.techWorkWithContainer a {
+  color: #141414;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+}
+
+
+.techAndLangContainer {
+  /* border: 5px solid blue; */
+  /* width: 100%; */
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+}
+
+/* LEFT CONTAINER */
+.techLangLeftContainer {
+  /* border: 1px solid red; */
+  width: 200px;
+  /* font-family: "Sulphur Point"; */
+  height: 100%;
+  position: relative;
+
+}
+.techLangLeftContainer p {
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-wrap: wrap;
+}
+
+/* RIGHT CONTAINER */
+.techLangRightContainer {
+  /* border: 1px solid red; */
+  /* width: 200px; */
+  height: 100%;
+  margin-left: 75px;
+}
+.techLangRightContainer li {
+  /* display: flex; */
+}
+.techLangRightContainer h4 {
+  /* border: 1px solid silver; */
+  /* width: 400px; */
+  display: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+
+@media (max-width: 1279px) {
+  .techLangRightContainer ul li h4 {
+    display: block;
+  }
+}
+
+
+
+

@@ -1,0 +1,26 @@
+.techWorkWithListContainer {
+  display: flex;
+  /* height: 100vh; */
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 100vh;
+  /* color: rgb(211, 211, 211); */
+  color: #141414;
+}
+
+.techWorkWithListBody {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.techWorkWithListBody p {
+  font-size: 3.5vw;
+  margin: 0px;
+  margin-right: 1.5vw;
+  font-weight: 700;
+}
+
+.techWorkWithListBody span {
+  opacity: 0.2;
+}

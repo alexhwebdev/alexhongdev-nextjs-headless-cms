@@ -1,0 +1,47 @@
+.whatIDoTypingContainer {
+  /* border: 2px solid blue; */
+  position: absolute;
+  padding-left: 50px;
+  overflow: hidden;
+  left: 25%;
+  position: relative;
+  z-index: 1;
+}
+
+.whatIDoTypingContainer .box {
+  /* border-bottom: 5px solid red; */
+  height: 0vw;
+  display: inline-block;
+  background: teal;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  z-index: -1;
+display: none;
+}
+
+.whatIDoTypingContainer .whatIDo {
+  /* color: white; */
+  display: inline-block;
+  padding-right: 50px;
+display: none;
+}
+
+.whatIDoTypingContainer .text {
+  /* color: #141414; */
+  font-size: 5em;
+  font-weight: 400;
+  letter-spacing: -5px;
+  margin: 100px 0;
+  position: relative;
+}
+.whatIDoTypingContainer .cursor {
+  /* color: #141414; */
+  font-size: 5em;
+  font-weight: 400;
+  letter-spacing: -12px;
+  margin: 100px 0;
+  /* padding-left: 12vw; */
+  position: relative;
+}

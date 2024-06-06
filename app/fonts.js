@@ -1,10 +1,11 @@
 import { 
   Montserrat, 
   Raleway, 
-  Sulphur_Point,
+  // Sulphur_Point,
   Inter,
   Vollkorn
 } from 'next/font/google';
+
 
 export const montserrat = Montserrat({
   subsets: ['latin'],
@@ -47,9 +48,7 @@ export const vollkorn = Vollkorn({
 //   subsets: ['latin'],
 //   variants: {
 //     regular: 300,
-//     italic: 300,
 //     bold: 700,
-//     boldItalic: 700,
 //   }
 // });
 

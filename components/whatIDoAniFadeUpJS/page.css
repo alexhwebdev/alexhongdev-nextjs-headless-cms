@@ -8,13 +8,13 @@
   align-items: center; */
 }
 .whatIDoFadeUpContainer {
-  border: 5px solid red;
+  /* border: 5px solid red; */
   /* height: 350px; */
   overflow: hidden;
 }
 
 .whatIDoFadeUpContainer h2.whatIDoRefH2 {
-  font-size: 10em;
+  font-size: 8em;
   font-weight: 400;
   letter-spacing: -12px;
   line-height: 100%;

@@ -19,6 +19,7 @@ import './page.css'
 import MouseHoverImgChange from "../mouseHoverImgChange/page";
 import EduSection from "../eduSection/page";
 import WhatIDo from "../whatIDoSection/page";
+import TechWorkWith from "../techWorkWith/page";
 
 
 export default function HomeHoriScroll() {
@@ -84,8 +85,8 @@ export default function HomeHoriScroll() {
             {/* 
             <div className="boxTest"></div>
             <div className="boxTest"></div>
-            <div className="boxTest"></div> */}
-
+            <div className="boxTest"></div> 
+            */}
           </div>
 
 
@@ -129,10 +130,12 @@ export default function HomeHoriScroll() {
           </VerticalInfiniteScroll> 
           */}
 
+
           {/* SECTION 3 : WORKS */}
           <div className={styles.worksSectionWrapper}>
             <WorksSection />
           </div>
+
 
 
           {/* SECTION 4 : EDUCATION */}
