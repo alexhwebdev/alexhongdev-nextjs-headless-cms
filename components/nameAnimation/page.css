@@ -1,0 +1,18 @@
+.name_animation_wrapper {
+  /* border: 1px solid red; */
+  width: 282px;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  top: 25px;
+  right: 0%;
+  left: 0%;
+  z-index: 1;
+}
+.name_animation_wrapper a {
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 140%;
+  text-transform: uppercase;
+}

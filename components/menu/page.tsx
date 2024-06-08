@@ -16,6 +16,7 @@ export interface Props {
 const menuLinks = [
   { path: "/", label: "Home" },
   { path: "/about", label: "About" },
+  { path: "/projects", label: "Projects" },
   { path: "/contact", label: "Contact" },
 ];
 

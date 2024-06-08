@@ -4,4 +4,11 @@
   height: 100vh;
 }
 
+.cupImg {
+  width: 200px;
+  /* height: 300px; */
+  position: absolute;
+  right: 32%;
+  bottom: 0;
+}
 

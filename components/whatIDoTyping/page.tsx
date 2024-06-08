@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import './page.css';
-
 import { TextPlugin } from 'gsap/TextPlugin'; // Import the TextPlugin
 
 
@@ -65,11 +64,11 @@ const WhatIDoTyping = () => {
   return (
     <div className="whatIDoTypingContainer">
       <span className="box"></span>      
-      <span className="whatIDo">
+      <span className="whatIDo mix-blend-difference">
         What I do :
       </span>
 
-      <span className="text"></span>
+      <span className="text mix-blend-difference"></span>
       <span className="cursor">_</span>
     </div>
   )

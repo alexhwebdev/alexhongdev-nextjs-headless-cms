@@ -70,7 +70,7 @@ const WhatIDoAniFadeUpJS = ({children}: WhatIDoAniFadeUpProps) => {
   return (
     <div className="whatIDoFadeUpWrapper">
       <div className="whatIDoFadeUpContainer">
-        <h2 ref={whatIDoRef} className="whatIDoRefH2">
+        <h2 ref={whatIDoRef} className="whatIDoRefH2 mix-blend-difference">
           {children}
         </h2>
       </div>

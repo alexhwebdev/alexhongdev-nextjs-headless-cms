@@ -43,7 +43,7 @@ const slider2 = [
   }
 ]
 
-export default function HoriParallax() {
+export default function HoriParallaxFramerMotion() {
   const imgcontainer = useRef(null);
   const { scrollYProgress } = useScroll({
     target: imgcontainer,

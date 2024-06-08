@@ -1,13 +1,18 @@
 .hamburger {
-  position: absolute;
-  display: flex;
-  width: 100px;
-  justify-content: flex-end;
+  // border: 1px solid red;
+  width: 50px;
+  background: #141414;
+  border-radius: 100%;
   box-sizing: border-box;
+  padding: 30px 32px;
+  position: absolute;
   z-index: 10005;
-  top: 0;
-  right: 0;
-  padding: 40px;
+
+  top: 45px;
+  right: 45px;
+  
+  display: flex;
+  justify-content: center;
 
   .hamburgerLines {
     position: relative;
@@ -17,31 +22,31 @@
     cursor: pointer;
     
     &::before, 
-    &::after{
+    &::after {
       display: block;
       content: "";
-      width: 30px;
+      width: 25px;
       height: 2px;
       background-color: silver;
       position: relative;
       transition: transform 0.3s;
     }
-    &::after{
-      top: -5px;
+    &::after {
+      top: -6px;
     }
 
-    &::before{
-      top: 5px;
+    &::before {
+      top: 8px;
     }
   }
-  .hamburgerActive{
-    &::after{
+  .hamburgerActive {
+    &::after {
       transform: rotate(45deg);
       top: -1px;
     }
-    &::before{
+    &::before {
       transform: rotate(-45deg);
-      top: 0px;
+      top: 1px;
     }
   }
 }

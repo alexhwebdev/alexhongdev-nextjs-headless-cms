@@ -52,7 +52,7 @@ export interface DescriptionProps {
   selectedProject: number | null;
 }
 
-export default function Projects() {
+export default function ScrollTextFill() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   return (

@@ -1,0 +1,45 @@
+.projectsScrollTextGradientWrapper {
+  /* display: flex; */
+  height: 100%;
+  /* align-items: flex-end; */
+  /* justify-content: center; */
+  margin-bottom: 35vh;
+  /* color: rgb(211, 211, 211); */
+  color: #141414;
+  padding-left: 50px;
+}
+
+.projectsScrollTextGradientContainer {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  left: -200%;
+
+  animation: animateFromLeft 1s ease-in-out forwards;
+  animation-delay: 2.8s;
+}
+
+.projectsScrollTextGradientContainer p {
+  font-size: 1.3em;
+  margin: 0px;
+  margin-right: 0.7vw;
+  font-weight: 400;
+}
+
+.projectsScrollTextGradientContainer span {
+  opacity: 0.1;
+}
+
+@keyframes animateFromLeft {
+  0% { 
+    opacity: 0;
+    /* transform: translateX(-100%);  */
+    left: -200%;
+  }
+  100% { 
+    opacity: 1;
+    /* transform: translateX(0%);  */
+    left: 0%;
+  }
+}

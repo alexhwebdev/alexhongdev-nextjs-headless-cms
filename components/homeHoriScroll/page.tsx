@@ -20,6 +20,7 @@ import MouseHoverImgChange from "../mouseHoverImgChange/page";
 import EduSection from "../eduSection/page";
 import WhatIDo from "../whatIDoSection/page";
 import TechWorkWith from "../techWorkWith/page";
+import ContactSection from "../contactSection/page";
 
 
 export default function HomeHoriScroll() {
@@ -35,7 +36,7 @@ export default function HomeHoriScroll() {
         translateX: 0,
       },
       {
-        translateX: "-500vw",
+        translateX: "-600vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -89,8 +90,6 @@ export default function HomeHoriScroll() {
             */}
           </div>
 
-
-
           {/* SECTION 2 : PROJECTS */}
           <VerticalInfiniteScroll>
             Projects&nbsp;&nbsp;&nbsp;Projects&nbsp;
@@ -130,21 +129,20 @@ export default function HomeHoriScroll() {
           </VerticalInfiniteScroll> 
           */}
 
-
           {/* SECTION 3 : WORKS */}
           <div className={styles.worksSectionWrapper}>
             <WorksSection />
           </div>
-
-
 
           {/* SECTION 4 : EDUCATION */}
           <div className={styles.eduSectionWrapper}>
             <EduSection />
           </div>
 
-
-          {/* SECTION 4 : TECH WORKED WITH */}
+          {/* SECTION 5 : TECH WORKED WITH */}
+          <VerticalInfiniteScroll>
+            Development&nbsp;&nbsp;&nbsp;Development&nbsp;
+          </VerticalInfiniteScroll>
           <div 
             className={`
               ${styles.whatIDoSectionWrapper} 
@@ -152,12 +150,20 @@ export default function HomeHoriScroll() {
             `}
           >
             <WhatIDoAniFadeUpJS>
-              What&nbsp;I&nbsp;do&nbsp;:
+              {/* What&nbsp;I&nbsp;do&nbsp;: */}
+              {/* Tech.&nbsp;Ive&nbsp;Worked&nbsp;With&nbsp;: */}
+              <div className="mix-blend-difference">
+                Development&nbsp;Experience&nbsp;:
+              </div>
             </WhatIDoAniFadeUpJS>
 
             <WhatIDo />
           </div>
 
+          {/* SECTION 6 : CONTACT */}
+          <div className={styles.contactSectionWrapper}>
+            <ContactSection />
+          </div>
 
           {/* <div className={styles.hoverModalWrapper}>
             <MouseHoverImgChange />

@@ -145,12 +145,28 @@
 
 /* ---------- WHAT I DO SECTION ---------- */
 .whatIDoSectionWrapper {
+  background: #f2f2f2;
   border-right: 1px solid silver;
   border-left: 1px solid silver;
-  width: 100vw;
+  width: 130vw;
   height: 100vh;
   position: relative;
 }
+
+
+
+/* ---------- CONTACT SECTION ---------- */
+.contactSectionWrapper {
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  width: 120vw;
+  height: 100vh;
+  background: #141414;
+  position: relative;
+}
+
+
+
 
 
 

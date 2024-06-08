@@ -15,7 +15,8 @@ import HomeHoriScroll from "@/components/homeHoriScroll/page";
 // import HoriParallax from "@/components/horiParallax/page";
 // import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
 
-
+// import './page.module.css'
+import HomeHoverMixBlend from "@/components/homeHoverMixBlend/page";
 
 
 
@@ -24,6 +25,7 @@ export default function Home() {
   return (
     <SmoothScroll>
       <main >
+        <HomeHoverMixBlend />
 
         {/* <HoriParallax /> */}
 

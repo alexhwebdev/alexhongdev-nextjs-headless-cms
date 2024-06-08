@@ -2,9 +2,10 @@
 
 .techWorkWithContainer p {
   display:block;
-  white-space:nowrap;
+  font-size: 14px;
   margin-bottom: .25em;
   margin-top: 0;
+  white-space:nowrap;
 }
 
 .techWorkWithContainer span {
@@ -49,7 +50,7 @@
   /* border: 1px solid red; */
   /* width: 200px; */
   height: 100%;
-  margin-left: 75px;
+  margin-left: 10px;
 }
 .techLangRightContainer li {
   /* display: flex; */

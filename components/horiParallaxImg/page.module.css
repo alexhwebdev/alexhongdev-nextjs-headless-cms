@@ -1,0 +1,49 @@
+
+.horiImgParallaxContainer {
+  /* border: 1px solid blue; */
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.panel {
+  font-weight: 300;
+}
+
+.boxContainer {
+  /* border: 5px solid purple; */
+  display: flex;
+  gap: 2vw;
+}
+.box {
+  /* border: 5px solid orange; */
+  /* width: 400px;
+  height: 500px; */
+  width: 100vw;
+  height: 100%;
+  background: #fff;
+  /* bottom: 50px; */
+  position: relative;
+  text-align: center;
+  will-change: transform;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box .laptop {
+  /* width: 200px; */
+  /* height: 300px; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: -25%;
+}
+

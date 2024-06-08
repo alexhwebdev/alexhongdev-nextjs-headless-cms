@@ -28,7 +28,7 @@ const TechWorkWith = () => {
         // start: "0% 0%",
         start: "100%+=2700 50%", // start, scroller-start
         end: "100%+=2700 10%",   // end, scroller-end
-        markers: true
+        // markers: true
       }
     })
     const allLinks = gsap.utils.toArray("p a")
@@ -140,15 +140,16 @@ const TechWorkWith = () => {
               <div>
                 <p className="three">
                   <a href="#">GraphQL&nbsp;</a>
-                  <span>/ Redux / Redux-Saga / React Router / Webpack / jQuery /&nbsp;</span>
+                  <span>/ Redux / React Router / Webpack / jQuery /&nbsp;</span>
                   <a href="#">GreenSock&nbsp;</a>
                 </p>                
               </div>
               <div>
                 <p className="four">
                   <span>React-Spring / React-Slick /&nbsp;</span>
-                  <a href="#">React Animated / Sass&nbsp;</a>
-                  <span>/ Styled-Components</span>
+                  <a href="#">React Animated&nbsp;</a>
+                  <span>/ Styled-Components /&nbsp;</span>
+                  <a href="#">Sass&nbsp;</a>
                 </p>
               </div>
               <div>
