@@ -1,0 +1,111 @@
+/* -------------------- SCROLL DOWN */
+.chevron_container {
+  /* border: 1px solid red; */
+  width: 100px;
+  height: 100px;
+  /* background: #fff; */
+  margin: auto;
+  mix-blend-mode: exclusion;
+  position: absolute;
+  z-index: 10005;
+  right: 0;
+  bottom: 45px;
+  left: 0;
+
+  opacity: 0;
+  animation-name: fadeInUp;
+  animation-fill-mode: forwards;
+  animation-duration: 1000ms;
+  animation-timing-function: ease;
+  animation-delay: 1.5s;
+}
+.text_scroll {
+  color: #fff;
+  display: block;
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 75px;
+  text-align: center;
+  text-transform: uppercase;
+
+  /* animation: pulse 2s linear alternate infinite; */
+}
+
+
+
+.chevron {
+  width: 28px;
+  height: 8px;
+  margin: 0 auto;
+  opacity: 0;
+  position: absolute;
+  transform: scale3d(0.5, 0.5, 0.5);
+  left: 0;
+  right: 0;
+
+  animation: move 3s ease-out infinite;
+}
+.chevron:first-child {
+  margin: 0 auto;
+
+  animation: move 3s ease-out 1s infinite;
+}
+.chevron:nth-child(2) {
+  margin: 0 auto;
+
+  animation: move 3s ease-out 2s infinite;
+}
+.chevron:before,
+.chevron:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #fff;
+}
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

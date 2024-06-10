@@ -2,45 +2,34 @@
 import styles from './page.module.css'
 import { useState } from 'react';  
 import { motion } from 'framer-motion';
+import { inter } from '@/app/fonts';
+import { montserrat } from '@/app/fonts';
 import { raleway } from '@/app/fonts';
 import useMousePosition from '@/app/utils/useMousePosition';
 import { LuArrowRight } from "react-icons/lu";
-import { FaLinkedinIn } from "react-icons/fa";
+
+// import './page.css'
+import ProjectsAniFadeUpJS from '@/app/projects/components/ProjectsAniFadeUpJS/page';
 
 
-import './page.module.css'
-import NameAnimation from '../nameAnimation/page';
 
 export default function HomeHoverMixBlend() {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
   const size = isHovered ? 500 : 40;
 
-  // var currentDate = new Date();
-  // const hours = currentDate.getHours();
-  // const minutes = currentDate.getMinutes();
-  // const ampm = hours >= 12 ? 'PM' : 'AM';
-  // const formattedHours = hours % 12 || 12;
+
+  const scrolltext = 'scrolltext'
 
   return (
     <div className={`${styles.wrapper} ${raleway.className}`}>
-      {/* <div>
-        {`${currentDate}`}
-      </div> */}
 
-      <NameAnimation />
-
-      <div className={styles.right_arrow_container}>
+      <div className={`
+        ${styles.right_arrow_container}
+        ${styles.fade_up3}
+      `}>
         <p>HOVER</p>
         <LuArrowRight />
-      </div>
-
-      <div className={styles.linkedin_container}>
-        <a href="https://www.linkedin.com/in/young-alex-hong/" target="_blank">
-          <FaLinkedinIn />
-          <span></span>
-          <p>Alex-Y-Hong/</p>
-        </a>
       </div>
 
 
@@ -68,12 +57,16 @@ export default function HomeHoverMixBlend() {
       </motion.div>
       {/* )} */}
 
-      <div 
-        className={styles.no_mask_wrapper}
-      >
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multi&mdash;</p>
-        <p>Disciplined</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Developer</p>
+      <div className={styles.no_mask_wrapper}>
+        <p className={styles.fade_up}>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multi&mdash;
+        </p>
+        <p className={styles.fade_up2}>
+          Disciplined
+        </p>
+        <p className={styles.fade_up3}>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Developer
+        </p>
       </div>
 
     </div>

@@ -1,55 +1,76 @@
-.hamburger {
-  // border: 1px solid red;
-  width: 50px;
-  background: #141414;
-  border-radius: 100%;
-  box-sizing: border-box;
-  padding: 30px 32px;
-  position: absolute;
+.hamburger_wrapper {
+  // mix-blend-mode: exclusion;
+  // position: absolute;
+  position: fixed;
   z-index: 10005;
 
   top: 45px;
   right: 45px;
-  
-  display: flex;
-  justify-content: center;
 
-  .hamburgerLines {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    cursor: pointer;
+  opacity: 0;
+  animation-name: fadeInUp;
+  animation-fill-mode: forwards;
+  animation-duration: 1000ms;
+  animation-timing-function: ease;
+  animation-delay: 0.8s;
+
+  .hamburger {
+    // border: 1px solid red;
+    width: 50px;
+    background: #141414;
+    // background: #fff;
+    border-radius: 100%;
+    box-sizing: border-box;
+    // mix-blend-mode: exclusion;
+    padding: 30px 32px;
     
-    &::before, 
-    &::after {
-      display: block;
-      content: "";
-      width: 25px;
-      height: 2px;
-      background-color: silver;
+    display: flex;
+    justify-content: center;
+  
+    .hamburgerLines {
       position: relative;
-      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      cursor: pointer;
+      
+      &::before, 
+      &::after {
+        display: block;
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: silver;
+        position: relative;
+        transition: transform 0.3s;
+      }
+      &::after { top: -6px;}
+      &::before { top: 8px;}
     }
-    &::after {
-      top: -6px;
-    }
-
-    &::before {
-      top: 8px;
-    }
-  }
-  .hamburgerActive {
-    &::after {
-      transform: rotate(45deg);
-      top: -1px;
-    }
-    &::before {
-      transform: rotate(-45deg);
-      top: 1px;
+    .hamburgerActive {
+      &::after {
+        transform: rotate(45deg);
+        top: -1px;
+      }
+      &::before {
+        transform: rotate(-45deg);
+        top: 1px;
+      }
     }
   }
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 /* .header {
   position: fixed;
   display: flex;

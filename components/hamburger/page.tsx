@@ -7,14 +7,19 @@ interface Props {
 
 export default function Hamburger({menuIsActive, setMenuIsActive}: Props) {
   return (
-    <div className={styles.hamburger}>
-      <div 
+    <div className={styles.hamburger_wrapper}>
+      <div className={styles.hamburger}
         onClick={() => {setMenuIsActive(!menuIsActive)}} 
-        className={`
-          ${styles.hamburgerLines} ${menuIsActive ? 
-          styles.hamburgerActive : 
-          ""}
-        `}
-      ></div>
+      >
+        <div 
+          // onClick={() => {setMenuIsActive(!menuIsActive)}} 
+          className={`
+            ${styles.hamburgerLines} ${menuIsActive ? 
+            styles.hamburgerActive : 
+            ""}
+          `}
+        ></div>
+      </div>
     </div>
+
 )}

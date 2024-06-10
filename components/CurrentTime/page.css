@@ -1,0 +1,21 @@
+/* --------------- TIME */
+.current_time {
+  /* border: 1px solid red; */
+  /* background: #141414; */
+  /* color: #fff; */
+  mix-blend-mode: exclusion;
+  position: fixed;
+  z-index: 10005;
+
+  right: 45px;
+  bottom: 45px;
+}
+.current_time p {
+  /* background: #141414; */
+  background: #fff;
+  color: #000;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  /* mix-blend-mode: exclusion; */
+}

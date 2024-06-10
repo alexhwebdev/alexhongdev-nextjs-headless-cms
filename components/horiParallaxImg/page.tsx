@@ -46,7 +46,7 @@ const HoriParallaxImg = () => {
           start: "100%+=1800 50%", // start, scroller-start
           end: "100%+=1800 -20%",   // end, scroller-end
 
-          markers: true
+          // markers: true
         }
       }
     );

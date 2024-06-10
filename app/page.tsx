@@ -17,6 +17,8 @@ import HomeHoriScroll from "@/components/homeHoriScroll/page";
 
 // import './page.module.css'
 import HomeHoverMixBlend from "@/components/homeHoverMixBlend/page";
+import HomeScrollTextGradient from "@/components/HomeScrollTextGradient/page";
+import NameAnimation from "@/components/nameAnimation/page";
 
 
 
@@ -24,10 +26,12 @@ import HomeHoverMixBlend from "@/components/homeHoverMixBlend/page";
 export default function Home() {
   return (
     <SmoothScroll>
-      <main >
+      <main style={{overflow: 'hidden'}}>
         <HomeHoverMixBlend />
 
+
         {/* <HoriParallax /> */}
+
 
         <HomeHoriScroll />
         {/* <UpDownParallax /> */}

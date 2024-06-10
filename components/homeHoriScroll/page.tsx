@@ -21,6 +21,7 @@ import EduSection from "../eduSection/page";
 import WhatIDo from "../whatIDoSection/page";
 import TechWorkWith from "../techWorkWith/page";
 import ContactSection from "../contactSection/page";
+import HomeScrollTextGradient from "../HomeScrollTextGradient/page";
 
 
 export default function HomeHoriScroll() {
@@ -83,6 +84,7 @@ export default function HomeHoriScroll() {
         >
           <div className={`${styles.scrollSection} ${styles.sectionOne}`}>
             <h3>Section 1</h3>
+            <HomeScrollTextGradient />
             {/* 
             <div className="boxTest"></div>
             <div className="boxTest"></div>

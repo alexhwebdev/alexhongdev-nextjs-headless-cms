@@ -4,8 +4,12 @@ import "./globals.css";
 import MainNav from "@/components/MainNav";
 import { ThemeProvider } from "@/components/theme-provider";
 import HeaderMenu from "@/components/headerMenu/page";
+import CurrentTime from "@/components/CurrentTime/page";
 // const inter = Inter({ subsets: ["latin"] });
-
+import styles from './page.module.css'
+import { FaLinkedinIn } from "react-icons/fa";
+import NameAnimation from "@/components/nameAnimation/page";
+import HomeScrollArrow from "@/components/HomeScrollArrow/page";
 
 export const metadata: Metadata = {
   title: "Alex Hong - Next.js Portfolio",
@@ -37,7 +41,21 @@ export default function RootLayout({
 
           <div>
             <HeaderMenu />
+            <NameAnimation />
+
             {children}
+
+            {/* LINKEDIN */}
+            <div className={styles.linkedin_container}>
+              <a href="https://www.linkedin.com/in/young-alex-hong/" target="_blank">
+                <FaLinkedinIn />
+                <span></span>
+                <p>Alex-Y-Hong/</p>
+              </a>
+            </div>
+
+            <HomeScrollArrow />
+            <CurrentTime />
           </div>
 
         </ThemeProvider>

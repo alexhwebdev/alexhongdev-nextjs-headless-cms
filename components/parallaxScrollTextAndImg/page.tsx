@@ -46,7 +46,7 @@ export default function ParallaxScrollTextAndImg() {
           // start: "100%+=2000 50%", // start, scroller-start
           // end: "100%+=2000 10%",   // end, scroller-end
           scrub: true,
-          markers: true,
+          // markers: true,
         },
       })
       .to(title1.current, {y: -50}, 0)
