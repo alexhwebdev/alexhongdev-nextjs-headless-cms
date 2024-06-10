@@ -40,8 +40,8 @@ const Project: React.FC<ProjectProps> = (
         stagger: 0.2,
         scrollTrigger: {
           trigger: ".transitionRight",
-          start: "100%+=1700 50%", // start, scroller-start
-          end: "100%+=1700 10%",   // end, scroller-end
+          start: "100%+=1300 50%", // start, scroller-start
+          end: "100%+=1300 10%",   // end, scroller-end
           scrub: 0.6,
           // pin: true,
           // markers: true

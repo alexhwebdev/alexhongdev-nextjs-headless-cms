@@ -14,7 +14,7 @@ import './page.scss';
 import ProjectsAniFadeUpJS from './components/ProjectsAniFadeUpJS/page';
 import ProjectsScrollTextGradient from './components/scrollTextGradient/page';
 import ParallaxScrollTextAndImg from '@/components/parallaxScrollTextAndImg/page';
-import HoverMixBlend from './components/hoverMixBlend/page';
+// import HoverMixBlend from './components/hoverMixBlend/page';
 
 
 
@@ -22,7 +22,8 @@ interface ProjectProps {
   index: number;
 }
 
-const ProjectsPage: React.FC<ProjectProps> = () => {
+// const ProjectsPage: React.FC<ProjectProps> = () => {
+  const ProjectsPage = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -56,9 +57,11 @@ const ProjectsPage: React.FC<ProjectProps> = () => {
 
   return (
     <div className="projectsPageWrapper">
-      <ProjectsAniFadeUpJS>
+      {/* <ProjectsAniFadeUpJS>
         Projects
-      </ProjectsAniFadeUpJS>
+      </ProjectsAniFadeUpJS> */}
+
+      <ProjectsAniFadeUpJS />
 
       <div 
         // className="animateLeftToRightOnScroll line"
@@ -67,20 +70,20 @@ const ProjectsPage: React.FC<ProjectProps> = () => {
 
       <div className="titleSection">
         <h5 className={`${montserrat.className}`}>Dow Jones</h5>
-        <h3 className={`${montserrat.className}`}>Investor's Business Daily</h3>
+        <h3 className={`${montserrat.className}`}>Investors Business Daily</h3>
         <div className="titleSectionLine"></div>
       </div>
-{/* 
-      <div className="">
+
+      {/* <div className="">
         <ProjectsScrollTextGradient />
-      </div>
+      </div> */}
       <div className="parallaxTextImgContainer">
         <ParallaxScrollTextAndImg />
         <ParallaxScrollTextAndImg />
-      </div> */}
+      </div>
 
     </div>
   )
 }
 
-export default ProjectsPage
+export default ProjectsPage;

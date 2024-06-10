@@ -1,14 +1,18 @@
+"use client";
+
 import React, { useRef } from 'react'
 import './page.css'
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-interface ProjectsAniFadeUpProps {
-  children: React.ReactNode;
-}
+// interface ProjectsAniFadeUpProps {
+//   children: React.ReactNode;
+// }
 
-const ProjectsAniFadeUpJS = ({children}: ProjectsAniFadeUpProps) => {
+const ProjectsAniFadeUpJS = (
+  // {children}: ProjectsAniFadeUpProps
+) => {
   const sectionCharRef = useRef(null);
   
   useGSAP(() => {
@@ -70,12 +74,13 @@ const ProjectsAniFadeUpJS = ({children}: ProjectsAniFadeUpProps) => {
   return (
     <div className="projectsAniFadeUpWrapper">
       <div className="projectsAniFadeUpContainer">
-        <h2 ref={sectionCharRef}  className="portOfProjectsH2">
-          {children}
+        <h2 ref={sectionCharRef} className="portOfProjectsH2">
+          {/* {children} */}
+          Projects
         </h2>
       </div>
     </div>
   )
 }
 
-export default ProjectsAniFadeUpJS
+export default ProjectsAniFadeUpJS;

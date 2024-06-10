@@ -15,9 +15,10 @@ export default function HomeScrollTextGradient() {
   const mainWrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
-    let headings = gsap.utils.toArray("h6");
-    headings.forEach(function (element, index) {
+    // let headings = gsap.utils.toArray("h6");
+    let headings: HTMLElement[] = Array.from(document.querySelectorAll("h6"));
+
+    headings.forEach(function (element: HTMLElement, index) {
       gsap.to(element, {
         // backgroundImage: "linear-gradient(45deg, #000 100%, #fff 200%, #000 300%)",
         backgroundImage: "linear-gradient(45deg, #000 100%, #000 200%, #fff 300%)",
@@ -33,16 +34,16 @@ export default function HomeScrollTextGradient() {
       });
     });
 
-    gsap.to(".line", {
+    gsap.to(".gradient_sec_line", {
       scrollTrigger: {
         // trigger: mainWrapper.current,
-        trigger: ".line",
+        trigger: ".gradient_sec_line",
         // start: "100%+=2000 50%", // start, scroller-start
         // end: "100%+=2000 10%",   // end, scroller-end
         start: "50% 70%",
         // end: "100% 100%",
         scrub: 0.5,
-        markers: true,
+        // markers: true,
       },
       width: "100px",
       ease: "none",
@@ -56,7 +57,7 @@ export default function HomeScrollTextGradient() {
     `}
       ref={mainWrapper}
     >
-      <div className="line"></div>
+      <div className="gradient_sec_line"></div>
       
       <h6>
         Talented frontend web and mobile <span>developer</span>
@@ -77,7 +78,7 @@ export default function HomeScrollTextGradient() {
         researched - I constantly weave my passions 
       </h6>
       <h6>
-        into life's tapestry.
+        into lifes tapestry.
       </h6>
     </div>
   );

@@ -2,6 +2,7 @@
 import styles from './page.module.scss'
 import Lenis from 'lenis'
 import { useEffect } from 'react';
+import { useGSAP } from '@gsap/react';
 import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 // import styles from '../../app/page.module.scss';
@@ -14,11 +15,16 @@ import { inter } from '@/app/fonts';
 import { montserrat } from '@/app/fonts';
 import { raleway } from '@/app/fonts';
 
-gsap.registerPlugin(ScrollTrigger) 
-const word = "with gsap";
+
+// gsap.registerPlugin(ScrollTrigger) 
+// const word = "with gsap";
 
 
 export default function ParallaxScrollTextAndImg() {
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const word = "with gsap";
+  }, []);
 
   useEffect( () => {
     const lenis = new Lenis()
@@ -34,7 +40,8 @@ export default function ParallaxScrollTextAndImg() {
   const container = useRef(null);
   const images = [Picture1, Picture2, Picture3];
   const lettersRef = useRef([])
-  const imagesRef = useRef([])
+  // const imagesRef = useRef([])
+  const imagesRef = useRef<(HTMLDivElement | null)[]>([]);
   const title1 = useRef(null);
   useLayoutEffect( () => {
     const context = gsap.context( () => {
@@ -97,9 +104,12 @@ export default function ParallaxScrollTextAndImg() {
             return (
               <div className={styles.imageContainer}
                 key={`i_${i}`} 
-                ref={
-                  el => imagesRef.current[i] = el
-                }
+                // ref={
+                //   el => imagesRef.current[i] = el
+                // }
+                ref={el => {
+                  if (el) imagesRef.current[i] = el!;
+                }}
               >
                 <Image 
                   src={image}

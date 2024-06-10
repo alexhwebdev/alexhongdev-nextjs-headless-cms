@@ -70,7 +70,7 @@ const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
   return (
     <div className="textAniFadeUpWrapper">
       <div className="textAniFadeUpContainer">
-        <h2 ref={sectionCharRef}  className="portOfProjectsH2">
+        <h2 ref={sectionCharRef} className="portOfProjectsH2">
           {children}
         </h2>
       </div>
@@ -78,4 +78,4 @@ const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
   )
 }
 
-export default TextAniFadeUpJS
+export default TextAniFadeUpJS;
