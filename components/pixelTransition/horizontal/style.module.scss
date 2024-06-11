@@ -17,11 +17,20 @@
     display: flex;
     flex-direction: column;
 
-    .block {
+    .light_mode {
+      background-color: #16181d;
+    }
+    .dark_mode {
+      background-color: #fff;
+    }
+    .pixelBlock {
       width: 100%;
       height: 5vw;
       // background-color: #ec4e39;
-      background-color: #16181d;
+      // background-color: #16181d;
+      // background-color: white;
+
+      // background: white;
       // opacity: 0.5;
     }
   }

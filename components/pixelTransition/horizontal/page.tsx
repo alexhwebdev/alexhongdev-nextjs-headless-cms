@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 
 interface Props {
   menuIsActive: boolean;
+  theme: string | undefined;
 }
 
 interface WindowSize {
@@ -27,13 +28,29 @@ const animation = {
   })
 }
 
-export default function HoriPixel({menuIsActive}: Props) {
+export default function HoriPixel({menuIsActive, theme}: Props) {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: undefined,
     height: undefined
   });
 
+  console.log('HoriPixel theme ', theme)
+
+
   useEffect(() => {
+    const htmlTag = document.querySelector('html');
+    const pixelBlockElement = document.querySelector('pixelBlock');
+
+    // if (htmlTag && pixelBlockElement && menuIsActive) {
+    //   if (htmlTag.classList.contains('light')) {
+    //     pixelBlockElement.style.backgroundColor = 'black';
+    //   } else {
+    //     pixelBlockElement.style.backgroundColor = 'white';
+    //   }
+    // }
+
+    // console.log('menuIsActive ', menuIsActive)
+
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
@@ -49,7 +66,7 @@ export default function HoriPixel({menuIsActive}: Props) {
 
     // Remove event listener on component unmount
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [menuIsActive, theme]);
 
   // Shuffles array in place (Fisher–Yates shuffle).
   // @param {Array} a items An array containing the items.
@@ -78,19 +95,30 @@ export default function HoriPixel({menuIsActive}: Props) {
     const numOfBlocks = Math.ceil(innerHeight / blockSize);
     const shuffledIndexes = shuffle([...Array(numOfBlocks)].map( (_, i) => i));
 
-    return shuffledIndexes.map( (randomIndex: number, index: number) => {
-      return (
-        <motion.div 
-          style={{background: '#fff'}} // Set : mix-blend-mode
-          key={index} 
-          className={styles.block}
-          variants={animation}
-          initial="initial"
-          animate={menuIsActive ? "open" : "closed"}
-          custom={[indexOfColum + randomIndex, (20 - indexOfColum + randomIndex)]}
-        />
-      )
-    })
+    const htmlTag2 = document.querySelector('html');
+
+    if (htmlTag2) {
+      return shuffledIndexes.map( (randomIndex: number, index: number) => {
+        return (
+          <motion.div 
+            key={index} 
+            className={`
+              ${styles.pixelBlock} 
+              ${
+                htmlTag2.classList.contains('light') ? 
+                styles.light_mode : 
+                styles.dark_mode
+              }
+            `}
+            variants={animation}
+            initial="initial"
+            animate={menuIsActive ? "open" : "closed"}
+            custom={[indexOfColum + randomIndex, (20 - indexOfColum + randomIndex)]}
+          />
+        )
+      });
+    }
+    return [];
   }
 
   return (

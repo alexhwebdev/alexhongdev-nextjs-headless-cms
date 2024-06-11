@@ -58,7 +58,7 @@
 
 /* Set : mix-blend-mode */
 .wrapper .no_mask_wrapper p {
-  color: white;
+  /* color: white; */
 }
 
 .wrapper span {
@@ -76,8 +76,8 @@
   color: white;
 
   /* Set : mix-blend-mode */
-  background: white;
-  color: black;
+  /* background: white;
+  color: black; */
 }
 
 /* --------------- ARROW */

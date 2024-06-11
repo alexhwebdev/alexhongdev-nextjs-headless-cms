@@ -127,6 +127,70 @@
 }
 
 
+// UNDO - Set : mix-blend-mode
+.worksSectionContainer {
+  mix-blend-mode: exclusion;
+  background: white;
+
+  .titleContainer {
+    mix-blend-mode: exclusion;
+    background: white;
+
+    h3 {
+      // color: white;
+      color: black;
+    }
+    .resumeContainer {
+      a {
+        p {
+        }
+        .resumeIcon {
+        }        
+      }
+    }
+  }
+  .companiesContainer {
+    background: white;
+
+    .companiesInnerContainer {
+      .companies {
+        h5 {
+          color: teal;
+        }
+        h4 {
+          color: black;
+        }
+        h5:nth-of-type(2):before {
+        }
+        h5:nth-of-type(2) {
+          
+          span {
+          }
+        }
+        .workPosition {
+          h4 {
+            span {
+            }
+          }
+          h5 {
+          }
+        }
+      }
+      .line {
+      }
+    }
+    .companiesInnerContainer:nth-of-type(5) {
+      .line {
+      }
+    }
+  }
+}
+
+
+
+
+
+
 
 
 // EXPERIENCE EXPERIENCE EXPERIENCE
@@ -167,5 +231,8 @@
   100% { transform: translateX(-200%); }
 }
 
-
-
+// UNDO - Set : mix-blend-mode
+// .worksSectionContainer .scrollContainer .transitionLeft {
+//   mix-blend-mode: exclusion;
+//   color: lightpink;
+// }

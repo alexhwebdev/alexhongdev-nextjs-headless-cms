@@ -17,11 +17,16 @@
   display: flex;
   gap: 2vw;
 }
+
+
+
 .box {
   /* border: 5px solid orange; */
   width: 400px;
   height: 500px;
-  background: #fff;
+  /* background: #fff; */
+  background: #efefef;
+  /* background: black; */
   /* bottom: 50px; */
   position: relative;
   text-align: center;
@@ -58,3 +63,19 @@
   bottom: 35px;
 }
 
+
+
+/* Set : mix-blend-mode */
+/* .undo_mix_blend_mode {
+  background-color: rgb(255, 255, 255);
+}
+.horiParallaxGsapContainer .boxContainer .box {
+  background: white;
+  mix-blend-mode: difference;
+}
+.horiParallaxGsapContainer .boxContainer .box h5,
+.horiParallaxGsapContainer .boxContainer .box h3,
+.horiParallaxGsapContainer .boxContainer .box p {
+  color: white;
+  mix-blend-mode: difference;
+} */

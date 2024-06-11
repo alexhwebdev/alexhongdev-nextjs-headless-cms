@@ -55,7 +55,10 @@
 .scrollSection.sectionTwo {
   border: 5px solid red;
   width: 160vw;
-  background-color: #efefef;
+  /* background: white; */
+  /* background: #efefef; */
+  /* background: rgb(239, 239, 239); */
+  /* background: #050505; */
   max-width: 2025px;
   position: relative;
 }
@@ -72,6 +75,7 @@
 .sectionTwoCopy {
   /* border: 5px solid black; */
   width: 40vw;
+  color: silver;
   /* margin-left: 13vw; */
   margin-left: 165px;
   position: absolute;
@@ -94,7 +98,7 @@
   left: -3px;
 }
 .sectionTwoCopy .line {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid silver;
   width: 90%;
 }
 .sectionTwoCopy h5:nth-of-type(2) {
@@ -124,6 +128,9 @@
   position: relative;
 
   /* left: -400px; */
+
+  /* UNDO - Set : mix-blend-mode */
+  /* background-color: rgb(255, 255, 255); */
 }
 
 

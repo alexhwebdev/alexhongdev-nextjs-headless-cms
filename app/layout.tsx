@@ -41,9 +41,9 @@ export default function RootLayout({
           </nav> */}
 
           <div 
-            style={{mixBlendMode: 'exclusion'}} // Set : mix-blend-mode
+            // style={{mixBlendMode: 'exclusion'}} // Set : mix-blend-mode
           >
-            <LightDarkToggle />
+            {/* <LightDarkToggle /> */}
             
             <HeaderMenu />
             <NameAnimation />

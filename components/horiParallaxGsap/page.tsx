@@ -96,21 +96,24 @@ export default function HoriParallaxGsap() {
         {
           works.map((work, index) => {
             return (
-              <div key={index} className={`${styles.box} ${montserrat.className}`}>
-                <h5>{ work.company }</h5>
-                <h3>
-                  Paper
-                </h3>
-                <Image 
-                  // fill={true}
-                  alt={"image"}
-                  src={`/images/${work.src}`}
-                  width={300}
-                  height={200}
-                  // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                />
-                <p>{ work.description }</p>
+              <div key={index} className={styles.undo_mix_blend_mode}>
+                <div className={`${styles.box} ${montserrat.className}`}>
+                  <h5>{ work.company }</h5>
+                  <h3>
+                    Paper
+                  </h3>
+                  <Image 
+                    // fill={true}
+                    alt={"image"}
+                    src={`/images/${work.src}`}
+                    width={300}
+                    height={200}
+                    // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                  />
+                  <p>{ work.description }</p>
+                </div>                
               </div>
+
             )
           })
         }

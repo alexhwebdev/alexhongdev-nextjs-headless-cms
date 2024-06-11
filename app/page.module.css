@@ -85,18 +85,15 @@
 }
 
 /* Set : mix-blend-mode */
-.linkedin_container {
+/* .linkedin_container {
   mix-blend-mode: exclusion;
 }
-/* Set : mix-blend-mode */
 .linkedin_container svg {
   color: white;
 }
-/* Set : mix-blend-mode */
 .linkedin_container span {
   background: white;
 }
-/* Set : mix-blend-mode */
 .linkedin_container p {
   color: gray;
-}
+} */

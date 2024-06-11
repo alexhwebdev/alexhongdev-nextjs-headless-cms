@@ -1,14 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "../ui/button";
 import styles from './page.module.css';
 
-const LightDarkToggle = () => {
-  const { theme, setTheme } = useTheme();
+
+interface Props {
+  menuIsActive: boolean;
+  theme: string | undefined;
+  toggleTheme: () => void;
+}
+
+const LightDarkToggle = ({menuIsActive, theme, toggleTheme}: Props) => {
+  // const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  // console.log('LightDarkToggle theme ', theme)
 
   useEffect(() => {
     setMounted(true);
@@ -31,15 +39,27 @@ const LightDarkToggle = () => {
         className={styles.light_dark_toggle}
         variant="outline"
         size="icon"
-        onClick={() => setTheme(`${dark ? "light" : "dark"}`)}
+        // onClick={() => toggleTheme(`${dark ? "light" : "dark"}`)}
+        onClick={() => toggleTheme()}
+
       >
-        {dark ? (
+        {
+          dark ? (
+            // <Sun className="hover:cursor-pointer hover:text-primary" />
+            'Light Mode'
+          ) : (
+            // <Moon className="hover:cursor-pointer hover:text-primary" />
+            'Dark Mode'
+          )
+        }
+
+        {/* {dark ? (
           // <Sun className="hover:cursor-pointer hover:text-primary" />
           'Light Mode'
         ) : (
           // <Moon className="hover:cursor-pointer hover:text-primary" />
           'Dark Mode'
-        )}
+        )} */}
       </Button>
     </div>
   );
