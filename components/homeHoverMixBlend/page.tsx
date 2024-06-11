@@ -7,6 +7,7 @@ import { montserrat } from '@/app/fonts';
 import { raleway } from '@/app/fonts';
 import useMousePosition from '@/app/utils/useMousePosition';
 import { LuArrowRight } from "react-icons/lu";
+import HomeScrollArrow from "@/components/HomeScrollArrow/page";
 
 // import './page.css'
 import ProjectsAniFadeUpJS from '@/app/projects/components/ProjectsAniFadeUpJS/page';
@@ -68,6 +69,8 @@ export default function HomeHoverMixBlend() {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Developer
         </p>
       </div>
+
+      <HomeScrollArrow />
 
     </div>
   )

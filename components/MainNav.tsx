@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ToggleMode from "./ToggleMode";
+import LightDarkToggle from "./LightDarkToggle/page";
 import MainNavLinks from "./MainNavLinks";
 // import { getServerSession } from "next-auth";
 // import options from "@/app/api/auth/[...nextauth]/options";
@@ -23,7 +23,7 @@ const MainNav = async () => {
         <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
         <Link href="/api/auth/signin">Login</Link>
         
-        <ToggleMode />
+        <LightDarkToggle />
       </div>
     </div>
   );

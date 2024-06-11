@@ -56,6 +56,11 @@
   text-transform: uppercase;
 }
 
+/* Set : mix-blend-mode */
+.wrapper .no_mask_wrapper p {
+  color: white;
+}
+
 .wrapper span {
   /* ORANGE */
   /* color: #ec4e39; */
@@ -66,11 +71,13 @@
   mask-image: url('../../public/mask.svg');
   mask-repeat: no-repeat;
   mask-size: 40px;
-  /* ORANGE */
-  /* background: #ec4e39; */ 
   background: black;
   position: absolute;
   color: white;
+
+  /* Set : mix-blend-mode */
+  background: white;
+  color: black;
 }
 
 /* --------------- ARROW */
@@ -88,9 +95,17 @@
   letter-spacing: 1px;
   line-height: 140%;
 }
+/* Set : mix-blend-mode */
+.right_arrow_container p {
+  color: white;
+}
 .right_arrow_container svg {
   font-size: 1.2em;
   padding-top: 2px;
+}
+/* Set : mix-blend-mode */
+.right_arrow_container svg {
+  color: white;
 }
 
 /* -------------------- FADEUP : NOT USING THIS*/

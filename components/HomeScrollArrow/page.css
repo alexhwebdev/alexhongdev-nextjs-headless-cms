@@ -7,7 +7,7 @@
   margin: auto;
   mix-blend-mode: exclusion;
   position: absolute;
-  z-index: 10005;
+  z-index: 10004;
   right: 0;
   bottom: 45px;
   left: 0;
@@ -20,7 +20,8 @@
   animation-delay: 1.5s;
 }
 .text_scroll {
-  color: #fff;
+  /* color: #fff; */
+  color: #000;
   display: block;
   font-size: 1em;
   font-weight: 500;
@@ -62,7 +63,8 @@
   top: 0;
   height: 100%;
   width: 51%;
-  background: #fff;
+  /* background: #fff; */
+  background: #000;
 }
 .chevron:before {
   left: 0;

@@ -81,6 +81,7 @@ export default function HoriPixel({menuIsActive}: Props) {
     return shuffledIndexes.map( (randomIndex: number, index: number) => {
       return (
         <motion.div 
+          style={{background: '#fff'}} // Set : mix-blend-mode
           key={index} 
           className={styles.block}
           variants={animation}

@@ -6,3 +6,8 @@
   position: fixed;
   z-index: 10005;
 }
+/* Set : mix-blend-mode */
+/* CANNOT ADD THIS BC MENU WONT HIDE WHATS BEHIND */
+.headerMenuWrapper {
+  /* mix-blend-mode: exclusion; */
+}

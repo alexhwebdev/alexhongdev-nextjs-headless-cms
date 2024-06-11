@@ -9,7 +9,8 @@ import CurrentTime from "@/components/CurrentTime/page";
 import styles from './page.module.css'
 import { FaLinkedinIn } from "react-icons/fa";
 import NameAnimation from "@/components/nameAnimation/page";
-import HomeScrollArrow from "@/components/HomeScrollArrow/page";
+import LightDarkToggle from "@/components/LightDarkToggle/page";
+
 
 export const metadata: Metadata = {
   title: "Alex Hong - Next.js Portfolio",
@@ -39,7 +40,11 @@ export default function RootLayout({
             </div>
           </nav> */}
 
-          <div>
+          <div 
+            style={{mixBlendMode: 'exclusion'}} // Set : mix-blend-mode
+          >
+            <LightDarkToggle />
+            
             <HeaderMenu />
             <NameAnimation />
 
@@ -54,7 +59,6 @@ export default function RootLayout({
               </a>
             </div>
 
-            <HomeScrollArrow />
             <CurrentTime />
           </div>
 
