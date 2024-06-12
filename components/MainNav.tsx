@@ -23,7 +23,7 @@ const MainNav = async () => {
         <Link href="/api/auth/signout?callbackUrl=/">Logout</Link>
         <Link href="/api/auth/signin">Login</Link>
         
-        <LightDarkToggle />
+        {/* <LightDarkToggle /> */}
       </div>
     </div>
   );

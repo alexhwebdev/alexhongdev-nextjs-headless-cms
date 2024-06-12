@@ -43,6 +43,7 @@ export default function ParallaxScrollTextAndImg() {
   // const imagesRef = useRef([])
   const imagesRef = useRef<(HTMLDivElement | null)[]>([]);
   const title1 = useRef(null);
+  
   useLayoutEffect( () => {
     const context = gsap.context( () => {
       const tl = gsap.timeline({

@@ -14,6 +14,7 @@ import './page.scss';
 import ProjectsAniFadeUpJS from './components/ProjectsAniFadeUpJS/page';
 import ProjectsScrollTextGradient from './components/scrollTextGradient/page';
 import ParallaxScrollTextAndImg from '@/components/parallaxScrollTextAndImg/page';
+import ProjectPlx from './components/ProjectsPlx/page';
 // import HoverMixBlend from './components/hoverMixBlend/page';
 
 
@@ -77,10 +78,12 @@ interface ProjectProps {
       {/* <div className="">
         <ProjectsScrollTextGradient />
       </div> */}
-      <div className="parallaxTextImgContainer">
+      {/* <div className="parallaxTextImgContainer">
         <ParallaxScrollTextAndImg />
         <ParallaxScrollTextAndImg />
-      </div>
+      </div> */}
+
+      <ProjectPlx />
 
     </div>
   )
