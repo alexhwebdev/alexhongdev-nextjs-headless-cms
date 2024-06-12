@@ -26,7 +26,7 @@ export default function ProjectPlx() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
     });
   
-    function raf(time) {
+    function raf(time: number) {
       lenis.raf(time);
       ScrollTrigger.update();
       requestAnimationFrame(raf);
@@ -80,7 +80,7 @@ export default function ProjectPlx() {
           >How to<br></br>Invest<br></br>in AI</p>
         </div>
         <div className={`project_desc ${montserrat.className}`}>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Artificial Intelligence, or AI, has the possibility to usher in... </p>
         </div>
         <div className="project">
           <div className="project_image">

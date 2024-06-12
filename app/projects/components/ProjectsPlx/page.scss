@@ -7,10 +7,15 @@
 
     .project_title {
       // border: 1px solid red;
+      mix-blend-mode: difference;
+      position: relative;
+      z-index: 2;
+      top: 30%;
 
       p {
         // border: 1px solid red;
         height: 50%;
+        color: white;
         font-size: 10em;
         font-weight: 900;
         line-height: 100%;

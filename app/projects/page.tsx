@@ -29,27 +29,27 @@ interface ProjectProps {
     gsap.registerPlugin(ScrollTrigger);
 
     // const pin = 
-    gsap.fromTo(
-      ".animateLeftToRightOnScroll",
-      {
-        opacity: 0,
-        translateX: '-300px',
-      },
-      {
-        duration: 1,
-        opacity: 1,
-        translateX: '0px',
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: ".animateLeftToRightOnScroll",
-          // start: "100%+=2000 50%", // start, scroller-start
-          // end: "100%+=2000 10%",   // end, scroller-end
-          scrub: 0.6,
-          // pin: true,
-          // markers: true
-        },
-      }
-    );
+    // gsap.fromTo(
+    //   ".animateLeftToRightOnScroll",
+    //   {
+    //     opacity: 0,
+    //     translateX: '-300px',
+    //   },
+    //   {
+    //     duration: 1,
+    //     opacity: 1,
+    //     translateX: '0px',
+    //     stagger: 0.2,
+    //     scrollTrigger: {
+    //       trigger: ".animateLeftToRightOnScroll",
+    //       // start: "100%+=2000 50%", // start, scroller-start
+    //       // end: "100%+=2000 10%",   // end, scroller-end
+    //       scrub: 0.6,
+    //       // pin: true,
+    //       // markers: true
+    //     },
+    //   }
+    // );
     // return () => {
     //   {/* A return function for killing the animation on component unmount */ }
     //   pin.kill();
