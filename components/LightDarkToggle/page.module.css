@@ -16,7 +16,7 @@
   animation-timing-function: ease;
   animation-delay: 0.8s;
 }
-/* Set : mix-blend-mode */
+
 .light_dark_toggle {
   /* border: 1px solid red; */
   border: none;
@@ -24,7 +24,7 @@
   width: 125px;
   background: white;
   /* height: 15px; */
-  color: gray;
+  color: silver;
   font-size: 0.8em;
   letter-spacing: 1px;
   /* margin: 0;
@@ -35,7 +35,23 @@
   top: 35px;
   left: 35px; */
 }
-
+.light_dark_toggle.light_mode {
+  background-color: #16181d;
+}
+.light_dark_toggle.light_mode:hover {
+  background-color: #f2f2f2;
+  border: 1px solid black;
+  color: black;
+}
+.light_dark_toggle.dark_mode {
+  background-color: #fff;
+  color: black;
+}
+.light_dark_toggle.dark_mode:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
 
 @keyframes fadeInLeft {
   from {

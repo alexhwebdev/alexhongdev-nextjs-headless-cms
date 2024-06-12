@@ -34,22 +34,8 @@ export default function HoriPixel({menuIsActive, theme}: Props) {
     height: undefined
   });
 
-  console.log('HoriPixel theme ', theme)
-
-
   useEffect(() => {
-    const htmlTag = document.querySelector('html');
     const pixelBlockElement = document.querySelector('pixelBlock');
-
-    // if (htmlTag && pixelBlockElement && menuIsActive) {
-    //   if (htmlTag.classList.contains('light')) {
-    //     pixelBlockElement.style.backgroundColor = 'black';
-    //   } else {
-    //     pixelBlockElement.style.backgroundColor = 'white';
-    //   }
-    // }
-
-    // console.log('menuIsActive ', menuIsActive)
 
     function handleResize() {
       setWindowSize({
@@ -95,9 +81,9 @@ export default function HoriPixel({menuIsActive, theme}: Props) {
     const numOfBlocks = Math.ceil(innerHeight / blockSize);
     const shuffledIndexes = shuffle([...Array(numOfBlocks)].map( (_, i) => i));
 
-    const htmlTag2 = document.querySelector('html');
+    const htmlTag = document.querySelector('html');
 
-    if (htmlTag2) {
+    if (htmlTag) {
       return shuffledIndexes.map( (randomIndex: number, index: number) => {
         return (
           <motion.div 
@@ -105,7 +91,7 @@ export default function HoriPixel({menuIsActive, theme}: Props) {
             className={`
               ${styles.pixelBlock} 
               ${
-                htmlTag2.classList.contains('light') ? 
+                htmlTag.classList.contains('light') ? 
                 styles.light_mode : 
                 styles.dark_mode
               }

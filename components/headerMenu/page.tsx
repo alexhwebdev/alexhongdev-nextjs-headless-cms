@@ -35,6 +35,7 @@ const HeaderMenu = () => {
       <Hamburger 
         menuIsActive={menuIsActive} 
         setMenuIsActive={setMenuIsActive}
+        theme={theme}
       />
 
       <LightDarkToggle 

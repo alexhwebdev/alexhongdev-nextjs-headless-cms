@@ -13,7 +13,9 @@ interface Props {
   toggleTheme: () => void;
 }
 
-const LightDarkToggle = ({menuIsActive, theme, toggleTheme}: Props) => {
+const LightDarkToggle = ({
+  menuIsActive, theme, toggleTheme
+}: Props) => {
   // const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   // console.log('LightDarkToggle theme ', theme)
@@ -36,30 +38,27 @@ const LightDarkToggle = ({menuIsActive, theme, toggleTheme}: Props) => {
   return (
     <div className={styles.light_dark_toggle_wrapper}>
       <Button
-        className={styles.light_dark_toggle}
+        className={`
+          ${styles.light_dark_toggle}
+          ${
+            theme == 'light' ? 
+            styles.light_mode : 
+            styles.dark_mode
+          }
+        `}
         variant="outline"
         size="icon"
         // onClick={() => toggleTheme(`${dark ? "light" : "dark"}`)}
         onClick={() => toggleTheme()}
 
       >
-        {
-          dark ? (
-            // <Sun className="hover:cursor-pointer hover:text-primary" />
-            'Light Mode'
-          ) : (
-            // <Moon className="hover:cursor-pointer hover:text-primary" />
-            'Dark Mode'
-          )
-        }
-
-        {/* {dark ? (
+        {dark ? (
           // <Sun className="hover:cursor-pointer hover:text-primary" />
           'Light Mode'
         ) : (
           // <Moon className="hover:cursor-pointer hover:text-primary" />
           'Dark Mode'
-        )} */}
+        )}
       </Button>
     </div>
   );

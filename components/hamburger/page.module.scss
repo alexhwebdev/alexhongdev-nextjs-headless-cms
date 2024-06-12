@@ -4,8 +4,8 @@
   position: fixed;
   z-index: 10005;
 
-  top: 45px;
-  right: 45px;
+  top: 35px;
+  right: 35px;
 
   opacity: 0;
   animation-name: fadeInUp;
@@ -80,11 +80,25 @@
   .hamburger {
     background: white;
 
+    &.light_mode {
+      background-color: #16181d;
+    }
+    &.dark_mode {
+      background-color: #fff;
+
+      .hamburgerLines {
+        &::before, 
+        &::after {
+          border-bottom: 2px solid black;
+        }
+      }
+    }
+
     .hamburgerLines {
       &::before, 
       &::after {
         // background: gray;
-        border-bottom: 2px solid gray;
+        border-bottom: 2px solid silver;
         padding: 4px 0;
       }
     }

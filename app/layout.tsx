@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     // NOTES - suppressHydrationWarning
-    <html lang="en" suppressHydrationWarning> 
+    <html lang="en" id="htmlId" suppressHydrationWarning> 
       <body 
         // className={inter.className}
       >

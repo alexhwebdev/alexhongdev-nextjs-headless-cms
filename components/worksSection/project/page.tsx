@@ -74,7 +74,7 @@ const Project: React.FC<ProjectProps> = (
         <h5 className="transitionRight"><span>{work.location}</span></h5>                  
         <div className="workPosition">
           <h4 className="transitionRight">{work.position}</h4>
-          <h5 className="transitionRight">{work.tech}</h5>
+          <h5 className="transitionRight h5_tech">{work.tech}</h5>
         </div>
       </div>
       <div className="transitionRight line"></div>
