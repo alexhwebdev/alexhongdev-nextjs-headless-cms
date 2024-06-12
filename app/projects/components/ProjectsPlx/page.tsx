@@ -96,7 +96,19 @@ export default function ProjectPlx() {
             />
             <div className="mask"></div>
           </div>
-          <video className={`video`}
+
+          <Image 
+              className="gif" 
+              src={'/images/projects/ibd-ai.gif'} 
+              // fill={true}
+              alt={"gif"}
+              // placeholder="blur"
+              width={300}
+              height={250}
+              // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+            />
+
+          {/* <video className={`video`}
             // ref={ vidRef }
             controls 
             style={{width: '300px'}}
@@ -107,7 +119,7 @@ export default function ProjectPlx() {
               src={'/images/projects/ibd-ai.mp4'} 
               type="video/mp4" 
             />
-          </video>
+          </video> */}
         </div>
       </div>
 
