@@ -14,34 +14,28 @@ import './page.scss';
 
 const projectsList = [
   { 
-    title: "How to Invest in AI",
-    description: "Artificial Intelligence, or AI, has the possibility to usher in...",
-    imgSrc: "ibd-ai.png",
-    gifSrc: "ibd-ai.gif",
+    title: "Investor's Business Daily",
+    description: "IBD provides financial news, analysis, and research data for investors...",
+    imgSrc: "ibd.jpg",
+    gifSrc: "ibd.gif",
   },
   { 
     title: "How to Invest in AI",
     description: "Artificial Intelligence, or AI, has the possibility to usher in...",
-    imgSrc: "ibd-ai.png",
+    imgSrc: "ibd-ai.jpg",
     gifSrc: "ibd-ai.gif",
   },
   { 
-    title: "How to Invest in AI",
-    description: "Artificial Intelligence, or AI, has the possibility to usher in...",
-    imgSrc: "ibd-ai.png",
-    gifSrc: "ibd-ai.gif",
+    title: "Elon Musk: The most ___ Man In The World",
+    description: "By some estimates, SpaceX is the most valuable privately held company in the U.S....",
+    imgSrc: "ibd-elon-musk.jpg",
+    gifSrc: "ibd-elon-musk.gif",
   },
 ]
 
 
 // const ProjectPlx = () => {
 export default function ProjectPlx() {
-  // const vidRef = useRef();
-  // useEffect(() => { vidRef.current.play(); },[]);
-  
-  const titleContainerRef = useRef(null);
-  const titleRef = useRef(null);
-  
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -72,98 +66,43 @@ export default function ProjectPlx() {
       })
     })
   }, []);
-  
-  // useLayoutEffect( () => {
-  //   const context = gsap.context( () => {
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: titleContainerRef.current,
-  //         start: "10% 50%",
-  //         end: "50%+=100 0%",
-  //         // start: "100%+=2000 50%", // start, scroller-start
-  //         // end: "100%+=2000 10%",   // end, scroller-end
-  //         scrub: true,
-  //         markers: true,
-  //       },
-  //     })
-  //     .to(titleRef.current, {y: -100}, 0)
-  //   })
-  //   return () => context.revert();
-  // }, [])
 
   useLayoutEffect( () => {
-    // const context = gsap.context( () => {
-      gsap.utils
-        .toArray<HTMLElement>("[data-module-parallax]")
-        .forEach((section) => {
-          const parallax = section.querySelector("[data-parallax]");
+    gsap.utils
+      .toArray<HTMLElement>("[data-module-parallax]")
+      .forEach((section) => {
+        const parallax = section.querySelector("[data-parallax]");
 
-          gsap.fromTo(
-            parallax,
-            { y: 0 },
-            {
-              y: -100,
-              ease: "none",
-              scrollTrigger: {
-                trigger: section,
-                start: "10% 50%",
-                end: "50%+=100 0%",
-                scrub: true,
-                markers: true
-              }
+        gsap.fromTo(
+          parallax,
+          { y: 0 },
+          {
+            y: -100,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "10% 50%",
+              end: "50%+=100 0%",
+              scrub: true,
+              markers: true
             }
-          );
-
-          // gsap.timeline({
-          //   scrollTrigger: {
-          //     trigger: section,
-          //     start: "10% 50%",
-          //     end: "50%+=100 0%",
-          //     scrub: true,
-          //     markers: true,
-          //   }
-          // })
-          // .to(section!, { y: -100 }, 0);
-        });
-
-      // const eachTitle = gsap.utils.toArray(".each_title");
-      // eachTitle.forEach(title => {
-      //   gsap.timeline({
-      //     scrollTrigger: {
-      //       trigger: titleContainerRef.current,
-      //       start: "10% 50%",
-      //       end: "50%+=100 0%",
-      //       scrub: true,
-      //       markers: true,
-      //     }
-      //   })
-      //   .to(title!, { y: -100 }, 0);
-      // });
-
-    // })
-    // return () => context.revert();
+          }
+        );
+      });
   }, [])
 
 
   return (
-
-    <div className="home">
+    <div className="projects_plx_wrapper">
       {
         projectsList.map((project, index) => {
           return (
-            <div className="project_section_wrapper" data-module-parallax
+            <div className="project_section_wrapper" 
+              data-module-parallax
               key={index} 
             >
-              <div 
-                className={`project_title ${montserrat.className}`}
-                ref={titleContainerRef}
-              >
-                <p 
-                  // className={'each_title'}
-                  className="each_title"
-                  ref={titleRef}
-                  data-parallax
-                >
+              <div className={`project_title ${montserrat.className}`}>
+                <p data-parallax>
                   { project.title }
                   {/* How to<br></br>Invest<br></br>in AI */}
                 </p>
