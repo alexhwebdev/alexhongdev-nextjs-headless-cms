@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useLayoutEffect, useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useEffect, useRef, useState } from 'react';
 import { gsap, Power1 } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -10,6 +10,7 @@ import { montserrat } from '@/app/fonts';
 import { raleway } from '@/app/fonts';
 import { inter } from '@/app/fonts';
 import './page.scss';
+import { motion } from 'framer-motion';
 
 
 const projectsList = [
@@ -36,6 +37,32 @@ const projectsList = [
 
 // const ProjectPlx = () => {
 export default function ProjectPlx() {
+  // TEXT SECTION
+  useLayoutEffect( () => {
+    gsap.utils
+      .toArray<HTMLElement>("[data-module-parallax]")
+      .forEach((section) => {
+        const parallax = section.querySelector("[data-parallax]");
+
+        gsap.fromTo(
+          parallax,
+          { y: 0 },
+          {
+            y: -100,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "10% 50%",
+              end: "50%+=100 0%",
+              scrub: true,
+              // markers: true
+            }
+          }
+        );
+      });
+  }, [])
+
+  // IMAGE SECTION
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -67,30 +94,6 @@ export default function ProjectPlx() {
     })
   }, []);
 
-  useLayoutEffect( () => {
-    gsap.utils
-      .toArray<HTMLElement>("[data-module-parallax]")
-      .forEach((section) => {
-        const parallax = section.querySelector("[data-parallax]");
-
-        gsap.fromTo(
-          parallax,
-          { y: 0 },
-          {
-            y: -100,
-            ease: "none",
-            scrollTrigger: {
-              trigger: section,
-              start: "10% 50%",
-              end: "50%+=100 0%",
-              scrub: true,
-              markers: true
-            }
-          }
-        );
-      });
-  }, [])
-
 
   return (
     <div className="projects_plx_wrapper">
@@ -101,7 +104,9 @@ export default function ProjectPlx() {
               data-module-parallax
               key={index} 
             >
-              <div className={`project_title ${montserrat.className}`}>
+              <div 
+                className={`project_title ${montserrat.className}`}
+              >
                 <p data-parallax>
                   { project.title }
                   {/* How to<br></br>Invest<br></br>in AI */}
@@ -116,7 +121,13 @@ export default function ProjectPlx() {
                   {/* Artificial Intelligence, or AI, has the possibility to usher in... */}
                 </p>
               </div>
-              <div className="project">
+              <div 
+                className="project"
+                // data-cursor="label" 
+                // data-cursor-label="Buy me" 
+              >
+                <div className="cursor_target_overlay cursor_target" data-hover="See more"></div>
+
                 <div className="project_image">
                   <Image 
                     className="img" 
@@ -130,8 +141,8 @@ export default function ProjectPlx() {
                   />
                   <div className="mask"></div>
                 </div>
-
-                <Image 
+                <div className="project_gif">
+                  <Image 
                     className="gif" 
                     src={`/images/projects/${project.gifSrc}`} 
                     // fill={true}
@@ -141,6 +152,7 @@ export default function ProjectPlx() {
                     height={250}
                     // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                   />
+                </div>
               </div>
             </div>            
           )
@@ -152,7 +164,7 @@ export default function ProjectPlx() {
 
 // export default ProjectPlx;
 // https://codepen.io/drummond-dev/pen/LYzzxrK
-
+// Cursor : https://www.youtube.com/watch?v=pndIZhWHaTY
 
 
 
