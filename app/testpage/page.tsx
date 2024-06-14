@@ -62,20 +62,20 @@ export default function ProjectHoriPlxTest() {
               pin.kill();
             };
           },
-          // "(min-width: 768px)": () => {
-          //   console.log("enter");
+          "(min-width: 768px)": () => {
+            console.log("enter");
     
-          //   let scrollTween = gsap.to(sections, {
-          //     xPercent: -100 * (sections.length - 1),
-          //     ease: "none",
-          //     scrollTrigger: {
-          //       trigger: scrollContainer,
-          //       pin: true,
-          //       scrub: 1,
-          //       end: () => "+=" + scrollContainer.offsetWidth,
-          //     }
-          //   });
-          // }
+            let scrollTween = gsap.to(sections, {
+              xPercent: -100 * (sections.length - 1),
+              ease: "none",
+              scrollTrigger: {
+                trigger: scrollContainer,
+                pin: true,
+                scrub: 1,
+                end: () => "+=" + scrollContainer.offsetWidth,
+              }
+            });
+          }
         });
       } else {
         console.error("Scroll container not found");
