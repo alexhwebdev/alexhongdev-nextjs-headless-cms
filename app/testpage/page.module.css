@@ -51,6 +51,18 @@
 
 
 
-
+@media (max-width: 768px) {
+  /* body {
+    overflow-y: scroll;
+  } */
+  .project_hori_plx_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: scroll;
+  }
+}
 
 
