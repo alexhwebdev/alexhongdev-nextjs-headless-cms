@@ -20,36 +20,98 @@ export default function ProjectHoriPlxTest() {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    let mm = gsap.matchMedia(),
-        breakPoint = 800;
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let scrollContainer = document.querySelector(".scrollContainer") as HTMLElement; // Type assertion
     
-    mm.add({
-      // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
-      isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
-      isMobile: `(max-width: ${breakPoint - 1}px) and (prefers-reduced-motion: no-preference)`
-    }, (context) => {
-      if (context.conditions) { // Check if conditions are defined
-        let { isDesktop, isMobile } = context.conditions,
-            target = isDesktop ? ".desktop" : ".mobile",
-            tl = gsap.timeline({
+      if (scrollContainer) { // Check if scrollContainer is not null
+        let sections = document.querySelectorAll(".section");
+    
+        gsap.matchMedia({
+          "(min-width: 1080px)": () => {
+            console.log("enter");
+    
+            let scrollTween = gsap.to(sections, {
+              xPercent: -100 * (sections.length - 1),
+              ease: "none",
               scrollTrigger: {
-                trigger: ".gray",
+                trigger: scrollContainer,
+                pin: true,
                 scrub: 1,
-                end: "200%",
-                pin: true
+                end: () => "+=" + scrollContainer.offsetWidth,
               }
             });
-        tl.to(target, {scale: 2, rotation: 360})
-          .to(target, {scale: 1});
     
-        // works for non-ScrollTrigger animations too: 
-        gsap.to(target, {backgroundColor: "#2c7ad2", duration: 0.8, ease: "none", repeat: -1, yoyo: true});
+            if (scrollTween.scrollTrigger) { // Check if scrollTrigger is defined
+              const trigger = scrollTween.scrollTrigger; // Type assertion
+              var dragRatio =
+                scrollContainer.offsetWidth / (window.innerWidth * (sections.length - 1));
+              var drag = Draggable.create(".proxy", {
+                trigger: scrollContainer,
+                type: "x",
+                onPress() {
+                  this.startScroll = trigger.scroll();
+                },
+                onDrag() {
+                  trigger.scroll(
+                    this.startScroll - (this.x - this.startX) * dragRatio
+                  );
+                },
+              })[0];
     
-        return () => { 
-          // optionally return a cleanup function that will be called when the media query no longer matches
-        }
+              return () => {
+                scrollTween.kill();
+                drag.kill();
+                console.log("leave");
+              }
+            } else {
+              console.error("Scroll trigger not found");
+            }
+          }
+        });
+      } else {
+        console.error("Scroll container not found");
       }
     });
+    
+  
+
+
+
+
+
+    // --------------- MOBILE / DESKTOP BLINKING CHANGE
+    // let mm = gsap.matchMedia(),
+    //     breakPoint = 800;
+    
+    // mm.add({
+    //   // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
+    //   isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
+    //   isMobile: `(max-width: ${breakPoint - 1}px) and (prefers-reduced-motion: no-preference)`
+    // }, (context) => {
+    //   if (context.conditions) { // Check if conditions are defined
+    //     let { isDesktop, isMobile } = context.conditions,
+    //         target = isDesktop ? ".desktop" : ".mobile",
+    //         tl = gsap.timeline({
+    //           scrollTrigger: {
+    //             trigger: ".gray",
+    //             scrub: 1,
+    //             end: "200%",
+    //             pin: true
+    //           }
+    //         });
+    //     tl.to(target, {scale: 2, rotation: 360})
+    //       .to(target, {scale: 1});
+    
+    //     // works for non-ScrollTrigger animations too: 
+    //     gsap.to(target, {backgroundColor: "#2c7ad2", duration: 0.8, ease: "none", repeat: -1, yoyo: true});
+    
+    //     return () => { 
+    //       // optionally return a cleanup function that will be called when the media query no longer matches
+    //     }
+    //   }
+    // });
       
 
 
@@ -62,7 +124,7 @@ export default function ProjectHoriPlxTest() {
 
 
 
-
+    // --------------- HORIZONTAL MINE
     // const pin = gsap.fromTo(
     //   sectionRef.current,
     //   {
@@ -93,23 +155,37 @@ export default function ProjectHoriPlxTest() {
 
   return (
     <div>
-      <header>
-        <h1>gsap.matchMedia()</h1>
-        <p className="lead">When the viewport is less than 800px, the Mobile &lt;div&gt; will animate. Otherwise, Desktop will.</p>
-      </header>
-      <section className="gray">
-        <div className="mobile">Mobile</div>
-        <div className="desktop">Desktop</div>
-      </section>
-
-      <section className="bottom lead">
-        <p><strong>Pretty cool, right?</strong></p>
-        <p>Resize your screen. 800px is the break point. Its all dynamic!</p>
-        <p>Check out <a href="https://greensock.com">GSAP</a> today. </p>
-      </section>
+      <div className='scrollContainer'>
+          <div className='section'>Horizontal/Vertical Scroll</div>
+          <div className='section'></div>
+          <div className='section'></div>
+          <div className='section'></div>
+      </div>
+      <div className="proxy"></div>
     </div>
 
 
+
+    // --------------- MOBILE / DESKTOP BLINKING CHANGE
+    // <div>
+    //   <header>
+    //     <h1>gsap.matchMedia()</h1>
+    //     <p className="lead">When the viewport is less than 800px, the Mobile &lt;div&gt; will animate. Otherwise, Desktop will.</p>
+    //   </header>
+    //   <section className="gray">
+    //     <div className="mobile">Mobile</div>
+    //     <div className="desktop">Desktop</div>
+    //   </section>
+
+    //   <section className="bottom lead">
+    //     <p><strong>Pretty cool, right?</strong></p>
+    //     <p>Resize your screen. 800px is the break point. Its all dynamic!</p>
+    //     <p>Check out <a href="https://greensock.com">GSAP</a> today. </p>
+    //   </section>
+    // </div>
+
+
+    // --------------- MINE
     // <section className={styles.project_hori_plx_wrapper}>
     //   {/* The section up act just as a wrapper. If the trigger (below) is the
     //   first jsx element in the component, you get an error on route change */}
