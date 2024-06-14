@@ -95,7 +95,7 @@ export default function ProjectHoriPlxTest() {
     <div>
       <header>
         <h1>gsap.matchMedia()</h1>
-        <p className="lead">When the viewport is less than 800px, the "Mobile" &lt;div&gt; will animate. Otherwise, "Desktop" will.</p>
+        <p className="lead">When the viewport is less than 800px, the Mobile &lt;div&gt; will animate. Otherwise, Desktop will.</p>
       </header>
       <section className="gray">
         <div className="mobile">Mobile</div>
@@ -104,7 +104,7 @@ export default function ProjectHoriPlxTest() {
 
       <section className="bottom lead">
         <p><strong>Pretty cool, right?</strong></p>
-        <p>Resize your screen. 800px is the break point. It's all dynamic!</p>
+        <p>Resize your screen. 800px is the break point. Its all dynamic!</p>
         <p>Check out <a href="https://greensock.com">GSAP</a> today. </p>
       </section>
     </div>
