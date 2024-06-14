@@ -3,6 +3,7 @@ import styles from './page.module.css'
 import { useRef, useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
+import { montserrat } from '@/app/fonts';
 
 
 // const sentence = "Investor's Business Daily is an American newspaper and website covering the stock market, international business, finance and economics. Founded in 1984 by William O'Neil as a print news publication, it is owned by News Corp and is headquartered in Los Angeles, California.";
@@ -66,7 +67,10 @@ export default function ProjectsScrollTextGradient() {
     <div className={styles.projectsScrollTextGradientWrapper}
       ref={mainWrapper}
     >
-      <div className={styles.projectsScrollTextGradientContainer}>
+      <div className={`
+        ${styles.projectsScrollTextGradientContainer}
+        ${montserrat.className} 
+      `}>
         {splitEachWords(sentence)}
       </div>
     </div>

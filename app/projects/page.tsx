@@ -15,6 +15,7 @@ import ProjectsAniFadeUpJS from './components/ProjectsAniFadeUpJS/page';
 import ProjectsScrollTextGradient from './components/scrollTextGradient/page';
 import ParallaxScrollTextAndImg from '@/components/parallaxScrollTextAndImg/page';
 import ProjectPlx from './components/ProjectsPlx/page';
+import ProjectsTextGradient from './components/ProjectsTextGradient/page';
 // import HoverMixBlend from './components/hoverMixBlend/page';
 
 
@@ -29,7 +30,7 @@ const ProjectsPage = () => {
     // ----------------- CURSOR
     // https://codepen.io/carriecarries/pen/XWEOEZG
     // const cursorTag = document.querySelector(".cursor")
-    const ball = document.querySelector(".cursor_inner_div");
+    const ball = document.querySelector(".cursor_inner_div") as HTMLElement;
     const text = document.querySelector(".cursor_inner_div span");
     // const cards = document.querySelectorAll(".card[data-hover]")
     const cursorTargets = document.querySelectorAll(".cursor_target[data-hover]");
@@ -56,13 +57,16 @@ const ProjectsPage = () => {
 
     cursorTargets.forEach( target => {
       target.addEventListener("mouseover",() => {
-        text.innerHTML = target.getAttribute("data-hover");
-        gsap.to(ball, {height:"80px", width:"80px", duration: .4});
-        gsap.to(text,  {opacity:1, duration: .2});
+        if (text) {
+          text.innerHTML = target.getAttribute("data-hover") || "";
+        }
+        gsap.to(ball, {height: "80px", width: "80px", duration: .4});
+        gsap.to(text, {opacity: 1, duration: .2});
       })
-      target.addEventListener("mouseleave",() => {
-        gsap.to(ball, {height:"10px", width:"10px", duration: .4});
-        gsap.to(text, {opacity:0, duration: .2},'<');
+      target.addEventListener("mouseleave", () => {
+        gsap.to(ball, {height: "10px", width: "10px", duration: .4});
+        // gsap.to(text, {opacity: 0, duration: 0.2}, '<');
+        gsap.to(text, {opacity: 0, duration: 0.2});
       })
     })
 
@@ -106,9 +110,7 @@ const ProjectsPage = () => {
       {/* </div> */}
 
 
-      {/* <ProjectsAniFadeUpJS>
-        Projects
-      </ProjectsAniFadeUpJS> */}
+      {/* <ProjectsAniFadeUpJS> Projects </ProjectsAniFadeUpJS> */}
 
       <ProjectsAniFadeUpJS />
 
@@ -123,15 +125,21 @@ const ProjectsPage = () => {
         <div className="titleSectionLine"></div>
       </div>
 
+
       {/* <div className="">
         <ProjectsScrollTextGradient />
       </div> */}
+      <ProjectsTextGradient />
+
+      <ProjectPlx />
+
+
+
+
       {/* <div className="parallaxTextImgContainer">
         <ParallaxScrollTextAndImg />
         <ParallaxScrollTextAndImg />
       </div> */}
-
-      <ProjectPlx />
 
     </div>
   )

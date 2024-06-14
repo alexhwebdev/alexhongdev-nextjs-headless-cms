@@ -1,0 +1,188 @@
+.scrollSectionOuter {
+  border: 5px solid red;
+  /* width: 200px;
+  height: 100vh; */
+  position: relative;
+}
+
+.scrollSectionInner {
+  height: 100vh;
+  width: 700vw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.scrollSection {
+  border: 1px solid black;
+  height: 100vh;
+  width: 100vw;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  position: relative;
+}
+
+.scrollSection h2 {
+  /* color: #141414; */
+  font-size: 10em;
+  font-weight: 400;
+  letter-spacing: -12px;
+  margin: 100px 0;
+  /* padding-left: 12vw; */
+  padding-left: 150px;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+/* ---------- SECTION 1 ---------- */
+.sectionOne {
+  /* max-width: 1280px; */
+}
+
+
+
+
+
+
+/* ---------- PORTFOLIO OF PROJECTS ---------- */
+.scrollSection.sectionTwo {
+  border: 5px solid red;
+  width: 160vw;
+  /* background: white; */
+  /* background: #efefef; */
+  /* background: rgb(239, 239, 239); */
+  /* background: #050505; */
+  max-width: 2025px;
+  position: relative;
+}
+
+.imagesContainer {
+  border: 5px solid blue;
+  width: 100%;
+  position: absolute;
+  /* top: 0; */
+  bottom: 30px;
+}
+
+
+.sectionTwoCopy {
+  /* border: 5px solid black; */
+  width: 40vw;
+  color: silver;
+  /* margin-left: 13vw; */
+  margin-left: 165px;
+  position: absolute;
+  bottom: 100px;
+}
+.sectionTwoCopy h5:nth-of-type(1) {
+  font-size: 0.9rem;
+  font-weight: 500;
+  /* padding: 30px 0 10px; */
+  text-transform: uppercase;
+  /* position: absolute; */
+  /* top: 45px; */
+}
+.sectionTwoCopy h3 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: -2px;
+  padding: 5px 0 15px;
+  position: relative;
+  left: -3px;
+}
+.sectionTwoCopy .line {
+  border-bottom: 1px solid silver;
+  width: 90%;
+}
+.sectionTwoCopy h5:nth-of-type(2) {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 30px 0 10px;
+  text-transform: uppercase;
+  /* position: absolute; */
+  /* top: 45px; */
+}
+.sectionTwoCopy .pContainer {
+  /* border: 1px solid red; */
+  display: flex;
+}
+.sectionTwoCopy .pContainer p {
+  font-size: 14px;
+}
+
+
+
+/* ---------- WORKS SECTION ---------- */
+.worksSectionWrapper {
+  /* border: 5px solid blue; */
+  width: 80vw;
+  height: 100vh;
+  /* max-width: 1280px; */
+  position: relative;
+
+  /* left: -400px; */
+
+  /* UNDO - Set : mix-blend-mode */
+  /* background-color: rgb(255, 255, 255); */
+}
+
+
+
+/* ---------- EDUCATION SECTION ---------- */
+.eduSectionWrapper {
+  /* border: 5px solid purple; */
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  width: 80vw;
+  height: 100vh;
+  /* max-width: 1280px; */
+  position: relative;
+
+  /* left: -400px; */
+}
+
+
+
+/* ---------- WHAT I DO SECTION ---------- */
+.whatIDoSectionWrapper {
+  background: #f2f2f2;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  width: 130vw;
+  height: 100vh;
+  position: relative;
+}
+
+
+
+/* ---------- CONTACT SECTION ---------- */
+.contactSectionWrapper {
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
+  width: 120vw;
+  height: 100vh;
+  background: #141414;
+  position: relative;
+}
+
+
+
+
+
+
+/* ---------- HOVER MODAL WORKS SECTION ---------- */
+.hoverModalWrapper {
+  border: 5px solid blue;
+  width: 100vw;
+  /* height: 100vh; */
+  position: relative;
+}
+
+

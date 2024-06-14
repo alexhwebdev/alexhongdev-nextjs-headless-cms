@@ -10,7 +10,7 @@
 }
 
 .projectsScrollTextGradientContainer {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -21,7 +21,7 @@
 }
 
 .projectsScrollTextGradientContainer p {
-  font-size: 1.3em;
+  font-size: 1.5em;
   margin: 0px;
   margin-right: 0.7vw;
   font-weight: 400;

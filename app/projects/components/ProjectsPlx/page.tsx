@@ -126,7 +126,11 @@ export default function ProjectPlx() {
                 // data-cursor="label" 
                 // data-cursor-label="Buy me" 
               >
-                <div className="cursor_target_overlay cursor_target" data-hover="See more"></div>
+
+                <a href="#"
+                  className="cursor_target_overlay cursor_target"
+                  data-hover="VIEW MORE"
+                ></a>
 
                 <div className="project_image">
                   <Image 
