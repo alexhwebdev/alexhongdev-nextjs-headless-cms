@@ -43,31 +43,31 @@ export default function ProjectHoriPlxTest() {
               }
             });
     
-            if (scrollTween.scrollTrigger) { // Check if scrollTrigger is defined
-              const trigger = scrollTween.scrollTrigger; // Type assertion
-              var dragRatio =
-                scrollContainer.offsetWidth / (window.innerWidth * (sections.length - 1));
-              var drag = Draggable.create(".proxy", {
-                trigger: scrollContainer,
-                type: "x",
-                onPress() {
-                  this.startScroll = trigger.scroll();
-                },
-                onDrag() {
-                  trigger.scroll(
-                    this.startScroll - (this.x - this.startX) * dragRatio
-                  );
-                },
-              })[0];
+            // if (scrollTween.scrollTrigger) { // Check if scrollTrigger is defined
+            //   const trigger = scrollTween.scrollTrigger; // Type assertion
+            //   var dragRatio =
+            //     scrollContainer.offsetWidth / (window.innerWidth * (sections.length - 1));
+            //   var drag = Draggable.create(".proxy", {
+            //     trigger: scrollContainer,
+            //     type: "x",
+            //     onPress() {
+            //       this.startScroll = trigger.scroll();
+            //     },
+            //     onDrag() {
+            //       trigger.scroll(
+            //         this.startScroll - (this.x - this.startX) * dragRatio
+            //       );
+            //     },
+            //   })[0];
     
-              return () => {
-                scrollTween.kill();
-                drag.kill();
-                console.log("leave");
-              }
-            } else {
-              console.error("Scroll trigger not found");
-            }
+            //   return () => {
+            //     scrollTween.kill();
+            //     drag.kill();
+            //     console.log("leave");
+            //   }
+            // } else {
+            //   console.error("Scroll trigger not found");
+            // }
           }
         });
       } else {
@@ -125,47 +125,35 @@ export default function ProjectHoriPlxTest() {
 
 
     // --------------- HORIZONTAL MINE
-    // const pin = gsap.fromTo(
-    //   sectionRef.current,
-    //   {
-    //     translateX: 0,
-    //   },
-    //   {
-    //     translateX: "-600vw",
-    //     ease: "none",
-    //     duration: 1,
-    //     scrollTrigger: {
-    //       trigger: triggerRef.current,
-    //       start: "top top",
-    //       end: "3000 top",    // This allows horizontal scroll
-    //       // start: "100%+=2000 50%", // start, scroller-start
-    //       // end: "100%+=2000 10%",   // end, scroller-end
-    //       scrub: 0.6,
-    //       pin: true,
-    //       markers: true
-    //     },
-    //   }
-    // );
-    // return () => {
-    //   {/* A return function for killing the animation on component unmount */ }
-    //   pin.kill();
-    // };
+    const pin = gsap.fromTo(
+      sectionRef.current,
+      {
+        translateX: 0,
+      },
+      {
+        translateX: "-600vw",
+        ease: "none",
+        duration: 1,
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          start: "top top",
+          end: "3000 top",    // This allows horizontal scroll
+          // start: "100%+=2000 50%", // start, scroller-start
+          // end: "100%+=2000 10%",   // end, scroller-end
+          scrub: 0.6,
+          pin: true,
+          markers: true
+        },
+      }
+    );
+    return () => {
+      {/* A return function for killing the animation on component unmount */ }
+      pin.kill();
+    };
   }, []);
 
 
   return (
-    <div>
-      <div className='scrollContainer'>
-          <div className='section'>Horizontal/Vertical Scroll</div>
-          <div className='section'></div>
-          <div className='section'></div>
-          <div className='section'></div>
-      </div>
-      <div className="proxy"></div>
-    </div>
-
-
-
     // --------------- MOBILE / DESKTOP BLINKING CHANGE
     // <div>
     //   <header>
@@ -185,37 +173,40 @@ export default function ProjectHoriPlxTest() {
     // </div>
 
 
-    // --------------- MINE
-    // <section className={styles.project_hori_plx_wrapper}>
-    //   {/* The section up act just as a wrapper. If the trigger (below) is the
-    //   first jsx element in the component, you get an error on route change */}
 
-    //   {/* The div below act just as a trigger. As the doc suggests, the trigger and 
-    //   the animation should alway be two separated refs */}
-    //   <div ref={triggerRef}>
-    //     <div className={styles.project_hori_plx_container}
-    //       ref={sectionRef}
-    //     >
-    //       <div className={`
-    //         ${styles.section_one}
-    //       `}>
-    //         <h3>Section 1</h3>
-    //       </div>
 
-    //       <div className={`
-    //         ${styles.section_two}
-    //       `}>
-    //         <h3>Section 2</h3>
-    //       </div>
-
-    //       <div className={`
-    //         ${styles.section_three}
-    //       `}>
-    //         <h3>Section 3</h3>
-    //       </div>
-
-    //     </div>
+    // <div>
+    //   <div className='scrollContainer'>
+    //       <div className='section'>Horizontal/Vertical Scroll</div>
+    //       <div className='section'></div>
+    //       <div className='section'></div>
+    //       <div className='section'></div>
     //   </div>
-    // </section>
+    //   <div className="proxy"></div>
+    // </div>
+
+    // --------------- MINE
+    <section className={styles.project_hori_plx_wrapper}>
+      {/* The section up act just as a wrapper. If the trigger (below) is the
+      first jsx element in the component, you get an error on route change */}
+
+      {/* The div below act just as a trigger. As the doc suggests, the trigger and 
+      the animation should alway be two separated refs */}
+      <div ref={triggerRef} className='scrollContainer'>
+        <div className={styles.project_hori_plx_container}
+          ref={sectionRef}
+        >
+          <div className={`section ${styles.section_one}`}>
+            <h3>Section 1</h3>
+          </div>
+          <div className={`section ${styles.section_two}`}>
+            <h3>Section 2</h3>
+          </div>
+          <div className={`section ${styles.section_three}`}>
+            <h3>Section 3</h3>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
