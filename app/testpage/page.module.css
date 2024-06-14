@@ -19,9 +19,6 @@
   height: 100vh;
   width: 100vw;
   background-color: red;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   position: relative;
 }
 
@@ -30,9 +27,6 @@
   height: 100vh;
   width: 100vw;
   background-color: green;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   position: relative;
 }
 
@@ -41,9 +35,6 @@
   height: 100vh;
   width: 100vw;
   background-color: gray;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   position: relative;
 }
 
@@ -52,16 +43,13 @@
 
 
 @media (max-width: 768px) {
-  /* body {
-    overflow-y: scroll;
-  } */
   .project_hori_plx_container {
     width: 100vw;
-    height: 100vh;
+    height: 300vh;
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
 }
 
