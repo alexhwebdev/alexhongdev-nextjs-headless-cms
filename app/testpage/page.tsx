@@ -28,27 +28,28 @@ export default function ProjectHoriPlxTest() {
       isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
       isMobile: `(max-width: ${breakPoint - 1}px) and (prefers-reduced-motion: no-preference)`
     }, (context) => {
-      // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
-      let { isDesktop, isMobile } = context.conditions,
-          target = isDesktop ? ".desktop" : ".mobile",
-          tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: ".gray",
-              scrub: 1,
-              end: "200%",
-              pin: true
-            }
-          });
-      tl.to(target, {scale: 2, rotation: 360})
-        .to(target, {scale: 1});
+      if (context.conditions) { // Check if conditions are defined
+        let { isDesktop, isMobile } = context.conditions,
+            target = isDesktop ? ".desktop" : ".mobile",
+            tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: ".gray",
+                scrub: 1,
+                end: "200%",
+                pin: true
+              }
+            });
+        tl.to(target, {scale: 2, rotation: 360})
+          .to(target, {scale: 1});
     
-      // works for non-ScrollTrigger animations too: 
-      gsap.to(target, {backgroundColor: "#2c7ad2", duration: 0.8, ease: "none", repeat: -1, yoyo: true});
+        // works for non-ScrollTrigger animations too: 
+        gsap.to(target, {backgroundColor: "#2c7ad2", duration: 0.8, ease: "none", repeat: -1, yoyo: true});
     
-      return () => { 
-        // optionally return a cleanup function that will be called when the media query no longer matches
+        return () => { 
+          // optionally return a cleanup function that will be called when the media query no longer matches
+        }
       }
-    }); 
+    });
       
 
 
