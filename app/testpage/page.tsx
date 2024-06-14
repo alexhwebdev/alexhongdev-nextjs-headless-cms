@@ -20,8 +20,32 @@ export default function ProjectHoriPlxTest() {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const pin = gsap.fromTo(
+      // gsap.fromTo(
+        sectionRef.current,
+        // sections,
+        {
+          translateX: 0,
+        },
+        {
+          translateX: "-600vw",
+          ease: "none",
+          duration: 1,
+          scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top top",
+            end: "3000 top",    // This allows horizontal scroll
+            // start: "100%+=2000 50%", // start, scroller-start
+            // end: "100%+=2000 10%",   // end, scroller-end
+            scrub: 0.6,
+            pin: true,
+            markers: true
+          },
+        }
+      );
 
-
+    // Disable Horizontal scroll on Mobile
+    // https://gsap.com/community/forums/topic/29235-horizontal-and-vertical-scroll/
     document.addEventListener("DOMContentLoaded", () => {
       let scrollContainer = document.querySelector(".scrollContainer") as HTMLElement; // Type assertion
     
@@ -29,52 +53,34 @@ export default function ProjectHoriPlxTest() {
         let sections = document.querySelectorAll(".section");
     
         gsap.matchMedia({
-          "(min-width: 1080px)": () => {
-            console.log("enter");
+          "(max-width: 1280px)": () => {
+            // --------------- HORIZONTAL MINE
+            pin
+
+            return () => {
+              {/* A return function for killing the animation on component unmount */ }
+              pin.kill();
+            };
+          },
+          // "(min-width: 768px)": () => {
+          //   console.log("enter");
     
-            let scrollTween = gsap.to(sections, {
-              xPercent: -100 * (sections.length - 1),
-              ease: "none",
-              scrollTrigger: {
-                trigger: scrollContainer,
-                pin: true,
-                scrub: 1,
-                end: () => "+=" + scrollContainer.offsetWidth,
-              }
-            });
-    
-            // if (scrollTween.scrollTrigger) { // Check if scrollTrigger is defined
-            //   const trigger = scrollTween.scrollTrigger; // Type assertion
-            //   var dragRatio =
-            //     scrollContainer.offsetWidth / (window.innerWidth * (sections.length - 1));
-            //   var drag = Draggable.create(".proxy", {
-            //     trigger: scrollContainer,
-            //     type: "x",
-            //     onPress() {
-            //       this.startScroll = trigger.scroll();
-            //     },
-            //     onDrag() {
-            //       trigger.scroll(
-            //         this.startScroll - (this.x - this.startX) * dragRatio
-            //       );
-            //     },
-            //   })[0];
-    
-            //   return () => {
-            //     scrollTween.kill();
-            //     drag.kill();
-            //     console.log("leave");
-            //   }
-            // } else {
-            //   console.error("Scroll trigger not found");
-            // }
-          }
+          //   let scrollTween = gsap.to(sections, {
+          //     xPercent: -100 * (sections.length - 1),
+          //     ease: "none",
+          //     scrollTrigger: {
+          //       trigger: scrollContainer,
+          //       pin: true,
+          //       scrub: 1,
+          //       end: () => "+=" + scrollContainer.offsetWidth,
+          //     }
+          //   });
+          // }
         });
       } else {
         console.error("Scroll container not found");
       }
     });
-    
   
 
 
@@ -112,44 +118,7 @@ export default function ProjectHoriPlxTest() {
     //     }
     //   }
     // });
-      
 
-
-
-
-
-
-
-
-
-
-
-    // --------------- HORIZONTAL MINE
-    const pin = gsap.fromTo(
-      sectionRef.current,
-      {
-        translateX: 0,
-      },
-      {
-        translateX: "-600vw",
-        ease: "none",
-        duration: 1,
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top top",
-          end: "3000 top",    // This allows horizontal scroll
-          // start: "100%+=2000 50%", // start, scroller-start
-          // end: "100%+=2000 10%",   // end, scroller-end
-          scrub: 0.6,
-          pin: true,
-          markers: true
-        },
-      }
-    );
-    return () => {
-      {/* A return function for killing the animation on component unmount */ }
-      pin.kill();
-    };
   }, []);
 
 
