@@ -13,7 +13,7 @@ import { raleway } from '@/app/fonts';
 import { montserrat } from '@/app/fonts';
 import { inter } from '@/app/fonts';
 
-const TechWorkWith = () => {
+const TechWorkWith2 = () => {
   const techWorkWithRef = useRef(null);
 
   useGSAP(() => {
@@ -46,13 +46,13 @@ const TechWorkWith = () => {
 
     gsap.set([
       lineOne, lineThree, lineFive, lineSeven, lineNine, lineEleven
-    ], { xPercent: -2, autoAlpha: 0 }) // -->
+    ], { xPercent: -25, autoAlpha: 0 }) // -->
     
     gsap.set([
       lineTwo, lineFour, lineSix, lineEight, lineTen
-    ], { xPercent: 2, autoAlpha: 0 }) 
+    ], { xPercent: 25, autoAlpha: 0 }) 
 
-    gsap.set(allLinks, { y: -100, autoAlpha: 0, scale: 1.5, 
+    gsap.set(allLinks, { y: -500, autoAlpha: 0, scale: 1.5, 
       rotationX: 15
     })
 
@@ -69,20 +69,20 @@ const TechWorkWith = () => {
       // .to(lineTwo, { xPercent: 0, autoAlpha: 1 }, "-=.1") // <--
       // .to(lineThree, { xPercent: 0, autoAlpha: 1 }, "-=.15" ) // -->
       
-      .to(lineOne, { xPercent: 0, autoAlpha: 1, duration: 0.15 }) // -->
-      .to(lineTwo, { xPercent: 0, autoAlpha: 1, duration: 0.15 }) // <--
-      .to(lineThree, { xPercent: 0, autoAlpha: 1, duration: 0.15 }) // -->
+      .to(lineOne, { xPercent: 0, autoAlpha: 1, duration: 0.2 }) // -->
+      .to(lineTwo, { xPercent: 0, autoAlpha: 1, duration: 0.2 }) // <--
+      .to(lineThree, { xPercent: 0, autoAlpha: 1, duration: 0.2 }) // -->
       
-      .to(lineFour, { xPercent: 0, autoAlpha: 1, duration: 0.15 })
-      .to(lineFive, { xPercent: 0, autoAlpha: 1, duration: 0.15 })
-      .to(lineSix, { xPercent: 0, autoAlpha: 1, duration: 0.15 })
+      .to(lineFour, { xPercent: 0, autoAlpha: 1, duration: 0.2 })
+      .to(lineFive, { xPercent: 0, autoAlpha: 1, duration: 0.2 })
+      .to(lineSix, { xPercent: 0, autoAlpha: 1, duration: 0.2 })
       
-      .to(lineSeven, { xPercent: 0, autoAlpha: 1, duration: 0.15 })
-      .to(lineEight, { xPercent: 0, autoAlpha: 1, duration: 0.15 })
-      .to(lineNine, { xPercent: 0, autoAlpha: 1, duration: 0.15 })
+      .to(lineSeven, { xPercent: 0, autoAlpha: 1, duration: 0.2 })
+      .to(lineEight, { xPercent: 0, autoAlpha: 1, duration: 0.2 })
+      .to(lineNine, { xPercent: 0, autoAlpha: 1, duration: 0.2 })
       
-      .to(lineTen, { xPercent: 0, autoAlpha: 1, duration: 0.15 })
-      .to(lineEleven, { xPercent: 0, autoAlpha: 1, duration: 0.15 })
+      .to(lineTen, { xPercent: 0, autoAlpha: 1, duration: 0.2 })
+      .to(lineEleven, { xPercent: 0, autoAlpha: 1, duration: 0.2 })
       .to(allLinks, { y: 0, autoAlpha: 1, scale: 1,  stagger: 0.1, rotationX: 0 })
   }, []);
 
@@ -91,7 +91,7 @@ const TechWorkWith = () => {
       ref={techWorkWithRef}
     >
       <div className="techAndLangContainer">
-        <div 
+        {/* <div 
           className={`techLangLeftContainer ${montserrat.className}`}
         >
           <p style={{paddingBottom: '10px'}}>Languages</p>
@@ -101,168 +101,138 @@ const TechWorkWith = () => {
           <p style={{paddingBottom: '12px'}}>CMS</p>
           <p style={{paddingBottom: '38px'}}>Other Tools</p>
           <p style={{paddingBottom: '10px'}}>Other Skills</p>
-        </div>
+        </div> */}
+        
         <div 
           // className="techLangRightContainer"
           className={`techLangRightContainer ${raleway.className}`}
         >
+
+
+
           <ul>
             <li>
               <h4 className={`${montserrat.className}`}>
-                Languages
+              [ 01 ]&nbsp;&nbsp;Languages
               </h4>
               <p className="one" style={{paddingBottom: '10px'}}>
-                <a href="#">HTML&nbsp;</a> 
-                <span>/&nbsp;</span>
-                <a href="#">CSS&nbsp;</a> 
-                <span>/&nbsp;</span>
-                <a href="#">JavaScript&nbsp;</a> 
-                <span>/&nbsp;</span>
-                <a href="#">TypeScript&nbsp;</a> 
-                <span>/ PHP / SQL&nbsp;</span>
+                <a href="#">HTML,&nbsp;</a> 
+                {/* <span>/&nbsp;</span> */}
+                <a href="#">CSS,&nbsp;</a> 
+                {/* <span>/&nbsp;</span> */}
+                <a href="#">JavaScript,&nbsp;</a> 
+                {/* <span>/&nbsp;</span> */}
+                <a href="#">TypeScript,&nbsp;</a> 
+                <span>PHP, SQL&nbsp;</span>
               </p>
+              {/* <h4 className={`number ${montserrat.className}`}>
+                [ 01 ]
+              </h4> */}
             </li>
             <li>
               <h4 className={`${montserrat.className}`}>
-                Frameworks & Environments
+              [ 02 ]&nbsp;&nbsp;Frameworks & Environments
               </h4>
               <p className="two" style={{paddingBottom: '30px'}}>
-                <a href="#">React&nbsp;</a> 
-                <span>/ GatsbyJS /&nbsp;</span>
-                <a href="#">NextJS&nbsp;</a>
-                <span>/ AngularJS / Ember / Express / SailsJS / Node</span>
+                <a href="#">React,&nbsp;</a> 
+                <span>GatsbyJS,&nbsp;</span>
+                <a href="#">NextJS,&nbsp;</a>
+                <span>AngularJS, Ember, Express, SailsJS, Node</span>
               </p>
+              {/* <h4 className={`number ${montserrat.className}`}>
+                [ 02 ]
+              </h4> */}
             </li>
             <li>
               <h4 className={`${montserrat.className}`}>
-                Libraries & Build Tools
+                [ 03 ]&nbsp;&nbsp;Libraries & Build Tools
               </h4>
               <div>
                 <p className="three">
                   <a href="#">GraphQL&nbsp;</a>
-                  <span>/ Redux / React Router / Webpack / jQuery /&nbsp;</span>
+                  <span>Redux, React Router, Webpack, jQuery,&nbsp;</span>
                   <a href="#">GreenSock&nbsp;</a>
-                </p>                
-              </div>
-              <div>
-                <p className="four">
-                  <span>React-Spring / React-Slick /&nbsp;</span>
-                  <a href="#">React Animated&nbsp;</a>
-                  <span>/ Styled-Components /&nbsp;</span>
-                  <a href="#">Sass&nbsp;</a>
+                  <span>React-Spring, React-Slick,&nbsp;</span>
+                  <a href="#">React Animated,&nbsp;</a>
+                  <span>Styled-Components,&nbsp;</span>
+                  <a href="#">Sass,&nbsp;</a>
+                  <a href="#">Framer Motion&nbsp;</a>
+                  <span>Less, Gulp, Grunt, Git, Jenkins</span>
                 </p>
+                {/* <h4 className={`number ${montserrat.className}`}>
+                [ 03 ]
+                </h4> */}
               </div>
-              <div>
+              {/* <div>
+                <p className="four">
+                  <span>React-Spring, React-Slick,&nbsp;</span>
+                  <a href="#">React Animated,&nbsp;</a>
+                  <span>Styled-Components,&nbsp;</span>
+                  <a href="#">Sass,&nbsp;</a>
+                </p>
+              </div> */}
+              {/* <div>
                 <p className="five" style={{paddingBottom: '10px'}}>
                   <a href="#">Framer Motion&nbsp;</a>
-                  <span>/ Less / Gulp / Grunt / Git / Jenkins</span>
+                  <span>Less, Gulp, Grunt, Git, Jenkins</span>
                 </p>
-              </div>
+              </div> */}
             </li>
             <li>
               <h4 className={`${montserrat.className}`}>
-                Platforms & Softwares
+                [ 04 ]&nbsp;&nbsp;Platforms & Softwares
               </h4>
               <p className="six">
-                <span>Netlify /&nbsp;</span>
+                <span>Netlify,&nbsp;</span>
                 <a href="#">Vercel&nbsp;</a>
-                <span>/ Shopify / Elementor / JIRA - Bitbucket /&nbsp;</span>
+                <span>Shopify, Elementor, JIRA - Bitbucket, Firebase, MongoDB, MySQL Workbench, Heroku,&nbsp;</span>
                 <a href="#">Github&nbsp;</a>
               </p>
-              <p className="seven" style={{paddingBottom: '10px'}}>
-                <span>Firebase / MongoDB / MySQL Workbench / Heroku</span>
-              </p>
+              {/* <h4 className={`number ${montserrat.className}`}>
+                [ 04 ]
+              </h4> */}
             </li>
             <li>
               <h4 className={`${montserrat.className}`}>
-                CMS
+                [ 05 ]&nbsp;&nbsp;CMS
               </h4>
               <p className="eight" style={{paddingBottom: '10px'}}>
                 <a href="#">Contentful&nbsp;</a>
-                <span>/ Strapi / Wordpress / Sanity</span>
+                <span>Strapi, Wordpress, Sanity</span>
               </p>
+              {/* <h4 className={`number ${montserrat.className}`}>
+                [ 05 ]
+              </h4> */}
             </li>
             <li>
               <h4 className={`${montserrat.className}`}>
-                OTHER TOOLS
+              [ 06 ]&nbsp;&nbsp;OTHER TOOLS
               </h4>
               <p className="nine">
-                <span>Docker /&nbsp;</span>
-                <a href="#">Figma&nbsp;</a>
-                <span>/ Photoshop / Illustrator / Salesforce</span>
+                <span>Docker,&nbsp;</span>
+                <a href="#">Figma,&nbsp;</a>
+                <span>Photoshop, Illustrator, Salesforce, Adobe Target, Trello, Asana, FullStory</span>
               </p>
-              <p className="ten" style={{paddingBottom: '10px'}}>
-                <span>Adobe Target / Trello / Asana / FullStory</span>
-              </p>
+              {/* <h4 className={`number ${montserrat.className}`}>
+                [ 06 ]
+              </h4> */}
             </li>
             <li>
               <h4 className={`${montserrat.className}`}>
-                OTHER SKILLS
+                [ 07 ]&nbsp;&nbsp;OTHER SKILLS
               </h4>
               <p className="eleven">
-                <span>Ruby - Ruby on Rails / Python / Visual Basic</span>
+                <span>Ruby - Ruby on Rails, Python, Visual Basic</span>
               </p> 
+              {/* <h4 className={`number ${montserrat.className}`}>
+                [ 07 ]
+              </h4> */}
             </li>
           </ul>
-
-
-{/* 
-          <p className="one" style={{paddingBottom: '10px'}}>
-            <span>HTML / CSS /&nbsp;</span>
-            <a href="#">JavaScript / TypeScript&nbsp;</a> 
-            <span>/ PHP / SQL&nbsp;</span>
-          </p>
-          <p className="two" style={{paddingBottom: '10px'}}>
-            <a href="#">React / GatsbyJS / NextJS&nbsp;</a>
-            <span>/ AngularJS / Ember / Express / SailsJS / Node</span>
-          </p>
-          <p className="three">
-            <a href="#">GraphQL&nbsp;</a>
-            <span>/ Redux / Redux-Saga / React Router / Webpack / jQuery /&nbsp;</span>
-            <a href="#">GreenSock&nbsp;</a>
-          </p>
-          <p className="four">
-            <span>React-Spring / React-Slick /&nbsp;</span>
-            <a href="#">React Animated / Sass&nbsp;</a>
-            <span>/ Styled-Components</span>
-          </p>
-          <p className="five" style={{paddingBottom: '10px'}}>
-            <a href="#">Framer Motion&nbsp;</a>
-            <span>/ Less / Gulp / Grunt / Git / Jenkins</span>
-          </p>
-
-          <p className="six">
-            <span>Netlify /&nbsp;</span>
-            <a href="#">Vercel&nbsp;</a>
-            <span>/ Shopify / Elementor / JIRA - Bitbucket /&nbsp;</span>
-            <a href="#">Github&nbsp;</a>
-          </p>
-          <p className="seven" style={{paddingBottom: '10px'}}>
-            <span>Firebase / MongoDB / MySQL Workbench / Heroku</span>
-          </p>
-
-          <p className="eight" style={{paddingBottom: '10px'}}>
-            <a href="#">Contentful&nbsp;</a>
-            <span>/ Strapi / Wordpress / Sanity</span>
-          </p>
-
-          <p className="nine">
-            <span>Docker /&nbsp;</span>
-            <a href="#">Figma&nbsp;</a>
-            <span>/ Photoshop / Illustrator / Salesforce</span>
-          </p>
-          <p className="ten" style={{paddingBottom: '10px'}}>
-            <span>Adobe Target / Trello / Asana / FullStory</span>
-          </p>
-
-          <p className="eleven">
-            <span>Ruby - Ruby on Rails / Python / Visual Basic</span>
-          </p> 
-*/}
         </div>
       </div>
     </div>
   )
 }
 
-export default TechWorkWith;
+export default TechWorkWith2;

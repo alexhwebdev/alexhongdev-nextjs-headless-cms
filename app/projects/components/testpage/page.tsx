@@ -3,42 +3,14 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Image from 'next/image';
 
-import { raleway } from '@/app/fonts';
+// import { raleway } from '@/app/fonts';
 import { montserrat } from '@/app/fonts';
 import { inter } from '@/app/fonts';
 
 import styles from './page.module.css'
 import './page.css'
 
-
-
-
-interface SiteInfo {
-  siteName: string;
-  siteLink: string;
-  imgs: {
-    [key: string]: string; // Assuming keys are numeric strings
-  };
-}
-
-const siteInfo:SiteInfo[] = [
-  { 
-    siteName: "Investor's Business Daily",
-    siteLink: 'https://investors.com/',
-    imgs: {
-      1: "/images/projects/ibd-ai/ai-0.png",
-      2: "/images/projects/ibd-ai/ai-1.png",
-      3: "/images/projects/ibd-ai/ai-2.png",
-      4: "/images/projects/ibd-ai/ai-3.png",
-      5: "/images/projects/ibd-ai/ai-4.png",
-      6: "/images/projects/ibd-ai/ai-5.png",
-      7: "/images/projects/ibd-ai/ai-6.png",
-      8: "/images/projects/ibd-ai/ai-7.png",
-    }
-  }
-]
 
 export default function ProjectHoriPlxTest() {
   const triggerRef = useRef(null);
@@ -61,7 +33,7 @@ export default function ProjectHoriPlxTest() {
           translateX: 0,
         },
         {
-          translateX: "-700vw",
+          translateX: "-600vw",
           ease: "none",
           duration: 1,
           scrollTrigger: {
@@ -112,36 +84,29 @@ export default function ProjectHoriPlxTest() {
 
 
   return (
-    <div className="project_hori_plx_wrapper">
-      <div ref={triggerRef}>
-      {siteInfo.map((eachItem, index) => (
-            <div key={index} className={`project_name_link ${montserrat.className}`}>
-              <h3>{eachItem.siteName}</h3>
-              <a href={`${eachItem.siteLink}`}>Visit Site</a>
-              <p>Close</p>
-            </div>
-          ))}
-        <div className="project_hori_plx_container" ref={sectionRef}>
 
-          {siteInfo.map((item, index) => (
-            Object.keys(item.imgs).map((key) => (
-              <section key={key} className={`all_sections section_${key}`}>
-                <div className="img_container">
-                  <Image
-                    className="img"
-                    src={item.imgs[key]}
-                    alt={`Image ${key}`}
-                    width={800}
-                    height={800}
-                    // placeholder="blur"
-                    // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                  />
-                </div>
-              </section>
-            ))
-          ))}
+    // --------------- MINE
+    <section className={styles.project_hori_plx_wrapper}>
+      {/* The section up act just as a wrapper. If the trigger (below) is the
+      first jsx element in the component, you get an error on route change */}
+
+      {/* The div below act just as a trigger. As the doc suggests, the trigger and 
+      the animation should alway be two separated refs */}
+      <div ref={triggerRef}>
+        <div className={styles.project_hori_plx_container}
+          ref={sectionRef}
+        >
+          <div className={`${styles.section_one}`}>
+            <h3>Section 1</h3>
+          </div>
+          <div className={`${styles.section_two}`}>
+            <h3>Section 2</h3>
+          </div>
+          <div className={`${styles.section_three}`}>
+            <h3>Section 3</h3>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -14,7 +14,7 @@
 }
 
 /* ---------- SECTION 1 ---------- */
-.section_one {
+.section_1 {
   border: 1px solid black;
   height: 100vh;
   width: 100vw;
@@ -22,7 +22,7 @@
   position: relative;
 }
 
-.section_two {
+.section_2 {
   border: 1px solid black;
   height: 100vh;
   width: 100vw;
@@ -30,7 +30,7 @@
   position: relative;
 }
 
-.section_three {
+.section_3 {
   border: 1px solid black;
   height: 100vh;
   width: 100vw;

@@ -28,7 +28,7 @@ const LightDarkToggle = ({
     // This Button is just placeholder so screen doesnt jump when Sun or Moon loads
     return (
       <div className={styles.light_dark_toggle_wrapper}>
-        <Button className={styles.light_dark_toggle} variant="outline" size="icon" disabled={true}></Button>;
+        <Button className={styles.light_dark_toggle} variant="outline" size="icon" disabled={true}></Button>
       </div>
     )
   }

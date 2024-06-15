@@ -1,0 +1,109 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap'); */
+
+.techWorkWithContainer p {
+  display:block;
+  font-size: 14px;
+  margin-bottom: .25em;
+  margin-top: 0;
+  white-space:nowrap;
+}
+
+.techWorkWithContainer span {
+  opacity: 0.6;
+}
+
+.techWorkWithContainer a {
+  color: #141414;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+}
+
+
+.techAndLangContainer {
+  /* border: 5px solid blue; */
+  /* width: 100%; */
+  display: flex;
+  position: absolute;
+  bottom: 130px;
+  left: 100px;
+}
+
+
+
+
+.techLangRightContainer {
+  /* border: 1px solid red; */
+  /* width: 200px; */
+  height: 100%;
+  margin-left: 10px;
+}
+.techLangRightContainer ul {
+  width: 40%;
+  height: 400px;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.techLangRightContainer li {
+  /* border: 1px solid red; */
+  /* width: 300px; */
+  width: calc(51% - 10px);
+  padding-bottom: 15px;
+  position: relative;
+}
+/* .techLangRightContainer ul li:nth-of-type(1) {
+  height: 90px;
+}
+.techLangRightContainer ul li:nth-of-type(2) {
+  height: 110px;
+}
+.techLangRightContainer ul li:nth-of-type(3) {
+  height: 150px;
+  top: -10px;
+}
+.techLangRightContainer ul li:nth-of-type(4) {
+  height: 130px;
+}
+.techLangRightContainer ul li:nth-of-type(5) {
+  height: 90px;
+  top: -5px;
+}
+.techLangRightContainer ul li:nth-of-type(6) {
+  top: -15px;
+}
+.techLangRightContainer ul li:nth-of-type(7) {
+  height: 90px;
+  top: -30px;
+} */
+
+
+.techLangRightContainer h4 {
+  /* border: 1px solid silver; */
+  /* width: 400px; */
+  display: block;
+  font-weight: 500;
+  letter-spacing: 0px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+.techLangRightContainer h4.number {
+  font-size: 14px;
+  font-weight: 600;
+}
+.techLangRightContainer p {
+  text-wrap: wrap;
+  padding-bottom: 0 !important;
+}
+
+
+/* @media (max-width: 1279px) {
+  .techLangRightContainer ul li h4 {
+    display: block;
+  }
+} */
+
+
+
+

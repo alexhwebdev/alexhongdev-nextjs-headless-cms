@@ -4,7 +4,7 @@
   margin: auto;
   mix-blend-mode: exclusion;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   top: 25px;
   right: 0%;
   left: 0%;

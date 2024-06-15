@@ -7,7 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import './page.css';
 import WhatIDoTyping from '../whatIDoTyping/page';
-import TechWorkWith from "../techWorkWith/page";
+import TechWorkWith2 from "../techWorkWith2/page";
 import FloatingImgs from '../floatingImgs/page';
 import HoriParallaxImg from '../horiParallaxImg/page';
 
@@ -17,7 +17,7 @@ const WhatIDo = () => {
   return (
     <div className="whatIDoContainer">
       <WhatIDoTyping />
-      <TechWorkWith />
+      <TechWorkWith2 />
       {/* <FloatingImgs /> */}
       <HoriParallaxImg />
 
