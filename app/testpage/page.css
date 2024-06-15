@@ -76,7 +76,7 @@
 @media (max-width: 768px) {
   .project_hori_plx_container {
     width: 100vw;
-    height: 300vh;
+    height: 800vh;
     display: flex;
     flex-direction: column;
     position: relative;

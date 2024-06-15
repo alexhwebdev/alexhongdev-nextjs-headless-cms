@@ -57,7 +57,7 @@ const WhatIDoAniFadeUpJS = ({children}: WhatIDoAniFadeUpProps) => {
         // delay: 1,
         scrollTrigger: {
           trigger: whatIDoRef.current,
-          start: "100%+=1800 50%", // start, scroller-start
+          start: "100%+=2200 50%", // start, scroller-start
           // end: "100%+=2700 10%",   // end, scroller-end
           // markers: true
         }

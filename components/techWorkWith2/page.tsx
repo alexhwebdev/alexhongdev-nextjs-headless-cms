@@ -149,14 +149,14 @@ const TechWorkWith2 = () => {
               </h4>
               <div>
                 <p className="three">
-                  <a href="#">GraphQL&nbsp;</a>
+                  <a href="#">GraphQL,&nbsp;</a>
                   <span>Redux, React Router, Webpack, jQuery,&nbsp;</span>
-                  <a href="#">GreenSock&nbsp;</a>
+                  <a href="#">GreenSock,&nbsp;</a>
                   <span>React-Spring, React-Slick,&nbsp;</span>
                   <a href="#">React Animated,&nbsp;</a>
                   <span>Styled-Components,&nbsp;</span>
                   <a href="#">Sass,&nbsp;</a>
-                  <a href="#">Framer Motion&nbsp;</a>
+                  <a href="#">Framer Motion,&nbsp;</a>
                   <span>Less, Gulp, Grunt, Git, Jenkins</span>
                 </p>
                 {/* <h4 className={`number ${montserrat.className}`}>
@@ -184,7 +184,7 @@ const TechWorkWith2 = () => {
               </h4>
               <p className="six">
                 <span>Netlify,&nbsp;</span>
-                <a href="#">Vercel&nbsp;</a>
+                <a href="#">Vercel,&nbsp;</a>
                 <span>Shopify, Elementor, JIRA - Bitbucket, Firebase, MongoDB, MySQL Workbench, Heroku,&nbsp;</span>
                 <a href="#">Github&nbsp;</a>
               </p>
@@ -197,7 +197,7 @@ const TechWorkWith2 = () => {
                 [ 05 ]&nbsp;&nbsp;CMS
               </h4>
               <p className="eight" style={{paddingBottom: '10px'}}>
-                <a href="#">Contentful&nbsp;</a>
+                <a href="#">Contentful,&nbsp;</a>
                 <span>Strapi, Wordpress, Sanity</span>
               </p>
               {/* <h4 className={`number ${montserrat.className}`}>
