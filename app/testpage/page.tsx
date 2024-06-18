@@ -64,7 +64,7 @@ export default function ProjectHoriPlxTest() {
           translateX: "-700vw",
           ease: "none",
           duration: 1,
-          // normalizeScroll: true,   // Dont use in Desktop
+          normalizeScroll: true,
           scrollTrigger: {
             trigger: triggerRef.current,
             start: "top top",
