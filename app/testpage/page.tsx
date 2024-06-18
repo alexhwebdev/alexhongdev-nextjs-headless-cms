@@ -48,7 +48,7 @@ export default function ProjectHoriPlxTest() {
     gsap.registerPlugin(ScrollTrigger);
 
     const deskTopSize = '(min-width: 1280px)';
-    const tabletSize = '(max-width: 800px)';
+    const tabletSize = '(max-width: 800px) and (min-width: 768px)';
     const mobileSize = '(min-width: 425px)';
 
     const mm = gsap.matchMedia();
