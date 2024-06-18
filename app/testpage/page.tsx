@@ -48,7 +48,7 @@ export default function ProjectHoriPlxTest() {
     gsap.registerPlugin(ScrollTrigger);
 
     const deskTopSize = '(min-width: 1280px)';
-    const tabletSize = '(min-width: 800px)';
+    const tabletSize = '(min-width: 800px)';  // Keep at 'min'. Makes mobile size active.
     const mobileSize = '(min-width: 425px)';
 
     const mm = gsap.matchMedia();
@@ -64,7 +64,7 @@ export default function ProjectHoriPlxTest() {
           translateX: "-700vw",
           ease: "none",
           duration: 1,
-          normalizeScroll: true,
+          // normalizeScroll: true,
           scrollTrigger: {
             trigger: triggerRef.current,
             start: "top top",
@@ -100,7 +100,7 @@ export default function ProjectHoriPlxTest() {
             end: "3000 top",    // This allows horizontal scroll
             // start: "100%+=2000 50%", // start, scroller-start
             // end: "100%+=2000 10%",   // end, scroller-end
-            // scrub: 0.6,  // Dont use on mobile
+            scrub: 0.6,  // Dont use on mobile
             pin: true,
             // markers: true
           },
