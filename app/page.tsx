@@ -10,7 +10,7 @@
 // import ScrollTextGradient from "@/components/scrollTextGradient/page";
 // import ScrollSplitImg from "@/components/scrollSplitImg/page";
 
-import SmoothScroll from "@/components/smoothScroll/page";
+// import SmoothScroll from "@/components/smoothScroll/page";
 import HomeHoriScroll from "@/components/homeHoriScroll/page";
 // import HoriParallax from "@/components/horiParallax/page";
 // import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
@@ -25,7 +25,7 @@ import NameAnimation from "@/components/nameAnimation/page";
 
 export default function Home() {
   return (
-    <SmoothScroll>
+    // <SmoothScroll>
       <main style={{overflow: 'hidden'}}>
         <HomeHoverMixBlend />
 
@@ -63,7 +63,7 @@ export default function Home() {
           <VerticalInfiniteScroll />
         </div> */}
       </main>
-    </SmoothScroll>
+    // </SmoothScroll>
   )
 }
 
