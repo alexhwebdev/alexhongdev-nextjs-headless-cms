@@ -100,7 +100,7 @@ export default function ProjectHoriPlxTest() {
             end: "3000 top",    // This allows horizontal scroll
             // start: "100%+=2000 50%", // start, scroller-start
             // end: "100%+=2000 10%",   // end, scroller-end
-            scrub: 0.6,
+            // scrub: 0.6,  // Dont use on mobile
             pin: true,
             // markers: true
           },
