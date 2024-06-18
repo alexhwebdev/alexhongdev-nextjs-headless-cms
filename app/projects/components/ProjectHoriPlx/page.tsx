@@ -44,7 +44,7 @@ export default function ProjectHoriPlxTest() {
             // end: "100%+=2000 10%",   // end, scroller-end
             scrub: 0.6,
             pin: true,
-            markers: true
+            // markers: true
           },
         }
       );
@@ -72,7 +72,7 @@ export default function ProjectHoriPlxTest() {
             // end: "100%+=2000 10%",   // end, scroller-end
             // scrub: 0.6,
             pin: true,
-            markers: true
+            // markers: true,
           },
         }
       );
