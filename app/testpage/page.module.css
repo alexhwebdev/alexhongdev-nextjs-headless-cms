@@ -2,6 +2,7 @@
   border: 5px solid red;
   /* width: 200px;
   height: 100vh; */
+  /* overflow: hidden; */
   position: relative;
 }
 
@@ -43,6 +44,9 @@
 
 
 @media (max-width: 768px) {
+  .project_hori_plx_wrapper {
+    overflow: hidden;
+  }
   .project_hori_plx_container {
     width: 100vw;
     height: 300vh;
