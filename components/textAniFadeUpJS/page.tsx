@@ -61,6 +61,7 @@ const TextAniFadeUpJS = ({children}: TextAniFadeUpProps) => {
           // end: "100% 10%",
           // markers: true
         }
+
       });
     };
     

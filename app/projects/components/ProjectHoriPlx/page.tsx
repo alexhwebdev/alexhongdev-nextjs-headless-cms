@@ -20,7 +20,7 @@ export default function ProjectHoriPlxTest() {
     gsap.registerPlugin(ScrollTrigger);
 
     const deskTopSize = '(min-width: 1280px)';
-    const tabletSize = '(max-width: 768px)';
+    const tabletSize = '(min-width: 800px)';
     const mobileSize = '(min-width: 425px)';
 
     const mm = gsap.matchMedia();
@@ -55,7 +55,7 @@ export default function ProjectHoriPlxTest() {
     })
 
     mm.add(tabletSize, () => {
-      gsap.fromTo(
+      const horiScroll = gsap.fromTo(
         sectionRef.current,
         {
           translateY: 0,
@@ -70,12 +70,16 @@ export default function ProjectHoriPlxTest() {
             end: "3000 top",    // This allows horizontal scroll
             // start: "100%+=2000 50%", // start, scroller-start
             // end: "100%+=2000 10%",   // end, scroller-end
-            scrub: 0.6,
+            // scrub: 0.6,
             pin: true,
             markers: true
           },
         }
       );
+      return () => {
+        {/* A return function for killing the animation on component unmount */ }
+        horiScroll.kill();
+      };
     })
 
     // Disable Horizontal scroll on Mobile
