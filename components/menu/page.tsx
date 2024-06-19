@@ -8,6 +8,10 @@ import { useGSAP } from '@gsap/react';
 import './page.css'
 import { motion } from 'framer-motion';
 
+import { raleway } from '@/app/fonts';
+import { montserrat } from '@/app/fonts';
+import { inter } from '@/app/fonts';
+
 export interface Props {
   menuIsActive: boolean;
   setMenuIsActive: (isActive: boolean) => void;
@@ -18,6 +22,7 @@ const menuLinks = [
   { path: "/about", label: "About" },
   { path: "/projects", label: "Projects" },
   { path: "/contact", label: "Contact" },
+  { path: "/testpage", label: "TestPage" },
 ];
 
 export default function Menu({menuIsActive, setMenuIsActive}: Props) {
@@ -56,39 +61,42 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
     }
   }, [menuIsActive])
 
-  return (
-    <div className="menu-container" ref={container}>
-      <div className="menu-copy">
-        <div className="menu-links">
-          {menuLinks.map((link, index) => (
-            <div className="menu-link-item" key={index}>
-              <div className="menu-link-item-holder" 
-                onClick={toggleMenu}
-              >
-                <Link className="menu-link" 
-                  href={link.path}
-                  onClick={handleButtonClick}
-                  prefetch={true}
-                >
-                  {link.label}                      
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-        {/* <div className="menu-links">
-          <Link href="/" onClick={toggleMenu}>
-            Home
-          </Link>
-          <Link href="/about" prefetch={true} onClick={toggleMenu}>
-            About Prefetching
-          </Link>
-          <Link href="/contact" onClick={toggleMenu}>
-            Contact
-          </Link>          
-        </div> */}
+  // const menuContainerElement = document.querySelector('menu_container');
+  // menuIsActive ? 
 
+  return (
+    <div className={`menu_container ${menuIsActive ? `menuActive` : ''}`} ref={container}>
+
+      <div className="menu-links">
+        {menuLinks.map((link, index) => (
+          <div className="menu-link-item" key={index}>
+            <div className="menu-link-item-holder" 
+              onClick={toggleMenu}
+            >
+              <Link className={`menu-link ${raleway.className}`} 
+                href={link.path}
+                onClick={handleButtonClick}
+                prefetch={true}
+              >
+                {link.label}                      
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
+      {/* <div className="menu-links">
+        <Link href="/" onClick={toggleMenu}>
+          Home
+        </Link>
+        <Link href="/about" prefetch={true} onClick={toggleMenu}>
+          About Prefetching
+        </Link>
+        <Link href="/contact" onClick={toggleMenu}>
+          Contact
+        </Link>          
+      </div> */}
+
+
     </div>
   )
 }

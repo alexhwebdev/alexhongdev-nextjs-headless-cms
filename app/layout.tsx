@@ -11,6 +11,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import NameAnimation from "@/components/nameAnimation/page";
 import LightDarkToggle from "@/components/LightDarkToggle/page";
 import SmoothScroll from "@/components/smoothScroll/page";
+import PageTransitionEffect from "@/components/PageTransEffect/page";
 
 
 export const metadata: Metadata = {
@@ -49,9 +50,11 @@ export default function RootLayout({
             <HeaderMenu />
             <NameAnimation />
 
-            <SmoothScroll>
-            {children}
-            </SmoothScroll>
+            <PageTransitionEffect>
+              <SmoothScroll>
+                {children}
+              </SmoothScroll>
+            </PageTransitionEffect>
 
             {/* LINKEDIN */}
             <div className={styles.linkedin_container}>

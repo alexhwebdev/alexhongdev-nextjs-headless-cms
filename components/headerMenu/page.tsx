@@ -19,8 +19,6 @@ const HeaderMenu = () => {
   const [menuIsActive, setMenuIsActive] = useState<boolean>(false);
   const { theme, setTheme } = useTheme();
 
-  // console.log('headerMenu setTheme ', setTheme)
-
   const handleMenuButtonClick = (isActive: boolean) => {
     setMenuIsActive(isActive);
   };

@@ -9,13 +9,13 @@ import { raleway } from '@/app/fonts';
 import { montserrat } from '@/app/fonts';
 import { inter } from '@/app/fonts';
 
-import styles from './page.module.css'
+// import styles from './page.module.css'
 import './page.css'
-
-
+import ProjectsScrollZoomPlx from "./components/projectsScrollZoomPlx/childComponent";
 
 
 interface SiteInfo {
+  siteCompany: string;
   siteName: string;
   siteLink: string;
   imgs: {
@@ -23,19 +23,28 @@ interface SiteInfo {
   };
 }
 
-const siteInfo:SiteInfo[] = [
+const siteInfo: SiteInfo[] = [
   { 
-    siteName: "Investor's Business Daily",
+    siteCompany: "Investor's Business Daily",
+    siteName: "How to Invest in AI",
     siteLink: 'https://investors.com/',
     imgs: {
-      1: "/images/projects/ibd-ai/ai-0.png",
-      2: "/images/projects/ibd-ai/ai-1.png",
-      3: "/images/projects/ibd-ai/ai-2.png",
-      4: "/images/projects/ibd-ai/ai-3.png",
-      5: "/images/projects/ibd-ai/ai-4.png",
-      6: "/images/projects/ibd-ai/ai-5.png",
-      7: "/images/projects/ibd-ai/ai-6.png",
-      8: "/images/projects/ibd-ai/ai-7.png",
+      // 1: "/images/projects/ibd-ai/ai-0.png",
+      // 2: "/images/projects/ibd-ai/ai-1.png",
+      // 3: "/images/projects/ibd-ai/ai-2.png",
+      // 4: "/images/projects/ibd-ai/ai-3.png",
+      // 5: "/images/projects/ibd-ai/ai-4.png",
+      // 6: "/images/projects/ibd-ai/ai-5.png",
+      // 7: "/images/projects/ibd-ai/ai-6.png",
+      // 8: "/images/projects/ibd-ai/ai-7.png",
+
+      1: "/images/projects/ibd-ai/ai-1.png",
+      2: "/images/projects/ibd-ai/ai-2.png",
+      3: "/images/projects/ibd-ai/ai-3.png",
+      4: "/images/projects/ibd-ai/ai-4.png",
+      5: "/images/projects/ibd-ai/ai-5.png",
+      6: "/images/projects/ibd-ai/ai-6.png",
+      7: "/images/projects/ibd-ai/ai-7.png",
     }
   }
 ]
@@ -46,6 +55,25 @@ export default function ProjectHoriPlxTest() {
   
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    // -------------------- Delay page on load
+    // https://gsap.com/community/forums/topic/35762-how-to-add-delay-first-page-load-only/
+    let isStartup = true;
+    window.addEventListener("load", () => {
+      setTimeout(() => isStartup = false, 3000); // after 3 seconds, set isStartup to false
+    });
+    ScrollTrigger.batch(".fadeup-startup", {
+      onEnter: elements => {
+        gsap.from(elements, {
+          autoAlpha: 0,
+          // y: 60,
+          // stagger: 0.2,
+          delay: isStartup ? 1 : 0
+        });
+      },
+      once: true
+    });
+
 
     const deskTopSize = '(min-width: 1280px)';
     const tabletSize = '(max-width: 800px) and (min-width: 768px)';
@@ -61,7 +89,7 @@ export default function ProjectHoriPlxTest() {
           translateX: 0,
         },
         {
-          translateX: "-700vw",
+          translateX: "-600vw",
           ease: "none",
           duration: 1,
           normalizeScroll: true,
@@ -118,15 +146,24 @@ export default function ProjectHoriPlxTest() {
 
 
   return (
-    <div className="project_hori_plx_wrapper">
+    <div className="project_hori_plx_wrapper fadeup-startup">
+      <ProjectsScrollZoomPlx 
+        siteInfoCompany={siteInfo[0].siteCompany}
+        siteInfoLink={siteInfo[0].siteLink}
+      />
+
       <div ref={triggerRef}>
-      {siteInfo.map((eachItem, index) => (
-            <div key={index} className={`project_name_link ${montserrat.className}`}>
-              <h3>{eachItem.siteName}</h3>
-              <a href={`${eachItem.siteLink}`}>Visit Site</a>
+        {siteInfo.map((eachItem, index) => (
+          <div key={index} className={`project_name_link ${montserrat.className}`}>
+            <h3>{eachItem.siteName}</h3>
+
+            <div className="btns_link_close">
+              <a href={`${eachItem.siteLink}`} target="_blank">Visit Site</a>
+              <span></span>
               <p>Close</p>
             </div>
-          ))}
+          </div>
+        ))}
         <div className="project_hori_plx_container" ref={sectionRef}>
 
           {siteInfo.map((item, index) => (

@@ -49,7 +49,8 @@ export default function Home() {
         <ScrollSection />
         <HoriFooter />
 
-        <ScrollZoomParallax /> */}
+         */}
+         
 
         
 

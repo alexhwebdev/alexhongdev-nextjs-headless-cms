@@ -2,7 +2,6 @@
   border: 5px solid red;
   /* width: 200px;
   height: 100vh; */
-  /* overflow: hidden; */
   position: relative;
 }
 
@@ -15,7 +14,7 @@
 }
 
 /* ---------- SECTION 1 ---------- */
-.section_1 {
+.section_one {
   border: 1px solid black;
   height: 100vh;
   width: 100vw;
@@ -23,7 +22,7 @@
   position: relative;
 }
 
-.section_2 {
+.section_two {
   border: 1px solid black;
   height: 100vh;
   width: 100vw;
@@ -31,7 +30,7 @@
   position: relative;
 }
 
-.section_3 {
+.section_three {
   border: 1px solid black;
   height: 100vh;
   width: 100vw;
@@ -44,9 +43,6 @@
 
 
 @media (max-width: 768px) {
-  .project_hori_plx_wrapper {
-    overflow: hidden;
-  }
   .project_hori_plx_container {
     width: 100vw;
     height: 300vh;
