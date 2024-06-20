@@ -46,6 +46,7 @@ interface HoriParallaxGsapProps {
 // const test = testGetImg()
 // console.log('test ', test)
 
+
 export default function HoriParallaxGsap(
   { imgDataArray }: HoriParallaxGsapProps
 ) {
