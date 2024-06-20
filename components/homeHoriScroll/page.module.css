@@ -36,19 +36,10 @@
 
 
 
-
-
-
-
-
 /* ---------- SECTION 1 ---------- */
 .sectionOne {
   /* max-width: 1280px; */
 }
-
-
-
-
 
 
 /* ---------- PORTFOLIO OF PROJECTS ---------- */
@@ -62,7 +53,6 @@
   max-width: 2025px;
   position: relative;
 }
-
 .imagesContainer {
   border: 5px solid blue;
   width: 100%;
@@ -171,8 +161,6 @@
   background: #141414;
   position: relative;
 }
-
-
 
 
 

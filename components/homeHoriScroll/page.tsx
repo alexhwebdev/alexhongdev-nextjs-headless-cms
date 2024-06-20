@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+// import React from "react";
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -24,7 +25,38 @@ import ContactSection from "../contactSection/page";
 import HomeScrollTextGradient from "../HomeScrollTextGradient/page";
 
 
-export default function HomeHoriScroll() {
+
+interface LineDataObject {
+  '$$typeof': symbol;
+  type: string;
+  key: null;
+  ref: null;
+  props: {
+    // children: any[]; // Adjust this based on what children should be
+    children: string;
+  };
+  _owner: null;
+  _store: {};
+}
+export interface ImageDataObject {
+  title: string;
+  description: string;
+  contentType: string;
+  fileName: string;
+  size: number;
+  url: string;
+  width: number;
+  height: number;
+}
+export interface HomeHoriScrollProps {
+  lineData: LineDataObject[];
+  imgDataArray: ImageDataObject[];
+}
+
+
+export default async function HomeHoriScroll({ lineData, 
+  imgDataArray 
+}: HomeHoriScrollProps) {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
@@ -33,6 +65,7 @@ export default function HomeHoriScroll() {
     
     const pin = gsap.fromTo(
       sectionRef.current,
+      // ".scrollSectionInner",
       {
         translateX: 0,
       },
@@ -42,6 +75,7 @@ export default function HomeHoriScroll() {
         duration: 1,
         scrollTrigger: {
           trigger: triggerRef.current,
+          // trigger: ".triggerRef",
           start: "top top",
           end: "3000 top",    // This allows horizontal scroll
           // end: "top top",
@@ -56,21 +90,6 @@ export default function HomeHoriScroll() {
     };
   }, []);
 
-  // useGSAP( () => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   gsap.fromTo(".boxTest", 
-  //   {
-  //     opacity: 0
-  //   },
-  //   {
-  //     duration: 1, // Duration of animation
-  //     opacity: 1, // Target opacity
-  //     x: 100, // Move from left
-  //     stagger: 0.2 // Stagger the animations
-  //   });
-  // }, [])
-
   return (
     <section className={styles.scrollSectionOuter}>
       {/* The section up act just as a wrapper. If the trigger (below) is the
@@ -78,8 +97,11 @@ export default function HomeHoriScroll() {
 
       {/* The div below act just as a trigger. As the doc suggests, the trigger and 
       the animation should alway be two separated refs */}
-      <div ref={triggerRef}>
-        <div className={styles.scrollSectionInner}
+      <div 
+        ref={triggerRef} 
+        // className={`triggerRef`}
+      >
+        <div className={`scrollSectionInner ${styles.scrollSectionInner}`}
           ref={sectionRef}
         >
           <div className={`${styles.scrollSection} ${styles.sectionOne}`}>
@@ -96,6 +118,7 @@ export default function HomeHoriScroll() {
           <VerticalInfiniteScroll>
             Projects&nbsp;&nbsp;&nbsp;Projects&nbsp;
           </VerticalInfiniteScroll>
+
           <div className={`
               ${styles.scrollSection} 
               ${styles.sectionTwo}
@@ -105,23 +128,30 @@ export default function HomeHoriScroll() {
             <TextAniFadeUpJS>
               Portfolio&nbsp;of&nbsp;Projects
             </TextAniFadeUpJS>
-            
+
             <div className={`${styles.sectionTwoCopy} ${montserrat.className}`}>
-              <h5>Research & Innovation</h5>
-              <h3>Low-impact luxury</h3>
+              {/* <h5>Research & Innovation</h5> */}
+              {lineData[0]}
+              
+              {/* <h3>Low-impact luxury</h3> */}
+              {lineData[1]}
 
               <div className={styles.line}></div>
 
-              <h5>Raw Materials and Innovative Technologies</h5>
+              {/* <h5>Raw Materials and Innovative Technologies</h5> */}
+              {lineData[2]}
 
               <div className={styles.pContainer}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> */}
+                {lineData[3]}
                 {/* <p>That’s why we are committed to always finding the most exclusive but also the most eco-friendly techniques and materials.</p> */}
               </div>
             </div>
 
             <div className={styles.imagesContainer}>
-              <HoriParallaxGsap />
+              <HoriParallaxGsap 
+                imgDataArray={imgDataArray}
+              />
             </div>
           </div>
 
@@ -159,7 +189,10 @@ export default function HomeHoriScroll() {
               </div>
             </WhatIDoAniFadeUpJS>
 
-            <WhatIDo />
+            <WhatIDo 
+              // lineData={lineData} 
+              imgDataArray={imgDataArray}
+            />
           </div>
 
           {/* SECTION 6 : CONTACT */}

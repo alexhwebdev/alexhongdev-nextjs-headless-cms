@@ -20,51 +20,57 @@ import HomeHoverMixBlend from "@/components/homeHoverMixBlend/page";
 import HomeScrollTextGradient from "@/components/HomeScrollTextGradient/page";
 import NameAnimation from "@/components/nameAnimation/page";
 
+import { getPortfolioPageDocuments } from "../lib/contentfulApi";
+import getPageData from "../lib/getPageData";
+import getImgCollection from "../lib/getImgCollection";
 
 
+export default async function Home() {
+  const portfolioPageData = await getPortfolioPageDocuments();
+  // console.log('portfolioPageData ', portfolioPageData)
+  
+  // ---------- COPY ----------
+  let lineData = getPageData("Portfolio", portfolioPageData)
+  // console.log('lineData ', lineData)
+  
+  let imgDataArray = [
+    // ...getImgCollection("Portfolio", portfolioPageData)
+    ...getImgCollection("Portfolio", portfolioPageData)
+  ];
+  // ---------- IMAGES ----------
+  // console.log('imgDataArray ', imgDataArray)
 
-export default function Home() {
+
   return (
-    // <SmoothScroll>
-      <main style={{overflow: 'hidden'}}>
-        <HomeHoverMixBlend />
+    <main style={{overflow: 'hidden'}}>
+      <HomeHoverMixBlend />
 
+      <HomeHoriScroll 
+        lineData={lineData} 
+        imgDataArray={imgDataArray}
+        // portfolioPageData={portfolioPageData}
+      />
+      {/* <UpDownParallax /> */}
+      {/* <ScrollSplitImg /> */}
+      {/* <HoriParallax /> */}
+      {/* <InfiniteScroll /> */}
+      {/* <Projects /> */}
+      {/* <ScrollTextGradient /> */}
+      {/* <TextClipMask /> */}
+      {/* <Hero /> */}
+      {/* <ScrollSection /> */}
+      {/* <HoriFooter /> */}
 
-        {/* <HoriParallax /> */}
-
-
-        <HomeHoriScroll />
-        {/* <UpDownParallax /> */}
-        {/* <ScrollSplitImg /> */}
-
-        {/* <InfiniteScroll /> */}
-
-        {/* <Projects />
-
-        <ScrollTextGradient />
-
-        <TextClipMask />
-
-        <Hero />
-        <ScrollSection />
-        <HoriFooter />
-
-         */}
-         
-
-        
-
-        {/* <div style={{
-          border: '5px solid orange', 
-          width: '100vw', 
-          height: '100vh',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
-          <VerticalInfiniteScroll />
-        </div> */}
-      </main>
-    // </SmoothScroll>
+      {/* <div style={{
+        border: '5px solid orange', 
+        width: '100vw', 
+        height: '100vh',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <VerticalInfiniteScroll />
+      </div> */}
+    </main>
   )
 }
 

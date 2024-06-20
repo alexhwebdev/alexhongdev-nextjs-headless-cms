@@ -22,7 +22,7 @@ const variants = {
     opacity: 0,
     transition: { 
       // delay: 1,
-      delay: 0.25,
+      delay: 0.5,
       duration: 0.25,
       // duration: 2,
       when: "beforeChildren",

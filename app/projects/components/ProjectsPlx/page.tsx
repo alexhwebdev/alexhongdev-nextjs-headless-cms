@@ -11,6 +11,7 @@ import { raleway } from '@/app/fonts';
 import { inter } from '@/app/fonts';
 import './page.scss';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 
 const projectsList = [
@@ -127,10 +128,15 @@ export default function ProjectPlx() {
                 // data-cursor-label="Buy me" 
               >
 
-                <a href="#"
+                {/* <a href="#"
                   className="cursor_target_overlay cursor_target"
                   data-hover="VIEW MORE"
-                ></a>
+                ></a> */}
+                <Link 
+                  href={`/testpage`}
+                  className="cursor_target_overlay cursor_target"
+                  data-hover="VIEW MORE"
+                ></Link>
 
                 <div className="project_image">
                   <Image 

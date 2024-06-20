@@ -10,6 +10,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef } from 'react';
 import { montserrat } from '@/app/fonts';
+import { ImageDataObject } from '../homeHoriScroll/page';
 
 
 const whatIDoImgs = [
@@ -19,7 +20,11 @@ const whatIDoImgs = [
   // { src: "floating_2.jpg" },
 ]
 
-const HoriParallaxImg = () => {
+interface HoriParallaxImgProps {
+  imgDataArray: ImageDataObject[];
+}
+
+const HoriParallaxImg = ({imgDataArray}: HoriParallaxImgProps) => {
   const horiParallaxImgRef1 = useRef(null);
   const horiParallaxImgRef2 = useRef(null);
 
@@ -46,7 +51,7 @@ const HoriParallaxImg = () => {
           start: "100%+=1800 50%", // start, scroller-start
           end: "100%+=1800 -20%",   // end, scroller-end
 
-          // markers: true
+          markers: true
         }
       }
     );
@@ -69,7 +74,8 @@ const HoriParallaxImg = () => {
                   className={styles.laptop}
                   // fill={true}
                   alt={"image"}
-                  src={`/images/floatingImgs/${work.src}`}
+                  // src={`/images/floatingImgs/${work.src}`}
+                  src={imgDataArray[4].url}
                   width={2500}
                   height={100}
                   // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"

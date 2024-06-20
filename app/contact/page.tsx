@@ -1,4 +1,9 @@
 'use client'
+
+import { gsap } from "gsap";
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 import styles from './page.module.css'
 import { useState } from 'react';  
 import { motion } from 'framer-motion';
@@ -10,8 +15,29 @@ export default function Home() {
   const { x, y } = useMousePosition();
   const size = isHovered ? 500 : 40;
 
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    // -------------------- Delay page on load
+    // https://gsap.com/community/forums/topic/35762-how-to-add-delay-first-page-load-only/
+    let isStartup = true;
+    window.addEventListener("load", () => {
+      setTimeout(() => isStartup = false, 3000); // after 3 seconds, set isStartup to false
+    });
+    ScrollTrigger.batch(".delay_page_load", {
+      onEnter: elements => {
+        gsap.from(elements, {
+          autoAlpha: 0,
+          // y: 60,
+          // stagger: 0.2,
+          delay: isStartup ? 1 : 0
+        });
+      },
+      once: true
+    });
+  }, []);
+
   return (
-    <div className={`${styles.contact} ${raleway.className}`}>
+    <div className={`delay_page_load ${styles.contact} ${raleway.className}`}>
       {/* {x !== null && y !== null && ( */}
         <motion.div className={styles.mask}
           animate={{

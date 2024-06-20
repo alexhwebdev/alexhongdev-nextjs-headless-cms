@@ -30,6 +30,7 @@ export default function RootLayout({
       <body 
         // className={inter.className}
       >
+        <PageTransitionEffect>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -50,11 +51,11 @@ export default function RootLayout({
             <HeaderMenu />
             <NameAnimation />
 
-            <PageTransitionEffect>
-              <SmoothScroll>
+            <SmoothScroll>
+              {/* <PageTransitionEffect> */}
                 {children}
-              </SmoothScroll>
-            </PageTransitionEffect>
+              {/* </PageTransitionEffect> */}
+            </SmoothScroll>
 
             {/* LINKEDIN */}
             <div className={styles.linkedin_container}>
@@ -69,6 +70,7 @@ export default function RootLayout({
           </div>
 
         </ThemeProvider>
+        </PageTransitionEffect>
       </body>
     </html>
   );
