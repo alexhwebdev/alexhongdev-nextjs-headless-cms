@@ -5,17 +5,13 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import styles from './page.module.css';
+
 import VerticalInfiniteScroll from "../verticalInfiniteScroll/page";
-// import { raleway } from '@/app/fonts';
-import { montserrat } from '@/app/fonts';
-import { inter } from '@/app/fonts';
 // import HoriParallax from "../horiParallaxFramerMotion/page";
 import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
 import TextAniFadeUpJS from "../textAniFadeUpJS/page";
 import WhatIDoAniFadeUpJS from "../whatIDoAniFadeUpJS/page";
 import WorksSection from "../worksSection/page";
-import './page.css'
 // import HoverCursorImgChange from "../hoverCursorImgChange/page";
 import MouseHoverImgChange from "../mouseHoverImgChange/page";
 import EduSection from "../eduSection/page";
@@ -24,39 +20,63 @@ import TechWorkWith from "../techWorkWith/page";
 import ContactSection from "../contactSection/page";
 import HomeScrollTextGradient from "../HomeScrollTextGradient/page";
 
+// import { raleway } from '@/app/fonts';
+import { montserrat } from '@/app/fonts';
+import { inter } from '@/app/fonts';
+
+import styles from './page.module.css';
+import './page.css'
 
 
-interface LineDataObject {
-  '$$typeof': symbol;
-  type: string;
-  key: null;
-  ref: null;
-  props: {
-    // children: any[]; // Adjust this based on what children should be
-    children: string;
-  };
-  _owner: null;
-  _store: {};
-}
-export interface ImageDataObject {
-  title: string;
+
+
+
+// interface LineDataObject {
+//   '$$typeof': symbol;
+//   type: string;
+//   key: null;
+//   ref: null;
+//   props: {
+//     // children: any[]; // Adjust this based on what children should be
+//     children: string;
+//   };
+//   _owner: null;
+//   _store: {};
+// }
+// export interface ImageDataObject {
+//   title: string;
+//   description: string;
+//   contentType: string;
+//   fileName: string;
+//   size: number;
+//   url: string;
+//   width: number;
+//   height: number;
+// }
+// export interface HomeHoriScrollProps {
+//   lineData: LineDataObject[];
+//   imgDataArray: ImageDataObject[];
+// }
+
+export interface CompanyDataProps {
+  company: string;
+  cardDesc: string;
+  introDesc: string;
   description: string;
-  contentType: string;
-  fileName: string;
-  size: number;
-  url: string;
-  width: number;
-  height: number;
-}
-export interface HomeHoriScrollProps {
-  lineData: LineDataObject[];
-  imgDataArray: ImageDataObject[];
+  fromTo: string;
+  location: string;
+  role: string;
+  imgSrc: string;
+  siteUrl: string;
 }
 
-
-export default async function HomeHoriScroll({ lineData, 
-  imgDataArray 
-}: HomeHoriScrollProps) {
+export default function HomeHoriScroll(
+  { 
+    // lineData, imgDataArray,
+    companyData
+  }: { companyData: CompanyDataProps[] }
+  // : HomeHoriScrollProps
+) {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
@@ -131,26 +151,27 @@ export default async function HomeHoriScroll({ lineData,
 
             <div className={`${styles.sectionTwoCopy} ${montserrat.className}`}>
               {/* <h5>Research & Innovation</h5> */}
-              {lineData[0]}
+              {/* {lineData[0]} */}
               
-              {/* <h3>Low-impact luxury</h3> */}
-              {lineData[1]}
+              <h3>Low-impact luxury</h3>
+              {/* {lineData[1]} */}
 
               <div className={styles.line}></div>
 
-              {/* <h5>Raw Materials and Innovative Technologies</h5> */}
-              {lineData[2]}
+              <h5>Raw Materials and Innovative Technologies</h5>
+              {/* {lineData[2]} */}
 
               <div className={styles.pContainer}>
-                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> */}
-                {lineData[3]}
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                {/* {lineData[3]} */}
                 {/* <p>That’s why we are committed to always finding the most exclusive but also the most eco-friendly techniques and materials.</p> */}
               </div>
             </div>
 
             <div className={styles.imagesContainer}>
               <HoriParallaxGsap 
-                imgDataArray={imgDataArray}
+                companyData={companyData}
+                // imgDataArray={imgDataArray}
               />
             </div>
           </div>
@@ -190,8 +211,7 @@ export default async function HomeHoriScroll({ lineData,
             </WhatIDoAniFadeUpJS>
 
             <WhatIDo 
-              // lineData={lineData} 
-              imgDataArray={imgDataArray}
+              // imgDataArray={imgDataArray}
             />
           </div>
 
@@ -208,3 +228,56 @@ export default async function HomeHoriScroll({ lineData,
     </section>
   );
 }
+
+
+
+
+
+// export default function HomeHoriScroll(
+//   { 
+//     companyData
+//   }
+// ) {
+//   const sectionRef = useRef(null);
+//   const triggerRef = useRef(null);
+
+//   useGSAP(() => {
+//     gsap.registerPlugin(ScrollTrigger);
+    
+//     const pin = gsap.fromTo(
+//       sectionRef.current,
+//       // ".scrollSectionInner",
+//       {
+//         translateX: 0,
+//       },
+//       {
+//         translateX: "-600vw",
+//         ease: "none",
+//         duration: 1,
+//         scrollTrigger: {
+//           trigger: triggerRef.current,
+//           // trigger: ".triggerRef",
+//           start: "top top",
+//           end: "3000 top",    // This allows horizontal scroll
+//           // end: "top top",
+//           scrub: 0.6,
+//           pin: true,
+//         },
+//       }
+//     );
+//     return () => {
+//       {/* A return function for killing the animation on component unmount */ }
+//       pin.kill();
+//     };
+//   }, []);
+
+//   return (
+//     <section className={styles.scrollSectionOuter}>
+//       <div 
+//         ref={triggerRef} 
+//         // className={`triggerRef`}
+//       >
+//       </div>
+//     </section>
+//   );
+// }

@@ -10,21 +10,26 @@ import WhatIDoTyping from '../whatIDoTyping/page';
 import TechWorkWith2 from "../techWorkWith2/page";
 import FloatingImgs from '../floatingImgs/page';
 import HoriParallaxImg from '../horiParallaxImg/page';
-import { ImageDataObject } from '../homeHoriScroll/page';
 
-interface WhatIDoProps {
-  imgDataArray: ImageDataObject[];
-}
+// import { ImageDataObject } from '../homeHoriScroll/page';
 
-const WhatIDo = ({imgDataArray}: WhatIDoProps) => {
+// interface WhatIDoProps {
+//   imgDataArray: ImageDataObject[];
+// }
 
-  console.log('WhatIDo imgDataArray ', imgDataArray)
+const WhatIDo = (
+  // {imgDataArray}: WhatIDoProps
+) => {
+
+  // console.log('WhatIDo imgDataArray ', imgDataArray)
   return (
     <div className="whatIDoContainer">
       <WhatIDoTyping />
       <TechWorkWith2 />
       {/* <FloatingImgs /> */}
-      <HoriParallaxImg imgDataArray={imgDataArray}/>
+      <HoriParallaxImg 
+        // imgDataArray={imgDataArray}
+      />
 
       <Image 
         className={`cupImg`}

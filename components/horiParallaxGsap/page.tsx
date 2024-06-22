@@ -1,5 +1,4 @@
-// SECTION : Portfolio of Projects 
-"use client";
+// "use client";
 
 // import { useRef } from 'react';
 // import { useScroll, useTransform, motion } from 'framer-motion';
@@ -12,63 +11,80 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef } from 'react';
 import { montserrat } from '@/app/fonts';
 import Link from 'next/link';
-import { ImageDataObject } from '../homeHoriScroll/page';
-import {testGetImg} from '../../lib/testGetImg'
 
+import { 
+  CompanyDataProps, 
+  // ImageDataObject 
+} from '../homeHoriScroll/page';
+import { testGetImg } from '../../lib/testGetImg'
+
+import { getPortfolioPageDocuments } from "../../lib/contentfulApi";
 
 const works = [
   { 
-    company: "Dow Jones, Investor's Business Daily",
+    title: "Dow Jones, Investor's Business Daily",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     src: "work1.png",
+    url: "https://alexhongdev.com"
   },
   { 
-    company: "MGA Entertainment",
+    title: "MGA Entertainment",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     src: "work2.png",
+    url: "https://alexhongdev.com"
   },
   { 
-    company: "Webpromo",
+    title: "Webpromo",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     src: "work3.png",
+    url: "https://alexhongdev.com"
   },
   { 
-    company: "Thunderbolt Studios",
+    title: "Thunderbolt Studios",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     src: "work3.png",
+    url: "https://alexhongdev.com"
   },
 ]
 
-interface HoriParallaxGsapProps {
-  imgDataArray: ImageDataObject[];
-}
-
-// const test = testGetImg()
-// console.log('test ', test)
-
+// interface HoriParallaxGsapProps {
+//   imgDataArray: ImageDataObject[];
+// }
 
 export default function HoriParallaxGsap(
-  { imgDataArray }: HoriParallaxGsapProps
+  // { imgDataArray }: HoriParallaxGsapProps
+  { companyData }: { companyData: CompanyDataProps[] }
 ) {
-  const sectionRef = useRef(null);
-  const triggerRef = useRef(null);
-  // const boxRef = useRef(null);
+  // console.log('HoriParallaxGsap companyData ', companyData);
+  // const portfolioPageData = await getPortfolioPageDocuments();
+  
+  // console.log('HoriParallaxGsap testGetImg ', testGetImg)
+
 
   // console.log('HoriParallaxGsap imgDataArray ', imgDataArray)
+
+  // const sectionRef = useRef(null);
+  // const triggerRef = useRef(null);
+  // // const boxRef = useRef(null);
+
+  // const firstFourArray = imgDataArray.slice(0, 4);
+  // console.log('firstFourArray ', firstFourArray);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     // let sections = gsap.utils.toArray("panel");
 
     const pin = gsap.fromTo(
-      sectionRef.current, 
+      // sectionRef.current,
+      ".sectionRef",
       { translateX: 1500 },
       {
         // xPercent: -100 * (sectionRef.current - 1),
         translateX: "-50vw",
         ease: "none",
         scrollTrigger: {
-          trigger:  triggerRef.current,
+          // trigger: triggerRef.current,
+          trigger: ".triggerRef",
           // pin: true,
           scrub: 0.1,
           //snap: directionalSnap(1 / (sections.length - 1)),
@@ -107,35 +123,39 @@ export default function HoriParallaxGsap(
   }, []);
 
   return (
-    <div ref={triggerRef} className={styles.horiParallaxGsapContainer}>
-      <section ref={sectionRef} className={styles.boxContainer}>
-
+    <div className={`triggerRef ${styles.horiParallaxGsapContainer}`}
+      // ref={triggerRef}
+    >
+      <section className={`sectionRef ${styles.boxContainer}`}
+        // ref={sectionRef}
+      >
         {
-          imgDataArray.map((work, index) => {
+          companyData.map((company, index) => {
             return (
               <div key={index} className={styles.undo_mix_blend_mode}>
                 {/* <div className={`${styles.box} ${montserrat.className}`}> */}
                 <Link 
                   // href={`/reviews/${review.slug}`}
-                  href={`/projects`}
+                  href={company.siteUrl}
                   // href="/projects"
                   className={`${styles.box} ${montserrat.className}`}
                 >
-                  <h5>{ work.title }</h5>
+                  <h5>{ company.company }</h5>
                   <h3>
                     Paper
                   </h3>
                   <Image 
                     // fill={true}
                     alt={"image"}
-                    // src={`/images/${work.src}`}
-                    src={ work.url }
+                    // src={`/images/${company.src}`}
+                    src={ company.imgSrc }
                     // src={ imgDataArray[1].url }
                     width={300}
                     height={200}
+                    // placeholder="blur"
                     // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                   />
-                  <p>{ work.description }</p>
+                  <p>{ company.cardDesc }</p>
                 </Link>
                 {/* </div> */}
               </div>

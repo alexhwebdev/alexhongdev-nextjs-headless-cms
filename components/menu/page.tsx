@@ -18,11 +18,11 @@ export interface Props {
 }
 
 const menuLinks = [
-  { path: "/", label: "Home" },
-  { path: "/about", label: "About" },
-  { path: "/projects", label: "Projects" },
-  { path: "/contact", label: "Contact" },
-  { path: "/testpage", label: "TestPage" },
+  { path: "/", label: "Home", prefetching: false },
+  { path: "/about", label: "About", prefetching: true },
+  { path: "/allProjects", label: "Projects", prefetching: false },
+  { path: "/contact", label: "Contact", prefetching: false },
+  { path: "/testpage", label: "TestPage", prefetching: false },
 ];
 
 export default function Menu({menuIsActive, setMenuIsActive}: Props) {
@@ -64,6 +64,8 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
   // const menuContainerElement = document.querySelector('menu_container');
   // menuIsActive ? 
 
+  // console.log('menuLinks ', menuLinks)
+
   return (
     <div className={`menu_container ${menuIsActive ? `menuActive` : ''}`} ref={container}>
 
@@ -76,7 +78,7 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
               <Link className={`menu-link ${raleway.className}`} 
                 href={link.path}
                 onClick={handleButtonClick}
-                prefetch={true}
+                prefetch={link.prefetching}
               >
                 {link.label}                      
               </Link>

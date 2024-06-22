@@ -1,0 +1,56 @@
+.project_hori_plx_wrapper {
+  border: 5px solid red;
+  /* width: 200px;
+  height: 100vh; */
+  position: relative;
+}
+
+.project_hori_plx_container {
+  height: 100vh;
+  width: 700vw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+/* ---------- SECTION 1 ---------- */
+.section_one {
+  border: 1px solid black;
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+  position: relative;
+}
+
+.section_two {
+  border: 1px solid black;
+  height: 100vh;
+  width: 100vw;
+  background-color: green;
+  position: relative;
+}
+
+.section_three {
+  border: 1px solid black;
+  height: 100vh;
+  width: 100vw;
+  background-color: gray;
+  position: relative;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .project_hori_plx_container {
+    width: 100vw;
+    height: 300vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* overflow-y: scroll; */
+  }
+}
+
+

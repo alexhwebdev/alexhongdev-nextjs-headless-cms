@@ -10,7 +10,8 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef } from 'react';
 import { montserrat } from '@/app/fonts';
-import { ImageDataObject } from '../homeHoriScroll/page';
+
+// import { ImageDataObject } from '../homeHoriScroll/page';
 
 
 const whatIDoImgs = [
@@ -20,11 +21,13 @@ const whatIDoImgs = [
   // { src: "floating_2.jpg" },
 ]
 
-interface HoriParallaxImgProps {
-  imgDataArray: ImageDataObject[];
-}
+// interface HoriParallaxImgProps {
+//   imgDataArray: ImageDataObject[];
+// }
 
-const HoriParallaxImg = ({imgDataArray}: HoriParallaxImgProps) => {
+const HoriParallaxImg = (
+  // {imgDataArray}: HoriParallaxImgProps
+) => {
   const horiParallaxImgRef1 = useRef(null);
   const horiParallaxImgRef2 = useRef(null);
 
@@ -74,8 +77,8 @@ const HoriParallaxImg = ({imgDataArray}: HoriParallaxImgProps) => {
                   className={styles.laptop}
                   // fill={true}
                   alt={"image"}
-                  // src={`/images/floatingImgs/${work.src}`}
-                  src={imgDataArray[4].url}
+                  src={`/images/floatingImgs/${work.src}`}
+                  // src={imgDataArray[5].url}
                   width={2500}
                   height={100}
                   // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"

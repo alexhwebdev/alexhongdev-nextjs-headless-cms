@@ -27,18 +27,19 @@ import getImgCollection from "../lib/getImgCollection";
 
 export default async function Home() {
   const portfolioPageData = await getPortfolioPageDocuments();
-  // console.log('portfolioPageData ', portfolioPageData)
+  // console.log('portfolioPageData.companyJson ', portfolioPageData[0].companyJson)
   
-  // ---------- COPY ----------
-  let lineData = getPageData("Portfolio", portfolioPageData)
-  // console.log('lineData ', lineData)
+  const companyData = portfolioPageData[0].companyJson;
+  // console.log('companyData ', companyData)
+
+  // let lineData = getPageData("Portfolio", portfolioPageData)
+  // // console.log('lineData ', lineData)
   
-  let imgDataArray = [
-    // ...getImgCollection("Portfolio", portfolioPageData)
-    ...getImgCollection("Portfolio", portfolioPageData)
-  ];
-  // ---------- IMAGES ----------
-  // console.log('imgDataArray ', imgDataArray)
+  // let imgDataArray = [
+  //   // ...getImgCollection("Portfolio", portfolioPageData)
+  //   ...getImgCollection("Portfolio", portfolioPageData)
+  // ];
+  // // console.log('imgDataArray ', imgDataArray)
 
 
   return (
@@ -46,8 +47,9 @@ export default async function Home() {
       <HomeHoverMixBlend />
 
       <HomeHoriScroll 
-        lineData={lineData} 
-        imgDataArray={imgDataArray}
+        companyData={companyData}
+        // lineData={lineData} 
+        // imgDataArray={imgDataArray}
         // portfolioPageData={portfolioPageData}
       />
       {/* <UpDownParallax /> */}
@@ -108,3 +110,21 @@ export default function Home() {
   )
 }
 */
+
+
+
+
+
+// export default async function Home() {
+//   const portfolioPageData = await getPortfolioPageDocuments();
+//   const companyData = portfolioPageData[0].companyJson;
+//   return (
+//     <main style={{overflow: 'hidden'}}>
+//       <HomeHoverMixBlend />
+
+//       <HomeHoriScroll 
+//         companyData={companyData}
+//       />
+//     </main>
+//   )
+// }

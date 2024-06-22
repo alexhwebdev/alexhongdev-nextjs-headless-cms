@@ -1,0 +1,74 @@
+.projectsPageWrapper {
+  // border: 5px solid blue;
+  width: 100vw;
+  // height: 300vh;
+  margin: 0 auto;
+  max-width: 90vw;
+  overflow: hidden;
+
+  .line {
+    width: 100%;
+    border-bottom: 2px solid gray;
+    position: relative;
+    z-index: 1;
+    left: -200%;
+
+    animation: animateFromLeft 1s ease-in-out forwards;
+    /* animation-delay: -80s; */
+    animation-delay: 1.5s;
+  }
+
+  .titleSection {
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    padding: 75px 0px 50px;
+
+    h5 {
+      font-size: 1.2em;
+      position: relative;
+      text-transform: uppercase;
+      left: -200%;
+
+      animation: animateFromLeft 1s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+    h3 {
+      font-size: 3em;
+      font-weight: 400;
+      letter-spacing: -2px;
+      padding-bottom: 50px;
+      position: relative;
+      left: -200%;
+
+      animation: animateFromLeft 1s ease-in-out forwards;
+      animation-delay: 2.3s;
+    }
+    .titleSectionLine {
+      width: 100%;
+      border-bottom: 1px solid gray;
+      position: relative;
+      z-index: 1;
+      left: -200%;
+
+      animation: animateFromLeft 1s ease-in-out forwards;
+      animation-delay: 2.5s;
+    }
+  }
+}
+
+
+@keyframes animateFromLeft {
+  0% { 
+    opacity: 0;
+    /* transform: translateX(-100%);  */
+    left: -200%;
+  }
+  100% { 
+    opacity: 1;
+    /* transform: translateX(0%);  */
+    left: 0%;
+  }
+}
+
+
+

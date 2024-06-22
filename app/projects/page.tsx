@@ -20,9 +20,9 @@ import ProjectsTextGradient from './components/ProjectsTextGradient/page';
 
 
 
-interface ProjectProps {
-  index: number;
-}
+// interface ProjectProps {
+//   index: number;
+// }
 
 // const ProjectsPage: React.FC<ProjectProps> = () => {
 const ProjectsPage = () => {
@@ -103,15 +103,11 @@ const ProjectsPage = () => {
 
   return (
     <div className="projectsPageWrapper">
-      {/* <div className="cursor"> */}
-        <div className="cursor_inner_div">
-          <span>see more</span>
-        </div>
-      {/* </div> */}
-
+      <div className="cursor_inner_div">
+        <span>see more</span>
+      </div>
 
       {/* <ProjectsAniFadeUpJS> Projects </ProjectsAniFadeUpJS> */}
-
       <ProjectsAniFadeUpJS />
 
       <div 
@@ -125,16 +121,12 @@ const ProjectsPage = () => {
         <div className="titleSectionLine"></div>
       </div>
 
-
       {/* <div className="">
         <ProjectsScrollTextGradient />
       </div> */}
       <ProjectsTextGradient />
 
       <ProjectPlx />
-
-
-
 
       {/* <div className="parallaxTextImgContainer">
         <ParallaxScrollTextAndImg />
