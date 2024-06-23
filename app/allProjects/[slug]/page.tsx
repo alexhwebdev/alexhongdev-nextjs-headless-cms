@@ -2,9 +2,11 @@ import React from 'react'
 import ProjectPageWrapper from '../components/SlugPageWrapper/SlugPageWrapper'
 import { getProjectData, getSlugs } from '../../../lib/contentfulApi';
 
+// THIS RESULTS --> 
+// ● (SSG) prerendered as static HTML (uses getStaticProps)
 export async function generateStaticParams() {
   const slugs = await getSlugs();
-  console.log('EachProjectPage slugs ', slugs)
+  // console.log('EachProjectPage slugs ', slugs)
 
   return slugs.map((slug) => ({ slug }));
 }

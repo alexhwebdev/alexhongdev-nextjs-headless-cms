@@ -3,30 +3,9 @@
 import React, { useRef } from 'react';
 import styles from './page.module.scss';
 
-// import Picture1 from '../../../../public/images/1.jpeg';
-// import Picture2 from '../../../../public/images/2.jpeg';
-// import Picture3 from '../../../../public/images/3.jpg';
-// import Picture4 from '../../../../public/images/4.jpg'
-// import Picture5 from '../../../../public/images/5.jpg'
-// import Picture6 from '../../../../public/images/6.jpg'
-// import Picture7 from '../../../../public/images/7.jpeg'
-
-// import Picture1 from '../../../../public/images/projects/ibd-ai/ai-0.png';
-// import Picture2 from '../../../../public/images/projects/ibd-ai/ai-1.png';
-// import Picture3 from '../../../../public/images/projects/ibd-ai/ai-6-long.png';
-// import Picture4 from '../../../../public/images/projects/ibd-ai/ai-3.png';
-// import Picture5 from '../../../../public/images/projects/ibd-ai/ai-4.png';
-// import Picture6 from '../../../../public/images/projects/ibd-ai/ai-5.png';
-// import Picture7 from '../../../../public/images/projects/ibd-ai/ai-2.png';
 import Image from 'next/image';
 import { useScroll, useTransform, motion} from 'framer-motion';
 
-
-
-// interface Props {
-//   siteInfoCompany: string;
-//   siteInfoLink: string;
-// }
 
 interface ProjectsScrollZoomPlxProps {
   matchedProjectObj: {
@@ -48,17 +27,19 @@ interface ProjectsScrollZoomPlxProps {
       url: string;
       title: string;
     }[];
+    pageImagesCollection: {
+      items: {
+        url: string;
+        description: string;
+        title: string;
+      }[];
+    };
   };
 }
 
 export default function ProjectsScrollZoomPlx({ 
-  matchedProjectObj,
-  // siteInfoCompany, siteInfoLink
+  matchedProjectObj
 }: ProjectsScrollZoomPlxProps) {
-  // console.log('ProjectsScrollZoomPlx matchedProjectObj ', matchedProjectObj)
-
-  // const siteCompany = siteInfoCompany;
-  // const siteLink = siteInfoLink;
 
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -72,37 +53,6 @@ export default function ProjectsScrollZoomPlx({
   const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
   const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
 
-  // const pictures = [
-  //   {
-  //     url: Picture1,
-  //     scale: scale4
-  //   },
-  //   {
-  //     url: Picture2,
-  //     scale: scale5
-  //   },
-  //   {
-  //     url: Picture3,
-  //     scale: scale6
-  //   },
-  //   {
-  //     url: Picture4,
-  //     scale: scale5
-  //   },
-  //   {
-  //     url: Picture5,
-  //     scale: scale6
-  //   },
-  //   {
-  //     url: Picture6,
-  //     scale: scale8
-  //   },
-  //   {
-  //     url: Picture7,
-  //     scale: scale9
-  //   }
-  // ]
-
   const scales = [
     { scale: scale4 },
     { scale: scale5 },
@@ -113,10 +63,20 @@ export default function ProjectsScrollZoomPlx({
     { scale: scale9 }
   ]
 
-  const matchedIntroImageJson = matchedProjectObj?.introImageJson;
-  if (!matchedIntroImageJson) {
-    return <div>Loading...</div>;
-  }
+  // const matchedIntroImageJson = matchedProjectObj?.introImageJson;
+  // // console.log(
+  // //   'ProjectsScrollZoomPlx matchedProjectObj ', 
+  // //   matchedProjectObj
+  // // )
+
+  // if (!matchedIntroImageJson) {
+  //   return <div>Loading...</div>;
+  // }
+
+  const imgCollection = matchedProjectObj.pageImagesCollection;
+  // console.log('imgCollection ', imgCollection.items)
+  const firstSevenImgs = imgCollection.items.slice(0, 7)
+  // console.log('firstSevenImgs ', firstSevenImgs)
 
   return (
     <div ref={container} className={styles.scrollZoomContainer}>
@@ -128,24 +88,23 @@ export default function ProjectsScrollZoomPlx({
       <div className={styles.sticky}>
         {
           // matchedIntroImageJson.map( ({url, scale}, index: number) => (
-            matchedIntroImageJson.map( ({url}, index: number) => (
-            // scales.map((scale) => (
-              <motion.div 
-                key={ index }
-                style={{ scale: scales[index]?.scale }}
-                className={ styles.el }
-              >
-                <div className={styles.imageContainer}>
-                  <Image
-                    src={url}
-                    fill
-                    alt="image"
-                    // placeholder='blur'
-                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                  />
-                </div>
-              </motion.div>                
-            // ))
+          // matchedIntroImageJson.map( ({url}, index: number) => (
+          firstSevenImgs.map( ({url}, index: number) => (
+            <motion.div 
+              key={ index }
+              style={{ scale: scales[index]?.scale }}
+              className={ `${styles.el} ` }
+            >
+              <div className={styles.imageContainer}>
+                <Image
+                  src={url}
+                  fill
+                  alt="image"
+                  // placeholder='blur'
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                />
+              </div>
+            </motion.div>
           ))
         }
       </div>

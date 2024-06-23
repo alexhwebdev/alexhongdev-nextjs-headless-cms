@@ -1,5 +1,5 @@
 .project_hori_plx_wrapper {
-  border: 5px solid red;
+  /* border: 5px solid red; */
   /* width: 200px;
   height: 100vh; */
   position: relative;
@@ -70,7 +70,7 @@
 }
 
 .all_sections {
-  border: 5px solid pink;
+  /* border: 5px solid pink; */
   height: 100vh;
   width: 100vw;
   /* background-color: hsl(217.2 32.6% 17.5%); */
@@ -85,6 +85,7 @@
   top: 100px;
 }
 .img_container img {
+  border-radius: 5px;
   margin: 0 auto;
 }
 

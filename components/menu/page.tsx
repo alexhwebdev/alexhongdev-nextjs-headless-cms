@@ -22,7 +22,7 @@ const menuLinks = [
   { path: "/about", label: "About", prefetching: true },
   { path: "/allProjects", label: "Projects", prefetching: false },
   { path: "/contact", label: "Contact", prefetching: false },
-  { path: "/testpage", label: "TestPage", prefetching: false },
+  // { path: "/testpage", label: "TestPage", prefetching: false },
 ];
 
 export default function Menu({menuIsActive, setMenuIsActive}: Props) {

@@ -15,42 +15,6 @@ import { inter } from '../../../fonts';
 import './page.css'
 
 
-
-interface SiteInfo {
-  siteCompany: string;
-  siteName: string;
-  siteLink: string;
-  imgs: {
-    [key: string]: string; // Assuming keys are numeric strings
-  };
-}
-
-const siteInfo: SiteInfo[] = [
-  { 
-    siteCompany: "Investor's Business Daily",
-    siteName: "How to Invest in AI",
-    siteLink: 'https://investors.com/',
-    imgs: {
-      // 1: "/images/projects/ibd-ai/ai-0.png",
-      // 2: "/images/projects/ibd-ai/ai-1.png",
-      // 3: "/images/projects/ibd-ai/ai-2.png",
-      // 4: "/images/projects/ibd-ai/ai-3.png",
-      // 5: "/images/projects/ibd-ai/ai-4.png",
-      // 6: "/images/projects/ibd-ai/ai-5.png",
-      // 7: "/images/projects/ibd-ai/ai-6.png",
-      // 8: "/images/projects/ibd-ai/ai-7.png",
-
-      1: "/images/projects/ibd-ai/ai-1.png",
-      2: "/images/projects/ibd-ai/ai-2.png",
-      3: "/images/projects/ibd-ai/ai-3.png",
-      4: "/images/projects/ibd-ai/ai-4.png",
-      5: "/images/projects/ibd-ai/ai-5.png",
-      6: "/images/projects/ibd-ai/ai-6.png",
-      7: "/images/projects/ibd-ai/ai-7.png",
-    }
-  }
-]
-
 // interface ProjectJson {
 //   siteUrl: string;
 // }
@@ -65,26 +29,31 @@ const siteInfo: SiteInfo[] = [
 //   imageJson: ImageJson;
 // }
 interface ProjectPageWrapperProps {
-  // matchedProjectObj: {
+  projectName: string;
+  slug: string;
+  description: string;
+  projectJson: {
+    companyName: string;
     projectName: string;
     slug: string;
     description: string;
-    projectJson: {
-      companyName: string;
-      projectName: string;
-      slug: string;
+    siteUrl: string;
+  }[];
+  introImageJson: {
+    url: string;
+    title: string;
+  }[];
+  imageJson: {
+    url: string;
+    title: string;
+  }[];
+  pageImagesCollection: {
+    items: {
+      url: string;
       description: string;
-      siteUrl: string;
-    }[];
-    introImageJson: {
-      url: string;
       title: string;
     }[];
-    imageJson: {
-      url: string;
-      title: string;
-    }[];
-  // };
+  };
 }
 
 export default function ProjectPageWrapper(
@@ -114,7 +83,6 @@ export default function ProjectPageWrapper(
       },
       once: true
     });
-
 
     const deskTopSize = '(min-width: 1280px)';
     const tabletSize = '(max-width: 800px) and (min-width: 768px)';
@@ -193,7 +161,12 @@ export default function ProjectPageWrapper(
       // console.log('item.slug', `/allProjects/${item.slug}`.toString())
       `/allProjects/${item.slug}`.toString() === pathname
   );
-  console.log('matchedProjectObj ', matchedProjectObj);
+  // console.log(
+  //   'AAAmatchedProjectObj ', 
+  //   // matchedProjectObj
+  //   // matchedProjectObj.pageImagesCollection
+  //   matchedProjectObj.pageImagesCollection.items
+  // );
   // console.log('matchedProjectObj ', matchedProjectObj.projectJson[0].siteUrl);
 
   // Handle case where no matching project is found
@@ -206,27 +179,25 @@ export default function ProjectPageWrapper(
     return <div>Loading...</div>; // Handle case where imageJson is not an array
   }
 
+  const horiScrollImgs: { 
+    url: string; 
+    description: string; 
+    title: string; 
+  }[] = [];
+  matchedProjectObj.pageImagesCollection.items.map((eachImg) => {
+    if (eachImg.description === "horiScroll") {
+      horiScrollImgs.push(eachImg);
+    }
+  })
+  // console.log('horiScrollImgs ', horiScrollImgs);
+
   return (
     <div className="project_hori_plx_wrapper fadeup-startup">
       <ProjectsScrollZoomPlx 
         matchedProjectObj={matchedProjectObj}
-        // siteInfoCompany={siteInfo[0].siteCompany}
-        // siteInfoLink={siteInfo[0].siteLink}
       />
 
       <div ref={triggerRef}>
-        {/* {siteInfo.map((eachItem, index) => (
-          <div key={index} className={`project_name_link ${montserrat.className}`}>
-            <h3>{eachItem.siteName}</h3>
-
-            <div className="btns_link_close">
-              <a href={`${eachItem.siteLink}`} target="_blank">Visit Site</a>
-              <span></span>
-              <p>Close</p>
-            </div>
-          </div>
-        ))} */}
-
         <div className={`project_name_link ${montserrat.className}`}>
           <h3>{matchedProjectObj!.projectName}</h3>
 
@@ -241,7 +212,7 @@ export default function ProjectPageWrapper(
         </div>
 
         <div className="project_hori_plx_container" ref={sectionRef}>
-          {matchedImageJson.map((item, index) => (
+          {horiScrollImgs.map((item, index) => (
 
             <div key={index} className={`all_sections section_${index}`}>
               <div className="img_container">
@@ -256,25 +227,7 @@ export default function ProjectPageWrapper(
                 />
               </div>
             </div>
-
           ))}
-          {/* {siteInfo.map((item, index) => (
-            Object.keys(item.imgs).map((key) => (
-              <section key={key} className={`all_sections section_${key}`}>
-                <div className="img_container">
-                  <Image
-                    className="img"
-                    src={item.imgs[key]}
-                    alt={`Image ${key}`}
-                    width={800}
-                    height={800}
-                    // placeholder="blur"
-                    // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                  />
-                </div>
-              </section>
-            ))
-          ))} */}
         </div>
       </div>
     </div>
