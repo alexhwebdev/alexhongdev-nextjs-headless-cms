@@ -6,13 +6,13 @@ import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { usePathname } from 'next/navigation';
-import ProjectsScrollZoomPlx from "../projectsScrollZoomPlx/ProjectsScrollZoomPlx";
+import ProjectsScrollZoomPlx from "../ProjectsScrollZoomPlx/ProjectsScrollZoomPlx";
 
 import { raleway } from '../../../fonts';
 import { montserrat } from '../../../fonts';
 import { inter } from '../../../fonts';
-// import styles from './page.module.css'
-import './page.css'
+// import styles from './page.module.css';
+import './page.css';
 
 
 // interface ProjectJson {
@@ -62,7 +62,8 @@ export default function ProjectPageWrapper(
 ) {
   const triggerRef = useRef(null);
   const sectionRef = useRef(null);
-  
+
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -99,6 +100,7 @@ export default function ProjectPageWrapper(
         },
         {
           translateX: "-600vw",
+          // translateX: `-${imgCount - 1}00vw`,
           ease: "none",
           duration: 1,
           normalizeScroll: true,
@@ -165,19 +167,19 @@ export default function ProjectPageWrapper(
   //   'AAAmatchedProjectObj ', 
   //   // matchedProjectObj
   //   // matchedProjectObj.pageImagesCollection
-  //   matchedProjectObj.pageImagesCollection.items
+  //   matchedProjectObj.pageImagesCollection.items.length
   // );
-  // console.log('matchedProjectObj ', matchedProjectObj.projectJson[0].siteUrl);
 
   // Handle case where no matching project is found
   if (!matchedProjectObj) {
-    return <div>Loading...</div>;
+    return <div>Loading... matchedProjectObj</div>;
   }
 
-  const matchedImageJson = matchedProjectObj?.imageJson;
-  if (!Array.isArray(matchedImageJson)) {
-    return <div>Loading...</div>; // Handle case where imageJson is not an array
-  }
+  // const matchedImageJson = matchedProjectObj?.imageJson;
+  // console.log('matchedImageJson ', matchedImageJson);
+  // if (!Array.isArray(matchedImageJson)) {
+  //   return <div>Loading... matchedImageJson</div>; // Handle case where imageJson is not an array
+  // }
 
   const horiScrollImgs: { 
     url: string; 
@@ -190,6 +192,16 @@ export default function ProjectPageWrapper(
     }
   })
   // console.log('horiScrollImgs ', horiScrollImgs);
+
+  let imgCount = 0;
+  matchedProjectObj.pageImagesCollection.items.map((eachImg) => {
+    if (eachImg.description === "horiScroll") {
+      imgCount += 1;
+    }
+  })
+  // console.log('imgCount ', imgCount)
+
+
 
   return (
     <div className="project_hori_plx_wrapper fadeup-startup">

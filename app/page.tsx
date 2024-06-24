@@ -23,6 +23,7 @@ import NameAnimation from "@/components/nameAnimation/page";
 import { getPortfolioPageDocuments } from "../lib/contentfulApi";
 import getPageData from "../lib/getPageData";
 import getImgCollection from "../lib/getImgCollection";
+import PageTransitionEffect from "@/components/PageTransEffect/page";
 
 
 export default async function Home() {
@@ -30,7 +31,7 @@ export default async function Home() {
   // console.log('portfolioPageData.companyJson ', portfolioPageData[0].companyJson)
   
   const companyData = portfolioPageData[0].companyJson;
-  // console.log('companyData ', companyData)
+  console.log('Home companyData ', companyData)
 
   // let lineData = getPageData("Portfolio", portfolioPageData)
   // // console.log('lineData ', lineData)
@@ -43,6 +44,7 @@ export default async function Home() {
 
 
   return (
+    <PageTransitionEffect>
     <main style={{overflow: 'hidden'}}>
       <HomeHoverMixBlend />
 
@@ -73,6 +75,7 @@ export default async function Home() {
         <VerticalInfiniteScroll />
       </div> */}
     </main>
+    </PageTransitionEffect>
   )
 }
 

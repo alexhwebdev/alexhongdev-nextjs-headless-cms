@@ -55,7 +55,7 @@ export default function HoriParallaxGsap(
   // { imgDataArray }: HoriParallaxGsapProps
   { companyData }: { companyData: CompanyDataProps[] }
 ) {
-  // console.log('HoriParallaxGsap companyData ', companyData);
+  console.log('HoriParallaxGsap companyData ', companyData);
   // const portfolioPageData = await getPortfolioPageDocuments();
   
   // console.log('HoriParallaxGsap testGetImg ', testGetImg)
@@ -142,7 +142,7 @@ export default function HoriParallaxGsap(
                 >
                   <h5>{ company.company }</h5>
                   <h3>
-                    Paper
+                    View
                   </h3>
                   <Image 
                     // fill={true}

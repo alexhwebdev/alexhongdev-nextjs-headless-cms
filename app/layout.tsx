@@ -12,7 +12,9 @@ import NameAnimation from "@/components/nameAnimation/page";
 import LightDarkToggle from "@/components/LightDarkToggle/page";
 import SmoothScroll from "@/components/smoothScroll/page";
 import PageTransitionEffect from "@/components/PageTransEffect/page";
-
+import {TransitionProvider} from "./context/TransitionContext"
+import Transition from "./context/Transition"
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Alex Hong - Next.js Portfolio",
@@ -30,7 +32,11 @@ export default function RootLayout({
       <body 
         // className={inter.className}
       >
-        <PageTransitionEffect>
+<Link style={{color: "black"}}scroll={false} href="/pageOne">PageOne</Link>
+<Link style={{color: "black"}}scroll={false} href="/pageTwo">PageTwo</Link>
+        {/* <PageTransitionEffect> */}
+        {/* <TransitionProvider>
+        <Transition> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -53,7 +59,9 @@ export default function RootLayout({
 
             <SmoothScroll>
               {/* <PageTransitionEffect> */}
+              
                 {children}
+              
               {/* </PageTransitionEffect> */}
             </SmoothScroll>
 
@@ -70,7 +78,9 @@ export default function RootLayout({
           </div>
 
         </ThemeProvider>
-        </PageTransitionEffect>
+        {/* </PageTransitionEffect> */}
+        {/* </Transition>
+        </TransitionProvider> */}
       </body>
     </html>
   );

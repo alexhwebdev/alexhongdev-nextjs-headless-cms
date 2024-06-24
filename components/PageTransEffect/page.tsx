@@ -12,19 +12,23 @@ const variants = {
   enter: {
     opacity: 1,
     transition: {
-      duration: 0.25,
-      delay: 0.25, // WORKS
-      // delay: 2,
+      // duration: 0.25,
+      duration: 1,
+
+      // delay: 0.25, // WORKS
+      delay: 1,
+
       when: "afterChildren",
     },
   },
   exit: {
     opacity: 0,
     transition: { 
-      // delay: 1,
-      delay: 0.5,
-      duration: 0.25,
-      // duration: 2,
+      delay: 1,
+      // delay: 0.5,
+
+      // duration: 0.25,
+      duration: 1, // WORKS
       when: "beforeChildren",
     },
   },

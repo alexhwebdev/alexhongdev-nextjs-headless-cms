@@ -6,13 +6,13 @@ import ProjectsAniFadeUpJS from './components/ProjectsAniFadeUpJS/ProjectsAniFad
 import ProjectsTextGradient from './components/ProjectsTextGradient/ProjectsTextGradient';
 import ProjectPlx from './components/ProjectsPlx/ProjectsPlx';
 
-import { getIbdProjectsData } from '../../lib/contentfulApi';
+import { ibdProjectsData } from '../../lib/contentfulApi';
 
 import { inter } from '../../app/fonts';
 import { montserrat } from '../../app/fonts';
 import { raleway } from '../../app/fonts';
 import './page.scss';
-
+import PageTransitionEffect from "../../components/PageTransEffect/page";
 
 export interface companyInfoTitleProps {
   companyInfoTitle: string;
@@ -20,8 +20,15 @@ export interface companyInfoTitleProps {
 
 // const AllProjects = (props) => {
 export default async function AllProjects() {
-  // const ibdProjectsData = await getIbdProjectsData();
-  const ibdProjectsData = await getIbdProjectsData() as { 
+  // const ibd = 'ibd'
+  // const whichProject = `${ibd}ProjectsData`;
+  // console.log('whichProject ', whichProject)
+  // if ('ibd') {
+  //   return 
+  // }
+
+  // const ibdProjectsData = await ibdProjectsData();
+  const ibdProjects = await ibdProjectsData() as { 
     companyInfoJson: { 
       pageTitle: string; 
       companyName: string; 
@@ -36,30 +43,17 @@ export default async function AllProjects() {
       projectName: string;
     }[]; 
   }[];
-  // const ibdCompanyProjects = await getIbdProjectsData() as { 
-  //   companyProjectsJson: { 
-  //     slug: string;
-  //     gifUrl: string;
-  //     siteUrl: string;
-  //     bkgdImgUrl: string;
-  //     description: string;
-  //     projectName: string;
-  //   }[];
-  // }[];
-  // console.log('AllProjects ibdProjectsData ', ibdProjectsData)
-  // console.log('AllProjects ibdProjectsData[0].companyInfoJson ', ibdProjectsData[0].companyInfoJson)
-  // console.log('AllProjects ibdProjectsData[0].companyProjectsJson ', ibdProjectsData[0].companyProjectsJson)
-
   
-  const companyInfoTitle = ibdProjectsData[0].companyInfoJson[0].pageTitle;
-  const companyName = ibdProjectsData[0].companyInfoJson[0].companyName;
-  const companyName2 = ibdProjectsData[0].companyInfoJson[0].companyName2;
+  const companyInfoTitle = ibdProjects[0].companyInfoJson[0].pageTitle;
+  const companyName = ibdProjects[0].companyInfoJson[0].companyName;
+  const companyName2 = ibdProjects[0].companyInfoJson[0].companyName2;
   // console.log('companyInfoTitle ', companyInfoTitle)
 
-  const companyProjects = ibdProjectsData[0].companyProjectsJson;
+  const companyProjects = ibdProjects[0].companyProjectsJson;
   // console.log('companyProjects ', companyProjects)
 
   return (
+    <PageTransitionEffect>
     <div className="projectsPageWrapper">
       <CursorComponent />
       {/* <div className="cursor_inner_div">
@@ -89,6 +83,7 @@ export default async function AllProjects() {
       />
 
     </div>
+    </PageTransitionEffect>
   )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectPageWrapper from '../components/SlugPageWrapper/SlugPageWrapper'
 import { getProjectData, getSlugs } from '../../../lib/contentfulApi';
+import PageTransitionEffect from '../../../components/PageTransEffect/page';
 
 // THIS RESULTS --> 
 // ● (SSG) prerendered as static HTML (uses getStaticProps)
@@ -21,10 +22,12 @@ export default async function EachProjectPage() {
   // console.log('EachProjectPage projectPageData ', projectPageData)
 
   return (
+    <PageTransitionEffect>
     <div>
       <ProjectPageWrapper 
         projectPageData={projectPageData}
       />
     </div>
+    </PageTransitionEffect>
   )
 }
