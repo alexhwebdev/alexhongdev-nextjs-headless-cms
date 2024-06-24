@@ -68,6 +68,7 @@ export interface CompanyDataProps {
   role: string;
   imgSrc: string;
   siteUrl: string;
+  slug: string;
 }
 
 export default function HomeHoriScroll(

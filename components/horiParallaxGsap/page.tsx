@@ -1,10 +1,11 @@
-// "use client";
+"use client";
 
 // import { useRef } from 'react';
 // import { useScroll, useTransform, motion } from 'framer-motion';
 import styles from './page.module.css';
 // import './page.css';
 import Image from 'next/image';
+// import { useRouter } from 'next/navigation';
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -19,6 +20,7 @@ import {
 import { testGetImg } from '../../lib/testGetImg'
 
 import { getPortfolioPageDocuments } from "../../lib/contentfulApi";
+
 
 const works = [
   { 
@@ -122,6 +124,14 @@ export default function HoriParallaxGsap(
     // );
   }, []);
 
+  // const router = useRouter();
+  // const handleClick = () => {
+  //   router.push({
+  //     pathname: '/allProjects',
+  //     query: { message: 'Hello from ParentComponent!' },
+  //   });
+  // };
+
   return (
     <div className={`triggerRef ${styles.horiParallaxGsapContainer}`}
       // ref={triggerRef}
@@ -131,17 +141,28 @@ export default function HoriParallaxGsap(
       >
         {
           companyData.map((company, index) => {
+            console.log('index ', index)
             return (
               <div key={index} className={styles.undo_mix_blend_mode}>
                 {/* <div className={`${styles.box} ${montserrat.className}`}> */}
                 <Link 
                   // href={`/reviews/${review.slug}`}
-                  href={company.siteUrl}
-                  // href="/projects"
+                  // href={company.siteUrl}
+                  href={{
+                    pathname: '/allProjects',
+                    query: {"id": `${companyData[index].slug}`}
+                  }}
                   className={`${styles.box} ${montserrat.className}`}
+                  
                 >
                   <h5>{ company.company }</h5>
-                  <h3>
+                  <h3 
+                    // onClick={handleClick}
+                    // onClick={() => router.push({
+                    //   pathname: "/allProjects",
+                    //   query: { message: 'Hello from ParentComponent!' }
+                    // })}  
+                  >
                     View
                   </h3>
                   <Image 
