@@ -32,8 +32,10 @@ export default function RootLayout({
       <body 
         // className={inter.className}
       >
-<Link style={{color: "black"}}scroll={false} href="/pageOne">PageOne</Link>
-<Link style={{color: "black"}}scroll={false} href="/pageTwo">PageTwo</Link>
+{/* <Link style={{color: "black"}}scroll={false} href="/pageOne">PageOne</Link>
+<Link style={{color: "black"}}scroll={false} href="/pageTwo">PageTwo</Link> */}
+
+
         {/* <PageTransitionEffect> */}
         {/* <TransitionProvider>
         <Transition> */}

@@ -14,9 +14,7 @@ export async function generateStaticParams() {
 
 
 export default async function EachProjectPage() {
-  // console.log('EachProjectPage props ', props)
-  // EachProjectPage props  
-  // { params: { slug: 'ibd' }, searchParams: {} }
+  // EachProjectPage props --> { params: { slug: 'ibd' }, searchParams: {} }
   
   const projectPageData = await getProjectData();
   // console.log('EachProjectPage projectPageData ', projectPageData)

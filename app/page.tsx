@@ -26,33 +26,32 @@ import getImgCollection from "../lib/getImgCollection";
 import PageTransitionEffect from "@/components/PageTransEffect/page";
 
 
+
+
+
 export default async function Home() {
   const portfolioPageData = await getPortfolioPageDocuments();
-  // console.log('portfolioPageData.companyJson ', portfolioPageData[0].companyJson)
+  // console.log(
+  //   'portfolioPageData[0].pageImagesCollection ', 
+  //   portfolioPageData[0].pageImagesCollection
+  // )
   
   const companyData = portfolioPageData[0].companyJson;
-  console.log('Home companyData ', companyData)
+  // console.log('Home companyData ', companyData)
 
-  // let lineData = getPageData("Portfolio", portfolioPageData)
-  // // console.log('lineData ', lineData)
-  
-  // let imgDataArray = [
-  //   // ...getImgCollection("Portfolio", portfolioPageData)
-  //   ...getImgCollection("Portfolio", portfolioPageData)
-  // ];
-  // // console.log('imgDataArray ', imgDataArray)
-
-
+  const pageImagesCollection = portfolioPageData[0].pageImagesCollection;
+  // console.log(
+  //   'Home pageImagesCollection.items ', 
+  //   pageImagesCollection.items
+  // )
   return (
     <PageTransitionEffect>
     <main style={{overflow: 'hidden'}}>
       <HomeHoverMixBlend />
 
       <HomeHoriScroll 
-        companyData={companyData}
-        // lineData={lineData} 
-        // imgDataArray={imgDataArray}
-        // portfolioPageData={portfolioPageData}
+        companyData={companyData} 
+        pageImagesCollection={pageImagesCollection.items}
       />
       {/* <UpDownParallax /> */}
       {/* <ScrollSplitImg /> */}
@@ -77,57 +76,4 @@ export default async function Home() {
     </main>
     </PageTransitionEffect>
   )
-}
-
-
-
-
-/*
-'use client';
-// import styles from './page.module.scss'
-import { useState } from 'react';
-import Header from '../components/header';
-import Menu from '../components/menu';
-// import CenteredPixelTransition from '../components/pixelTransition/centered';
-import HorizontalPixelTransition from '../components/pixelTransition/horizontal';
-// import VerticalPixelTransition from '../components/pixelTransition/vertical';
-
-
-export default function Home() {
-  const [menuIsActive, setMenuIsActive] = useState<boolean>(false);
-  return (
-    <main 
-      // className={styles.main}
-    >
-      <Header 
-        menuIsActive={menuIsActive} 
-        setMenuIsActive={setMenuIsActive}
-      />
-      
-      <Menu menuIsActive={menuIsActive}/>
-      
-      // <CenteredPixelTransition menuIsActive={menuIsActive}/>
-      // <HorizontalPixelTransition menuIsActive={menuIsActive}/>
-      // <VerticalPixelTransition menuIsActive={menuIsActive}/>
-    </main>
-  )
-}
-*/
-
-
-
-
-
-// export default async function Home() {
-//   const portfolioPageData = await getPortfolioPageDocuments();
-//   const companyData = portfolioPageData[0].companyJson;
-//   return (
-//     <main style={{overflow: 'hidden'}}>
-//       <HomeHoverMixBlend />
-
-//       <HomeHoriScroll 
-//         companyData={companyData}
-//       />
-//     </main>
-//   )
-// }
+};

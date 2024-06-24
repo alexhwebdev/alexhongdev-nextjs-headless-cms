@@ -96,17 +96,17 @@
   line-height: 140%;
 }
 /* Set : mix-blend-mode */
-.right_arrow_container p {
+/* .right_arrow_container p {
   color: white;
-}
+} */
 .right_arrow_container svg {
   font-size: 1.2em;
   padding-top: 2px;
 }
 /* Set : mix-blend-mode */
-.right_arrow_container svg {
+/* .right_arrow_container svg {
   color: white;
-}
+} */
 
 /* -------------------- FADEUP : NOT USING THIS*/
 

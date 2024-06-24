@@ -69,10 +69,6 @@ export default function ProjectsScrollZoomPlx({
   // //   matchedProjectObj
   // // )
 
-  // if (!matchedIntroImageJson) {
-  //   return <div>Loading...</div>;
-  // }
-
   const imgCollection = matchedProjectObj.pageImagesCollection;
   // console.log('imgCollection ', imgCollection.items)
   const firstSevenImgs = imgCollection.items.slice(0, 7)

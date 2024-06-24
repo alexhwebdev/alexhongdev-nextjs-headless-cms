@@ -57,20 +57,7 @@ export default function HoriParallaxGsap(
   // { imgDataArray }: HoriParallaxGsapProps
   { companyData }: { companyData: CompanyDataProps[] }
 ) {
-  console.log('HoriParallaxGsap companyData ', companyData);
-  // const portfolioPageData = await getPortfolioPageDocuments();
-  
-  // console.log('HoriParallaxGsap testGetImg ', testGetImg)
-
-
-  // console.log('HoriParallaxGsap imgDataArray ', imgDataArray)
-
-  // const sectionRef = useRef(null);
-  // const triggerRef = useRef(null);
-  // // const boxRef = useRef(null);
-
-  // const firstFourArray = imgDataArray.slice(0, 4);
-  // console.log('firstFourArray ', firstFourArray);
+  // console.log('HoriParallaxGsap companyData ', companyData);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -124,30 +111,16 @@ export default function HoriParallaxGsap(
     // );
   }, []);
 
-  // const router = useRouter();
-  // const handleClick = () => {
-  //   router.push({
-  //     pathname: '/allProjects',
-  //     query: { message: 'Hello from ParentComponent!' },
-  //   });
-  // };
-
   return (
-    <div className={`triggerRef ${styles.horiParallaxGsapContainer}`}
-      // ref={triggerRef}
-    >
-      <section className={`sectionRef ${styles.boxContainer}`}
-        // ref={sectionRef}
-      >
+    <div className={`triggerRef ${styles.horiParallaxGsapContainer}`}>
+      <section className={`sectionRef ${styles.boxContainer}`}>
         {
           companyData.map((company, index) => {
-            console.log('index ', index)
+            // console.log('index ', index)
             return (
               <div key={index} className={styles.undo_mix_blend_mode}>
-                {/* <div className={`${styles.box} ${montserrat.className}`}> */}
                 <Link 
                   // href={`/reviews/${review.slug}`}
-                  // href={company.siteUrl}
                   href={{
                     pathname: '/allProjects',
                     query: {"id": `${companyData[index].slug}`}
@@ -156,13 +129,7 @@ export default function HoriParallaxGsap(
                   
                 >
                   <h5>{ company.company }</h5>
-                  <h3 
-                    // onClick={handleClick}
-                    // onClick={() => router.push({
-                    //   pathname: "/allProjects",
-                    //   query: { message: 'Hello from ParentComponent!' }
-                    // })}  
-                  >
+                  <h3>
                     View
                   </h3>
                   <Image 
@@ -178,57 +145,11 @@ export default function HoriParallaxGsap(
                   />
                   <p>{ company.cardDesc }</p>
                 </Link>
-                {/* </div> */}
               </div>
-
             )
           })
         }
       </section>
     </div>
   )
-}
-
-
-
-
-// return (
-//   <div ref={triggerRef} className={styles.horiParallaxGsapContainer}>
-//     <section ref={sectionRef} className={styles.boxContainer}>
-
-//       {
-//         works.map((work, index) => {
-//           return (
-//             <div key={index} className={styles.undo_mix_blend_mode}>
-//               {/* <div className={`${styles.box} ${montserrat.className}`}> */}
-//               <Link 
-//                 // href={`/reviews/${review.slug}`}
-//                 href={`/projects`}
-//                 // href="/projects"
-//                 className={`${styles.box} ${montserrat.className}`}
-//               >
-//                 <h5>{ work.company }</h5>
-//                 <h3>
-//                   Paper
-//                 </h3>
-//                 <Image 
-//                   // fill={true}
-//                   alt={"image"}
-//                   src={`/images/${work.src}`}
-//                   // src={ work.url }
-//                   // src={ imgDataArray[1].url }
-//                   width={300}
-//                   height={200}
-//                   // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-//                 />
-//                 <p>{ work.description }</p>
-//               </Link>
-//               {/* </div> */}
-//             </div>
-
-//           )
-//         })
-//       }
-//     </section>
-//   </div>
-// )
+};

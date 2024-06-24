@@ -39,6 +39,7 @@ const ProjectsAniFadeUpJS = ({ companyInfoTitle }: companyInfoTitleProps) => {
               {eachChar}
             </h2>
           ))}
+
         </div>
       </div>
     </div>

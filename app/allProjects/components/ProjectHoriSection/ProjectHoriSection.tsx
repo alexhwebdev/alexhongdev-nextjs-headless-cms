@@ -155,9 +155,6 @@ const ProjectHoriSection = ({matchedProjectObj}: ProjectHoriSectionProps) => {
     // https://gsap.com/community/forums/topic/29235-horizontal-and-vertical-scroll/
   }, []);
 
-
-
-
   return (
     <div ref={triggerRef}>
       <div className={`project_name_link ${montserrat.className}`}>
@@ -193,6 +190,5 @@ const ProjectHoriSection = ({matchedProjectObj}: ProjectHoriSectionProps) => {
       </div>
     </div>
   )
-}
-
+};
 export default ProjectHoriSection;

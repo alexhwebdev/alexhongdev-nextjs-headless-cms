@@ -10,18 +10,25 @@ import WhatIDoTyping from '../whatIDoTyping/page';
 import TechWorkWith2 from "../techWorkWith2/page";
 import FloatingImgs from '../floatingImgs/page';
 import HoriParallaxImg from '../horiParallaxImg/page';
+import { CompanyDataProps, HomeHoriScrollProps, PageImage } from '../homeHoriScroll/page';
 
-// import { ImageDataObject } from '../homeHoriScroll/page';
-
-// interface WhatIDoProps {
-//   imgDataArray: ImageDataObject[];
-// }
 
 const WhatIDo = (
-  // {imgDataArray}: WhatIDoProps
+  {
+    companyData, 
+    pageImagesCollection
+  }: HomeHoriScrollProps
 ) => {
+  console.log(
+    'WhatIDo pageImagesCollection ', 
+    pageImagesCollection
+  )
+  
+  const devPreviewShipImg = pageImagesCollection[4].url;
+  // console.log('WhatIDo devPreviewShipImg ', devPreviewShipImg)
+  const macBlackWhiteImg = pageImagesCollection[5];
+  console.log('WhatIDo macBlackWhiteImg ', typeof macBlackWhiteImg)
 
-  // console.log('WhatIDo imgDataArray ', imgDataArray)
   return (
     <div className="whatIDoContainer">
       <WhatIDoTyping />
@@ -29,14 +36,16 @@ const WhatIDo = (
       {/* <FloatingImgs /> */}
       <HoriParallaxImg 
         // imgDataArray={imgDataArray}
+        // macBlackWhite={macBlackWhite}
+        macBlackWhiteImg={macBlackWhiteImg}
       />
 
       <Image 
         className={`cupImg`}
         // fill={true}
         alt={"image"}
-        src={`/images/floatingImgs/floating_1.jpg`}
-        // src={imgDataArray[4].url}
+        // src={`/images/floatingImgs/floating_1.jpg`}
+        src={ devPreviewShipImg }
         width={500}
         height={300}
         // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"

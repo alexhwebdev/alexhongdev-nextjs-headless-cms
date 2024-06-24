@@ -27,37 +27,6 @@ import { inter } from '@/app/fonts';
 import styles from './page.module.css';
 import './page.css'
 
-
-
-
-
-// interface LineDataObject {
-//   '$$typeof': symbol;
-//   type: string;
-//   key: null;
-//   ref: null;
-//   props: {
-//     // children: any[]; // Adjust this based on what children should be
-//     children: string;
-//   };
-//   _owner: null;
-//   _store: {};
-// }
-// export interface ImageDataObject {
-//   title: string;
-//   description: string;
-//   contentType: string;
-//   fileName: string;
-//   size: number;
-//   url: string;
-//   width: number;
-//   height: number;
-// }
-// export interface HomeHoriScrollProps {
-//   lineData: LineDataObject[];
-//   imgDataArray: ImageDataObject[];
-// }
-
 export interface CompanyDataProps {
   company: string;
   cardDesc: string;
@@ -70,16 +39,40 @@ export interface CompanyDataProps {
   siteUrl: string;
   slug: string;
 }
+export interface PageImage {
+    url: string;
+  // pageImagesCollection: {
+    items: {
+      title: string;
+      description: string;
+      contentType: string;
+      fileName: string;
+      size: number;
+      url: string;
+      width: number;
+      height: number;    
+    }[];
+  // }
+}
+export interface HomeHoriScrollProps {
+  companyData: CompanyDataProps[];
+  pageImagesCollection: PageImage[];
+}
 
 export default function HomeHoriScroll(
   { 
     // lineData, imgDataArray,
-    companyData
-  }: { companyData: CompanyDataProps[] }
-  // : HomeHoriScrollProps
+    companyData,
+    pageImagesCollection
+  }: HomeHoriScrollProps
 ) {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
+
+  console.log(
+    'HomeHoriScroll pageImagesCollection ', 
+    pageImagesCollection
+  )
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -87,9 +80,7 @@ export default function HomeHoriScroll(
     const pin = gsap.fromTo(
       sectionRef.current,
       // ".scrollSectionInner",
-      {
-        translateX: 0,
-      },
+      { translateX: 0 },
       {
         translateX: "-600vw",
         ease: "none",
@@ -213,6 +204,8 @@ export default function HomeHoriScroll(
 
             <WhatIDo 
               // imgDataArray={imgDataArray}
+              companyData={companyData}
+              pageImagesCollection={pageImagesCollection}
             />
           </div>
 
@@ -228,57 +221,4 @@ export default function HomeHoriScroll(
       </div>
     </section>
   );
-}
-
-
-
-
-
-// export default function HomeHoriScroll(
-//   { 
-//     companyData
-//   }
-// ) {
-//   const sectionRef = useRef(null);
-//   const triggerRef = useRef(null);
-
-//   useGSAP(() => {
-//     gsap.registerPlugin(ScrollTrigger);
-    
-//     const pin = gsap.fromTo(
-//       sectionRef.current,
-//       // ".scrollSectionInner",
-//       {
-//         translateX: 0,
-//       },
-//       {
-//         translateX: "-600vw",
-//         ease: "none",
-//         duration: 1,
-//         scrollTrigger: {
-//           trigger: triggerRef.current,
-//           // trigger: ".triggerRef",
-//           start: "top top",
-//           end: "3000 top",    // This allows horizontal scroll
-//           // end: "top top",
-//           scrub: 0.6,
-//           pin: true,
-//         },
-//       }
-//     );
-//     return () => {
-//       {/* A return function for killing the animation on component unmount */ }
-//       pin.kill();
-//     };
-//   }, []);
-
-//   return (
-//     <section className={styles.scrollSectionOuter}>
-//       <div 
-//         ref={triggerRef} 
-//         // className={`triggerRef`}
-//       >
-//       </div>
-//     </section>
-//   );
-// }
+};
