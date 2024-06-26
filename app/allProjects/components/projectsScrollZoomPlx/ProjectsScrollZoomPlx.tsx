@@ -106,6 +106,6 @@ const ProjectsScrollZoomPlx = (
         }
       </div>
     </div>
-  );
+  )
 };
 export default ProjectsScrollZoomPlx;

@@ -43,7 +43,6 @@ export interface ProjectHoriSectionProps {
 }
 
 const ProjectHoriSection = (
-
   {matchedProjectObj}: ProjectHoriSectionProps
 ) => {
   const triggerRef = useRef(null);
