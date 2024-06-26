@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectPageWrapper from '../components/SlugPageWrapper/SlugPageWrapper'
+import SlugPageWrapper from '../components/SlugPageWrapper/SlugPageWrapper'
 import { getProjectData, getSlugs } from '../../../lib/contentfulApi';
 import PageTransitionEffect from '../../../components/PageTransEffect/page';
 import ContactHoriInfiniteScroll from '../../../components/ContactHoriInfiniteScroll/page';
@@ -24,7 +24,7 @@ export default async function EachProjectPage() {
   return (
     <PageTransitionEffect>
     <div>
-      <ProjectPageWrapper 
+      <SlugPageWrapper 
         projectPageData={projectPageData}
       />
     </div>

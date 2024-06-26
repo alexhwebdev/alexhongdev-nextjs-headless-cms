@@ -38,7 +38,7 @@ interface ProjectPageWrapperProps {
   };
 }
 
-export default function ProjectPageWrapper(
+export default function SlugPageWrapper(
   { projectPageData }: 
   { projectPageData: ProjectPageWrapperProps[] }
 ) {
