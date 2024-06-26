@@ -37,9 +37,10 @@ interface ProjectsScrollZoomPlxProps {
   };
 }
 
-export default function ProjectsScrollZoomPlx({ 
-  matchedProjectObj
-}: ProjectsScrollZoomPlxProps) {
+// export default function ProjectsScrollZoomPlx(
+const ProjectsScrollZoomPlx = (
+  { matchedProjectObj }: ProjectsScrollZoomPlxProps
+) => {
 
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -107,4 +108,4 @@ export default function ProjectsScrollZoomPlx({
     </div>
   );
 };
-// export default ProjectsScrollZoomPlx;
+export default ProjectsScrollZoomPlx;
