@@ -59,4 +59,4 @@ const CircularLogoText = () => {
   )
 }
 
-export default LogoComp
+export default CircularLogoText;

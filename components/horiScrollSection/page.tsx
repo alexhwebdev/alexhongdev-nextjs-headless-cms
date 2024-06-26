@@ -66,4 +66,4 @@ function HoriScrollSection() {
   );
 }
 
-export default ScrollSection;
+export default HoriScrollSection;

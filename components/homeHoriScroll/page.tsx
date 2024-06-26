@@ -69,10 +69,10 @@ export default function HomeHoriScroll(
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
-  console.log(
-    'HomeHoriScroll pageImagesCollection ', 
-    pageImagesCollection
-  )
+  // console.log(
+  //   'HomeHoriScroll pageImagesCollection ', 
+  //   pageImagesCollection
+  // )
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);

@@ -26,7 +26,7 @@
     
     display: flex;
     justify-content: center;
-  
+
     .hamburgerLines {
       position: relative;
       display: flex;
@@ -79,7 +79,6 @@
 
   .hamburger {
     background: white;
-
     &.light_mode {
       background-color: #16181d;
     }
@@ -93,7 +92,6 @@
         }
       }
     }
-
     .hamburgerLines {
       &::before, 
       &::after {
