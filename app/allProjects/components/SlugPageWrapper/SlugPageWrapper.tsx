@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import ProjectsScrollZoomPlx from "../ProjectsScrollZoomPlx/ProjectsScrollZoomPlx";
+import ProjectsScrollZoomPlx from "../ProjectsScrollZoomPlx/page";
 import ProjectHoriSection from "../ProjectHoriSection/ProjectHoriSection";
 import './page.css';
 

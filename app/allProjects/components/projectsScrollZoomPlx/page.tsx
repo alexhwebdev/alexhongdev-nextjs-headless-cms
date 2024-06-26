@@ -88,7 +88,7 @@ export default function ProjectsScrollZoomPlx({
           firstSevenImgs.map( ({url}, index: number) => (
             <motion.div 
               key={ index }
-              style={{ scale: scales[index]?.scale }}
+              style={{ scale: scales[index].scale }}
               className={ `${styles.el} ` }
             >
               <div className={styles.imageContainer}>
