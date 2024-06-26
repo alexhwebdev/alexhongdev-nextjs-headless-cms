@@ -1,0 +1,132 @@
+.infiniteScrollWrapper {
+  background-color: white;
+  position: relative;
+  display: flex;
+  height: 700px;
+  /* margin-bottom: 100vh; */
+  mix-blend-mode: difference;
+  overflow: hidden;
+}
+.infiniteScrollWrapper img {
+  object-fit: cover;
+}
+.sliderContainer {
+  position: absolute;
+  top: 0px;
+}
+.slider {
+  position: relative;
+  white-space: nowrap;
+}
+/* .backgroundImage {
+  background-image: url(../../public/images/background.jpg);
+} */
+.slider p {
+  position: relative;
+  margin: 0px;
+  color: black;
+  font-size: 10em;
+  font-weight: 700;
+  padding-right: 50px;
+  opacity: 0.7;
+
+  display: flex;
+  align-items: center;
+}
+.slider p:nth-of-type(2) {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.slider svg {
+  font-size: 0.8em;
+}
+
+
+.footerNav {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 50px;
+
+  display: flex;
+  justify-content: center;
+}
+.footerNav a {
+  /* border: 2px solid blue; */
+  color: black;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0 15px;
+  text-transform: uppercase;
+  
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* -------------------- CONTACT CIRCLE */
+.envelope_wrapper {
+  width: 200px;
+  height: 200px;
+  top: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.envelope_wrapper svg {
+  font-size: 2em;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.envelope_wrapper .circTxt1, 
+.envelope_wrapper .circTxt2 {   
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.circTxt2 {
+  letter-spacing: 1px;
+}
+.envelope_wrapper .circTxt1{
+  animation: moveAround 5s ease-in-out infinite;
+}
+.circTxt1 p {
+  color: #ff0;
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0;
+}
+/* .circTxt1 p span{
+  animation: moveAround1 5s ease-in-out infinite;
+} */
+.circTxt2 p{
+  /* color: #f00; */
+  color: white;
+  font-size: 0.8em;
+  margin: 0;
+}
+@keyframes moveAround {
+  0% { transform: rotate(-2deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}

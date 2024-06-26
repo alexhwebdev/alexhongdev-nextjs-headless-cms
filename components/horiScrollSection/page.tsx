@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import './page.css';
 
-function ScrollSection() {
+function HoriScrollSection() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 

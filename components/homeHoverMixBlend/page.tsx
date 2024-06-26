@@ -10,7 +10,6 @@ import { LuArrowRight } from "react-icons/lu";
 import HomeScrollArrow from "@/components/HomeScrollArrow/page";
 
 // import './page.css'
-import ProjectsAniFadeUpJS from '@/app/projects/components/ProjectsAniFadeUpJS/page';
 
 
 

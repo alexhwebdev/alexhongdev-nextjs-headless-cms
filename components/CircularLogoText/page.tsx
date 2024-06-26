@@ -1,6 +1,7 @@
 import React from 'react'
+import './page.scss'
 
-const LogoComp = () => {
+const CircularLogoText = () => {
   return (
     <div className="buckSkinLogo__container">
       <div className="logo_cont abs_center">

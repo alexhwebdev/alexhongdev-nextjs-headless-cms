@@ -10,7 +10,9 @@ import { raleway } from '../../../fonts';
 import { montserrat } from '../../../fonts';
 import { inter } from '../../../fonts';
 
-interface ProjectHoriSectionProps {
+import styles from './page.module.scss'
+
+export interface ProjectHoriSectionProps {
   matchedProjectObj: {
     projectName: string;
     slug: string;
@@ -40,7 +42,10 @@ interface ProjectHoriSectionProps {
   };
 }
 
-const ProjectHoriSection = ({matchedProjectObj}: ProjectHoriSectionProps) => {
+const ProjectHoriSection = (
+
+  {matchedProjectObj}: ProjectHoriSectionProps
+) => {
   const triggerRef = useRef(null);
   const sectionRef = useRef(null);
 
@@ -156,12 +161,11 @@ const ProjectHoriSection = ({matchedProjectObj}: ProjectHoriSectionProps) => {
   }, []);
 
   return (
-    <div ref={triggerRef}>
+    <div className={styles.project_hori_section_wrapper} ref={triggerRef}>
       <div className={`project_name_link ${montserrat.className}`}>
         <h3>{matchedProjectObj!.projectName}</h3>
 
         <div className="btns_link_close">
-          {/* <a href={`${matchedProjectObj.projectJson.siteUrl}`} target="_blank">Visit Site</a> */}
           <Link href={`${matchedProjectObj.projectJson[0].siteUrl}`} target="_blank">
             Visit Site
           </Link>
@@ -172,7 +176,6 @@ const ProjectHoriSection = ({matchedProjectObj}: ProjectHoriSectionProps) => {
 
       <div className="project_hori_plx_container" ref={sectionRef}>
         {horiScrollImgs.map((item, index) => (
-
           <div key={index} className={`all_sections section_${index}`}>
             <div className="img_container">
               <Image

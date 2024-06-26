@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+// import Header from './component/header';
+// import StickyCursor from './component/stickyCursor';
 import styles from './page.module.scss';
 
 interface Props {
@@ -12,6 +14,7 @@ interface Props {
 export default function Hamburger({
   menuIsActive, setMenuIsActive, theme
 }: Props) {
+  // const stickyElement = useRef(null);
 
   const [htmlTag, setHtmlTag] = useState<HTMLElement | null>(null);
 
@@ -30,6 +33,8 @@ export default function Hamburger({
     <div className={`
       ${styles.hamburger_wrapper}
     `}>
+      {/* <Header ref={stickyElement}/>
+      <StickyCursor stickyElement={stickyElement}/> */}
       <div 
         className={`
           ${styles.hamburger}

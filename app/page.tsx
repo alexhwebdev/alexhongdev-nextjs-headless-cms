@@ -24,6 +24,9 @@ import { getPortfolioPageDocuments } from "../lib/contentfulApi";
 import getPageData from "../lib/getPageData";
 import getImgCollection from "../lib/getImgCollection";
 import PageTransitionEffect from "@/components/PageTransEffect/page";
+import CursorComponent from "@/components/CursorComponent/CursorComponent";
+// import CircularLogoText from "@/components/CircularLogoText/page";
+
 
 
 
@@ -47,6 +50,11 @@ export default async function Home() {
   return (
     <PageTransitionEffect>
     <main style={{overflow: 'hidden'}}>
+      {/* <InfiniteScroll /> */}
+      {/* <CircularLogoText /> */}
+
+      {/* <CursorComponent /> */}
+      
       <HomeHoverMixBlend />
 
       <HomeHoriScroll 
@@ -56,7 +64,6 @@ export default async function Home() {
       {/* <UpDownParallax /> */}
       {/* <ScrollSplitImg /> */}
       {/* <HoriParallax /> */}
-      {/* <InfiniteScroll /> */}
       {/* <Projects /> */}
       {/* <ScrollTextGradient /> */}
       {/* <TextClipMask /> */}

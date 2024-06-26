@@ -53,13 +53,14 @@
   transform: rotate(270deg);
   z-index: 10005;
   
-  left: -1%;
-  bottom: 15%;
+  left: -3%;
+  bottom: 110px;
 }
 .linkedin_container a {
   display: flex;
 }
 .linkedin_container svg {
+  color: gray;
   font-size: 1.2em;
   padding-top: 2px;
   position: relative;

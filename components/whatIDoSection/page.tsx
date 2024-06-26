@@ -19,15 +19,15 @@ const WhatIDo = (
     pageImagesCollection
   }: HomeHoriScrollProps
 ) => {
-  console.log(
-    'WhatIDo pageImagesCollection ', 
-    pageImagesCollection
-  )
+  // console.log(
+  //   'WhatIDo pageImagesCollection ', 
+  //   pageImagesCollection
+  // )
   
   const devPreviewShipImg = pageImagesCollection[4].url;
   // console.log('WhatIDo devPreviewShipImg ', devPreviewShipImg)
   const macBlackWhiteImg = pageImagesCollection[5];
-  console.log('WhatIDo macBlackWhiteImg ', typeof macBlackWhiteImg)
+  // console.log('WhatIDo macBlackWhiteImg ', typeof macBlackWhiteImg)
 
   return (
     <div className="whatIDoContainer">

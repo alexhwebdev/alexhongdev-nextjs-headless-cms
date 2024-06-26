@@ -1,0 +1,40 @@
+// .project_hori_section_wrapper {
+//   // height: 300vh;
+//   // position: relative;
+
+//   .site_name_link {
+//     mix-blend-mode: exclusion;
+//     opacity: 0;
+//     position: fixed;
+//     z-index: 1;
+//     top: 15%;
+//     // left: 5%;
+//     // top: -80%;
+
+//     animation: animateFromLeft 1.5s ease-in-out forwards;
+//     animation-delay: 1s;
+    
+//     p {
+//       color: white;
+//       font-weight: 700;
+//       font-size: 3em;
+//       flex-wrap: nowrap;
+//       letter-spacing: -2px;
+//       line-height: 100%;
+//       text-transform: uppercase;
+//       white-space: nowrap;
+//     }
+//   }
+// }
+// @keyframes animateFromLeft {
+//   0% { 
+//     opacity: 0;
+//     /* transform: translateX(-100%);  */
+//     left: -200%;
+//   }
+//   100% { 
+//     opacity: 1;
+//     /* transform: translateX(0%);  */
+//     left: 5%;
+//   }
+// }

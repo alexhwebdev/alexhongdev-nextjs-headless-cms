@@ -82,7 +82,7 @@
 .img_container {
   width: 100vw;
   position: relative;
-  top: 100px;
+  top: 0px;
 }
 .img_container img {
   margin: 0 auto;

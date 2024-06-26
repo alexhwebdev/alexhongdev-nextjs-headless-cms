@@ -2,8 +2,12 @@
   .project_section_wrapper {
     // border: 1px solid red;
     width: 100vw;
-    height: 100vh;
+    height: 105vh;
     position: relative;
+
+    &:last-of-type {
+      margin-bottom: 75px;
+    }
 
     .project_title {
       // border: 1px solid red;
@@ -154,7 +158,7 @@
   .project_section_wrapper:nth-of-type(6),
   .project_section_wrapper:nth-of-type(8) {
     .project_title {
-      width: 50%;
+      width: 75%;
       text-align: right;
       right: 10%;
 

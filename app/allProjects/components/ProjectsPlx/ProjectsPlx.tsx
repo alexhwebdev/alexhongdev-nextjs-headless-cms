@@ -15,6 +15,7 @@ import { raleway } from '../../../../app/fonts';
 import { inter } from '../../../../app/fonts';
 import './page.scss';
 
+
 interface companyProjectsProps {
   slug: string;
   gifUrl: string;

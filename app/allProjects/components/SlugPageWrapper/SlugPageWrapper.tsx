@@ -1,10 +1,13 @@
 "use client";
 import React, { useRef } from "react";
 import { usePathname } from 'next/navigation';
+import { gsap } from "gsap";
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ProjectsScrollZoomPlx from "../ProjectsScrollZoomPlx/ProjectsScrollZoomPlx";
 import ProjectHoriSection from "../ProjectHoriSection/ProjectHoriSection";
-
 import './page.css';
+
 
 
 interface ProjectPageWrapperProps {
@@ -65,6 +68,22 @@ export default function ProjectPageWrapper(
   // if (!Array.isArray(matchedImageJson)) {
   //   return <div>Loading... matchedImageJson</div>; // Handle case where imageJson is not an array
   // }
+
+  // TRIED TO PIN TEXT (Title : INVESTORS BUSINESS DAILY)
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+    
+  //   // const pinDistance = 1000;
+    
+  //   ScrollTrigger.create({
+  //     trigger: ".site_name_link",
+  //     start: "center center",
+  //     end: "+=3000",
+  //     pin: ".site_name_link",
+  //     markers: true,
+  //     // id: "two"
+  //   })
+  // }, []);
 
   return (
     <div className="project_hori_plx_wrapper fadeup-startup">

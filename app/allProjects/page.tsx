@@ -14,6 +14,7 @@ import { montserrat } from '../../app/fonts';
 import { raleway } from '../../app/fonts';
 import './page.scss';
 import PageTransitionEffect from "../../components/PageTransEffect/page";
+import ContactHoriInfiniteScroll from '../../components/ContactHoriInfiniteScroll/page';
 
 
 export interface companyInfoTitleProps {
@@ -38,8 +39,8 @@ export default async function AllProjects(
 ) {
   console.log('searchParams ', searchParams)
 
-  const ibdProjects = await allProjectsData();
-  // const ibdProjects = await allProjectsData() as { 
+  const allProjects = await allProjectsData();
+  // const allProjects = await allProjectsData() as { 
   //   companyInfoJson: { 
   //     pageTitle: string; 
   //     companyName: string; 
@@ -55,23 +56,34 @@ export default async function AllProjects(
   //     projectName: string;
   //   }[]; 
   // }[];
-  // console.log('ibdProjects ', ibdProjects.length)
-  
+
+  // console.log(
+  //   'AllProjects allProjects.companyProjectsJson ', 
+  //   allProjects[0].companyInfoJson[0].slug
+  // )
+  // console.log(
+  //   'AllProjects allProjects.companyProjectsJson ', 
+  //   allProjects[1].companyInfoJson[0].slug
+  // )
   let companyProjects: companyProjectsProps[] = [];;
   let companyInfoTitle;
   let companyName;
   let companyName2;
 
-  for (let i = 0; i < ibdProjects.length; i++) {
-    // console.log('Slug ', ibdProjects[i].companyInfoJson[0].slug)
+  for (let i = 0; i < allProjects.length; i++) {
+    // console.log('Slug ', allProjects[i].companyInfoJson[0].slug)
 
-    if (ibdProjects[i].companyInfoJson[0].slug === searchParams.id) {
-        companyProjects = ibdProjects[i].companyProjectsJson;
-        companyInfoTitle = ibdProjects[i].companyInfoJson[0].pageTitle;
-        companyName = ibdProjects[i].companyInfoJson[0].companyName;
-        companyName2 = ibdProjects[i].companyInfoJson[0].companyName2;
+    if (allProjects[i].companyInfoJson[0].slug === searchParams.id) {
+        companyProjects = allProjects[i].companyProjectsJson;
+        companyInfoTitle = allProjects[i].companyInfoJson[0].pageTitle;
+        companyName = allProjects[i].companyInfoJson[0].companyName;
+        companyName2 = allProjects[i].companyInfoJson[0].companyName2;
     }
   }
+  // console.log(
+  //   'AllProjects companyProjects ', 
+  //   companyProjects
+  // )
 
   return (
     <PageTransitionEffect>
@@ -107,6 +119,9 @@ export default async function AllProjects(
 
 
     </div>
+
+    <ContactHoriInfiniteScroll />
+
     </PageTransitionEffect>
   )
 }
