@@ -1,6 +1,6 @@
 'use client'
 import styles from './page.module.css'
-import { useState } from 'react';  
+import { useEffect, useState } from 'react';  
 import { motion } from 'framer-motion';
 import { inter } from '@/app/fonts';
 import { montserrat } from '@/app/fonts';
@@ -8,7 +8,6 @@ import { raleway } from '@/app/fonts';
 import useMousePosition from '@/app/utils/useMousePosition';
 import { LuArrowRight } from "react-icons/lu";
 import HomeScrollArrow from "@/components/HomeScrollArrow/page";
-
 // import './page.css'
 
 
@@ -18,12 +17,23 @@ export default function HomeHoverMixBlend() {
   const { x, y } = useMousePosition();
   const size = isHovered ? 500 : 40;
 
+  // const [renderComponent, setRenderComponent] = useState(false);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setRenderComponent(true);
+  //   }, 5000); // 4000 milliseconds = 4 seconds
 
-  const scrolltext = 'scrolltext'
+  //   // Clean up the timeout to avoid memory leaks
+  //   return () => clearTimeout(timeout);
+  // }, []); // Empty dependency array ensures this effect runs only once on mount
+
+  // // Return null if renderComponent is false (to delay rendering)
+  // if (!renderComponent) {
+  //   return null;
+  // }
 
   return (
     <div className={`${styles.wrapper} ${raleway.className}`}>
-
       <div className={`
         ${styles.right_arrow_container}
         ${styles.fade_up3}
@@ -32,28 +42,28 @@ export default function HomeHoverMixBlend() {
         <LuArrowRight />
       </div>
 
-
       {/* {x !== null && y !== null && ( */}
       <motion.div className={styles.mask_wrapper}
         animate={{
           WebkitMaskPosition: `${x - (size/2)}px ${y - (size/2)}px`,
-          WebkitMaskSize: `${size}px`,
+          WebkitMaskSize: `${size}px`
         }}
         transition={{ 
           type: "tween", // Tween is duration based transition
           ease: "circOut", 
           // duration: 0.5
-          duration: 0.2
+          duration: 0.2,
+          // delay: 4
         }}
       >
-          <p 
-            onMouseEnter={() => {setIsHovered(true)}} 
-            onMouseLeave={() => {setIsHovered(false)}}
-          >
-            &nbsp;&nbsp;&nbsp;&nbsp;Focus &mdash; <br></br>
-            JS Headless 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CMS Dev.
-          </p>
+        <p 
+          onMouseEnter={() => {setIsHovered(true)}} 
+          onMouseLeave={() => {setIsHovered(false)}}
+        >
+          &nbsp;&nbsp;&nbsp;&nbsp;Focus &mdash; <br></br>
+          JS Headless 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CMS Dev.
+        </p>
       </motion.div>
       {/* )} */}
 
@@ -70,7 +80,6 @@ export default function HomeHoverMixBlend() {
       </div>
 
       <HomeScrollArrow />
-
     </div>
   )
 }

@@ -25,6 +25,8 @@ import getPageData from "../lib/getPageData";
 import getImgCollection from "../lib/getImgCollection";
 import PageTransitionEffect from "@/components/PageTransEffect/page";
 import CursorComponent from "@/components/CursorComponent/CursorComponent";
+import AhLogo from "@/components/AhLogo/AhLogo";
+import PreloaderContainer from "@/components/PreloaderContainer/PreloaderContainer";
 // import CircularLogoText from "@/components/CircularLogoText/page";
 
 
@@ -50,6 +52,9 @@ export default async function Home() {
   return (
     <PageTransitionEffect>
     <main style={{overflow: 'hidden'}}>
+      <PreloaderContainer />
+      <AhLogo />
+
       {/* <InfiniteScroll /> */}
       {/* <CircularLogoText /> */}
 

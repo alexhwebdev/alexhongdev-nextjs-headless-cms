@@ -6,20 +6,22 @@
   margin: 0;
   position: fixed;
   z-index: 10006;
-  top: 35px;
-  left: 35px;
+  bottom: 45px;
+  left: 60px;
 
   opacity: 0;
   animation-name: fadeInLeft;
   animation-fill-mode: forwards;
-  animation-duration: 1000ms;
-  animation-timing-function: ease;
-  animation-delay: 0.8s;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 6s;
+  /* animation: fadeInLeft 1s ease-in-out forwards; */
 }
 
 .light_dark_toggle {
   /* border: 1px solid red; */
-  border: none;
+  border: 1px solid silver;
+  /* border: none; */
   border-radius: 0;
   width: 125px;
   background: white;

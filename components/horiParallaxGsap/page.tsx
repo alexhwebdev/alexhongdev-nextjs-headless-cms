@@ -81,7 +81,7 @@ export default function HoriParallaxGsap(
           // end: "+=3000 bottom",      // This allows horizontal scroll
           start: "bottom bottom", // start, scroller-start
           end: "100%+=1500 bottom",   // end, scroller-end
-          markers: true
+          // markers: true
         }
       }
     );

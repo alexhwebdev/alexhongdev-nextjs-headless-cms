@@ -16,7 +16,7 @@ const variants = {
       duration: 1,
 
       // delay: 0.25, // WORKS
-      delay: 1,
+      delay: 0.3,
 
       when: "afterChildren",
     },

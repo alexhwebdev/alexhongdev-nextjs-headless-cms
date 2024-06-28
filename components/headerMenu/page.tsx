@@ -1,6 +1,7 @@
 'use client';
 import styles from './page.module.css'
 import { useState } from 'react';
+import AhLogo from "@/components/AhLogo/AhLogo";
 import Hamburger from '../hamburger/page';
 import Menu from '../menu/page';
 // import LightDarkToggle from '../LightDarkToggle/page';
@@ -30,6 +31,8 @@ const HeaderMenu = () => {
 
   return (
     <div className={styles.headerMenuWrapper}>
+      {/* <AhLogo /> */}
+
       <Hamburger 
         menuIsActive={menuIsActive} 
         setMenuIsActive={setMenuIsActive}

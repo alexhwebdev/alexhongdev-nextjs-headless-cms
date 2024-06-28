@@ -8,11 +8,12 @@
   right: 35px;
 
   opacity: 0;
-  animation-name: fadeInUp;
+  animation-name: fadeInRight;
   animation-fill-mode: forwards;
-  animation-duration: 1000ms;
-  animation-timing-function: ease;
-  animation-delay: 0.8s;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 5s;
+  /* animation: fadeInRight 1s ease-in-out forwards; */
 
   .hamburger {
     // border: 1px solid red;
@@ -62,7 +63,7 @@
   }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInRight {
   from {
     opacity: 0;
     transform: translateX(200px);

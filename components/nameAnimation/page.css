@@ -9,6 +9,10 @@
   right: 0%;
   left: 0%;
   z-index: 10005;
+
+  opacity: 0;
+  animation: fadeInNameAni 1s ease-in-out forwards;
+  animation-delay: 4s;
 }
 .name_animation_wrapper a {
   color: #fff;
@@ -18,4 +22,9 @@
   line-height: 140%;
   /* mix-blend-mode: exclusion; */
   text-transform: uppercase;
+}
+
+@keyframes fadeInNameAni {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

@@ -15,6 +15,7 @@ import { raleway } from '../../app/fonts';
 import './page.scss';
 import PageTransitionEffect from "../../components/PageTransEffect/page";
 import ContactHoriInfiniteScroll from '../../components/ContactHoriInfiniteScroll/page';
+import AhLogo from '@/components/AhLogo/AhLogo';
 
 
 export interface companyInfoTitleProps {
@@ -88,6 +89,8 @@ export default async function AllProjects(
   return (
     <PageTransitionEffect>
     <div className="projectsPageWrapper">
+      <Link href="/">AH</Link>
+
       <CursorComponent />
       {/* <div className="cursor_inner_div">
         <span>see more</span>

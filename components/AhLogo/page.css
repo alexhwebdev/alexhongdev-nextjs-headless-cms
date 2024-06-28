@@ -1,0 +1,81 @@
+
+/* .ah_wrapper {
+  mix-blend-mode: difference;
+  position: relative;
+} */
+.textStart {
+  border: 1px solid blue;
+  width: 480px;
+  height: 125px;
+  position: fixed;
+  margin: auto;
+  mix-blend-mode: difference;
+  /* mix-blend-mode: exclusion; */
+  z-index: 10005;
+
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.destination {
+  /* border: 1px solid red; */
+  /* width: 200px; */
+  /* height: 200px; */
+  position: fixed;
+  top: -15px;
+  left: -175px;
+}
+.chars_wrapper {
+  /* border: 1px solid red; */
+  width: 470px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  overflow: hidden;
+  padding-left: 5px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+}
+.chars_container {
+  display: flex;
+}
+.chars_container p {
+  color: white;
+  font-size: 5rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  /* opacity: 0; */
+  overflow: hidden;
+  & span {
+    display: inline-block;
+  }
+}
+
+
+
+
+.animation-row {
+  display:flex;
+  width:100%;
+  justify-content:space-between;
+}
+.animation-row .text {
+  color:white;
+  font-size:40px;
+  font-weight:900;
+  position:relative;
+}
+.a_move_right,
+.h_move_left {
+  position: relative;
+}
+.text.a_move_right {
+  left: -100%;
+}
+.text.h_move_left {
+  right: -100%;
+}
