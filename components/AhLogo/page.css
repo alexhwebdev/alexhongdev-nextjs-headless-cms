@@ -1,34 +1,40 @@
 
-/* .ah_wrapper {
-  mix-blend-mode: difference;
-  position: relative;
-} */
+.ah_wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0px;
+  /* margin: auto; */
+}
 .textStart {
-  /* border: 1px solid blue; */
-  width: 480px;
+  /* border: 1px solid gray; */
+  width: 490px;
   height: 125px;
-  position: fixed;
+  /* position: fixed; */
+  position: relative;
   margin: auto;
   mix-blend-mode: difference;
   /* mix-blend-mode: exclusion; */
   z-index: 10005;
-
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  /* left: 0; */
 }
-.destination {
-  /* border: 1px solid red; */
-  /* width: 200px; */
-  /* height: 200px; */
+/* .destination {
+  border: 1px solid red;
+  width: 200px;
+  height: 200px;
   position: fixed;
   top: -15px;
   left: -175px;
-}
+  left: 0;
+  z-index: 10006;
+} */
 .chars_wrapper {
   /* border: 1px solid red; */
-  width: 470px;
+  /* width: 470px; */
+  height: 125px;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -38,12 +44,48 @@
   top: 0;
   bottom: 0;
 }
-.chars_container {
+.ah_container {
+  /* border: 1px solid blue; */
+  width: 305px;
   display: flex;
+  position: relative;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  
 }
-.chars_container p {
+.ah_container p {
+  /* border: 1px solid gray; */
   color: white;
-  font-size: 5rem;
+  /* font-size: 5em; */
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  /* opacity: 0; */
+  overflow: hidden;
+  & span {
+    display: inline-block;
+  }
+}
+.chars_container1,
+.chars_container2 {
+  display: flex;
+  position: relative;
+  /* position: absolute; */
+}
+
+.chars_container1 {
+  left: -4px;
+}
+.chars_container2 {
+  left: 65px;
+}
+.chars_container1 p,
+.chars_container2 p {
+  /* border: 1px solid gray; */
+  color: white;
+  /* font-size: 5em; */
   text-transform: uppercase;
   white-space: nowrap;
   font-family: Arial, sans-serif;

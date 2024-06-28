@@ -69,79 +69,80 @@ const AhLogo = () => {
     gsap.to('.hide-char', {
       delay: 2.4, duration: .6, ease: "ease.out",opacity: 0
     })
-    gsap.to(
-      ".chars_wrapper",
-      {
-        width: "150px",
-        delay: 3,
-        stagger: 0.05
-      }
-    )
-    gsap.to(
-      ".ah_container",
-      {
-        width: "130px",
-        delay: 3,
-        stagger: 0.05
-      }
-    )
-    gsap.to(".textStart", {
-      width: "50px",
-      height: "50px",
-      delay: 4,
-      duration: 0.6,
-      stagger: 0.05,
-      right: "unset",
-      bottom: "unset"
+    gsap.to('.a_move_right', {
+      left: 170, 
+      delay: 2.8, duration: .6, ease: "ease.out"
     })
-    gsap.to(".ah_wrapper", {
-      width: "135px",
-      height: "50px",
-      top: "25px",
-      delay: 4,
-      duration: 0.6,
-      stagger: 0.05
-    })
-    // // Move AH top left
-    // gsap.to(textStart, {
-    //   motionPath: scrollItemPath,
-    //   align: 'self',
-    //   duration: 1,
-    //   delay: 5
+    // gsap.to('.h_move_left', {
+    //   right: 0, 
+    //   delay: 2.8, duration: .6, ease: "ease.out"
     // })
-    gsap.to(
-      ".ah_container",
+
+
+    // // Scale down AH
+    // gsap.to(
+    //   // [".a_move_right", ".h_move_left"], 
+    //   ".textStart",
+    //   {
+    //     // y: 300, 
+    //     delay: 4,
+    //     scale: 0.3, 
+    //     transformOrigin: "50% 50%", 
+    //     stagger: 0.05
+    //   }
+    // )
+ 
+    // // Scale down font AH
+    // gsap.to(
+    //   [".charA span", ".charH span"], 
+    //   // ".charA",
+    //   {
+    //     // y: 300, 
+    //     delay: 4,
+    //     fontSize: '1em',
+    //     stagger: 0.05
+    //   }
+    // )
+    
+    // gsap.to('.remove_char', {
+    //   delay: 2.4, duration: .6, ease: "ease.out",opacity: 0
+    // })
+
+    // Move AH top left
+    gsap.to(textStart, {
+      motionPath: scrollItemPath,
+      align: 'self',
+      duration: 1,
+      delay: 4
+    })
+   gsap.to(
+      ".textStart",
       {
-        width: "50px",
-        delay: 4,
+        width: "100px",
+        delay: 5,
         stagger: 0.05
       }
     )
-    // Scale down Font AH
+
+    // Scale down font AH
     gsap.fromTo(
       [".charA", ".charH", ".remove_char"], 
       {
-        delay: 4,
+        delay: 4.5,
         fontSize: '5em',
         stagger: 0.05
       },
       {
-        delay: 4,
+        delay: 4.5,
         fontSize: '2em',
         stagger: 0.05
       }
     )
-    gsap.to(
-      ".textStart",
-      {
-        // margin: 'unset',
-        position: "fixed",
-        // top: "45px",
-        // left: "45px",
-        delay: 5,
-        // stagger: 0.05
-      }
-    )
+    gsap.to('.a_move_right', {
+      left: 0, 
+      delay: 4, duration: .6, ease: "ease.out"
+    })
+
     // function removeElement(element) {
     //   if (typeof(element) === "string") {
     //     element = document.querySelector(element);
@@ -150,13 +151,15 @@ const AhLogo = () => {
     //     element.parentNode.removeChild(element);
     //   };
     // }
-    // // let tl = gsap.timeline({delay: 4.1});
-    // // tl.call(removeElement(".remove_char1"))
-    // // tl.call(removeElement(".remove_char2"))
-    // // tl.call(removeElement(".remove_char3"))
-    // // tl.call(removeElement(".remove_char4"))
-    // // tl.call(removeElement(".remove_char5"))
-    // // tl.call(removeElement(".remove_char6"))
+    // let tl = gsap.timeline({delay: 4.1});
+    // tl.call(removeElement(".remove_char1"))
+    // tl.call(removeElement(".remove_char2"))
+    // tl.call(removeElement(".remove_char3"))
+    // tl.call(removeElement(".remove_char4"))
+    // tl.call(removeElement(".remove_char5"))
+    // tl.call(removeElement(".remove_char6"))
+
+
 
     // let tl = gsap.timeline({delay:1});
     // tl.add('start');
@@ -166,6 +169,13 @@ const AhLogo = () => {
     //   ease: "ease.out"},
     //   'start'
     // );
+    // tl.to('.h_move_left', {
+    //   right: -50, 
+    //   duration: .6, 
+    //   ease: "ease.out"}, 
+    //   'start'
+    // );
+
   }, []);
 
   return (
@@ -176,21 +186,13 @@ const AhLogo = () => {
       {/* <PreloaderContainer /> */}
 
 
-      {/* <div className="destination">destination</div> */}
+      <div className="destination">destination</div>
       <div className="textStart">
         <Link href="/" className={`chars_wrapper`}>
-          <div className={`ah_container`}>
+          <div className={`chars_container`}>
             <p className="eachLetter a_move_right" > 
               <span className={`charA ${inter.className}`}>A</span>
             </p>
-            <p className="eachLetter a_move_right" > 
-              <span className={`charA ${inter.className}`}>H</span>
-            </p>
-          </div>
-          <div className={`chars_container1`}>
-            {/* <p className="eachLetter a_move_right" > 
-              <span className={`charA ${inter.className}`}>A</span>
-            </p> */}
             <p className="eachLetter hide-char">
               <span className={`remove_char remove_char1 ${inter.className}`}>L</span>
             </p>
@@ -201,10 +203,10 @@ const AhLogo = () => {
               <span className={`remove_char remove_char3 ${inter.className}`}>X&nbsp;</span>
             </p>
           </div>
-          <div className="chars_container2">
-            {/* <p className="eachLetter h_move_left">
+          <div className="chars_container">
+            <p className="eachLetter h_move_left">
               <span className={`charH ${inter.className}`}>H</span>
-            </p> */}
+            </p>
             <p className="eachLetter hide-char">
               <span className={`remove_char remove_char4 ${inter.className}`}>O</span>
             </p>
