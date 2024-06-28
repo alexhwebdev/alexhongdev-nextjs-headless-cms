@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 // import { useTheme } from "next-themes";
-import { Moon, Sun } from "lucide-react";
+// import { Moon, Sun } from "lucide-react";
 import { Button } from "../ui/button";
 import styles from './page.module.css';
 
@@ -33,7 +33,7 @@ const LightDarkToggle = ({
     )
   }
 
-  const dark = theme === "dark"; // is theme equal to dark?
+  const light = theme === "light"; // is theme equal to dark?
 
   return (
     <div className={styles.light_dark_toggle_wrapper}>
@@ -52,7 +52,7 @@ const LightDarkToggle = ({
         onClick={() => toggleTheme()}
 
       >
-        {dark ? (
+        {light ? (
           // <Sun className="hover:cursor-pointer hover:text-primary" />
           'Light Mode'
         ) : (

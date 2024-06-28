@@ -88,6 +88,9 @@ export default function RootLayout({
   );
 }
 
+// bluish black
+// hsl(217.2, 32.6%, 17.5%)
+// #020817
 
 /*
 suppressHydrationWarning :

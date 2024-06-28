@@ -15,7 +15,6 @@ import HomeHoriScroll from "@/components/homeHoriScroll/page";
 // import HoriParallax from "@/components/horiParallax/page";
 // import HoriParallaxGsap from "@/components/horiParallaxGsap/page";
 
-// import './page.module.css'
 import HomeHoverMixBlend from "@/components/homeHoverMixBlend/page";
 import HomeScrollTextGradient from "@/components/HomeScrollTextGradient/page";
 import NameAnimation from "@/components/nameAnimation/page";
@@ -29,7 +28,7 @@ import AhLogo from "@/components/AhLogo/AhLogo";
 import PreloaderContainer from "@/components/PreloaderContainer/PreloaderContainer";
 // import CircularLogoText from "@/components/CircularLogoText/page";
 
-
+// import styles from './page.module.css'
 
 
 
@@ -51,7 +50,10 @@ export default async function Home() {
   // )
   return (
     <PageTransitionEffect>
-    <main style={{overflow: 'hidden'}}>
+    <main 
+      style={{overflow: 'hidden'}}
+      // className={styles.main}
+    >
       <PreloaderContainer />
       <AhLogo />
 

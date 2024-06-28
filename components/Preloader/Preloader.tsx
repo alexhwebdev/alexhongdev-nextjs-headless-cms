@@ -65,19 +65,23 @@ export default function Preloader() {
     }
   }
 
-    return (
-      <motion.div className={styles.introduction}
-        variants={slideUp} initial="initial" exit="exit">
-        {dimension.width > 0 && 
-        <>
-          {/* <motion.p variants={opacity} initial="initial" animate="enter">
-            <span></span>{words[index]}
-          </motion.p> */}
-          <svg>
-            <motion.path variants={curve} initial="initial" exit="exit"></motion.path>
-          </svg>
-        </>
-        }
-      </motion.div>
-    )
+  return (
+    <motion.div className={styles.introduction}
+      variants={slideUp} initial="initial" exit="exit">
+      {dimension.width > 0 && 
+      <div className={styles.svgContainer}>
+        {/* <motion.p variants={opacity} initial="initial" animate="enter">
+          <span></span>{words[index]}
+        </motion.p> */}
+        <svg>
+          <motion.path 
+            variants={curve} 
+            initial="initial" 
+            exit="exit"
+          ></motion.path>
+        </svg>
+      </div>
+      }
+    </motion.div>
+  )
 }

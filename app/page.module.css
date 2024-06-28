@@ -1,3 +1,8 @@
+.main {
+  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
+}
+
 .contact {
   border: 2px solid blue;
   width: 100vw;
@@ -53,7 +58,7 @@
   transform: rotate(270deg);
   z-index: 10005;
   
-  left: -3%;
+  left: -20px;
   bottom: 110px;
 }
 .linkedin_container a {

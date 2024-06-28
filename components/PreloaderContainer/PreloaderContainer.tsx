@@ -25,9 +25,12 @@ const PreloaderContainer = () => {
 
   return (
     <div className="preloader_container_wrapper">
-      <AnimatePresence mode='wait'>
-        {isLoading && <Preloader />}
-      </AnimatePresence>
+      <div className="preloader_container">
+        <AnimatePresence mode='wait'>
+          {isLoading && <Preloader />}
+        </AnimatePresence>
+      </div>
+
     </div>
   )
 }

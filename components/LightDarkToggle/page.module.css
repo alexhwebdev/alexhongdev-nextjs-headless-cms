@@ -7,7 +7,7 @@
   position: fixed;
   z-index: 10006;
   bottom: 45px;
-  left: 60px;
+  left: 75px;
 
   opacity: 0;
   animation-name: fadeInLeft;

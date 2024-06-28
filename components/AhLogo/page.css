@@ -4,7 +4,7 @@
   position: relative;
 } */
 .textStart {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 480px;
   height: 125px;
   position: fixed;

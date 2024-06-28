@@ -4,3 +4,7 @@
   position: relative;
   z-index: 10001;
 }
+.preloader_container {
+  /* mix-blend-mode: difference; */
+  /* mix-blend-mode: exclusion; */
+}
