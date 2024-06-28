@@ -33,7 +33,7 @@ const LightDarkToggle = ({
     )
   }
 
-  const light = theme === "light"; // is theme equal to dark?
+  const dark = theme === "dark"; // is theme equal to dark?
 
   return (
     <div className={styles.light_dark_toggle_wrapper}>
@@ -52,7 +52,7 @@ const LightDarkToggle = ({
         onClick={() => toggleTheme()}
 
       >
-        {light ? (
+        {dark ? (
           // <Sun className="hover:cursor-pointer hover:text-primary" />
           'Light Mode'
         ) : (
