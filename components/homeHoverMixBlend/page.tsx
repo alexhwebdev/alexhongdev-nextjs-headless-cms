@@ -15,7 +15,7 @@ import HomeScrollArrow from "@/components/HomeScrollArrow/page";
 export default function HomeHoverMixBlend() {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 500 : 40;
+  const size = isHovered ? 1000 : 40;
 
   // const [renderComponent, setRenderComponent] = useState(false);
   // useEffect(() => {
