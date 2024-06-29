@@ -76,7 +76,7 @@
 }
 
 .wrapper .mask_wrapper {
-  mask-image: url('../../public/mask.svg');
+  mask-image: url('../../public/mask-transparent.svg');
   mask-repeat: no-repeat;
   mask-size: 40px;
   background: black;
@@ -110,6 +110,7 @@
   color: white;
 } */
 .right_arrow_container svg {
+
   font-size: 1.2em;
   padding-top: 2px;
 }

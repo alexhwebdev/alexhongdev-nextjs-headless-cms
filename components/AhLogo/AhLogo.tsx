@@ -72,6 +72,7 @@ const AhLogo = () => {
         opacity: 0, 
         stagger: 0.5,
         yPercent: 100, 
+        normalizeScroll: true,
       },{
         // rotationY: 36, 
         delay: 1,
@@ -89,12 +90,14 @@ const AhLogo = () => {
       gsap.to(".chars_wrapper",{
         width: "150px",
         delay: 3,
-        stagger: 0.05
+        stagger: 0.05,
+        normalizeScroll: true,
       })
       gsap.to(".ah_container",{
         width: "130px",
         delay: 3,
-        stagger: 0.05
+        stagger: 0.05,
+        normalizeScroll: true,
       })
       gsap.to(".textStart", {
         width: "50px",
@@ -103,7 +106,8 @@ const AhLogo = () => {
         duration: 0.6,
         stagger: 0.05,
         right: "unset",
-        bottom: "unset"
+        bottom: "unset",
+        normalizeScroll: true,
       })
       gsap.to(".ah_wrapper", {
         width: "135px",
@@ -116,17 +120,20 @@ const AhLogo = () => {
       gsap.to(".ah_container",{
         width: "50px",
         delay: 4,
-        stagger: 0.05
+        stagger: 0.05,
+        normalizeScroll: true,
       })
       // Scale down Font AH
       gsap.fromTo([".charA", ".charH", ".remove_char"], {
         delay: 4,
         fontSize: '5em',
-        stagger: 0.05
+        stagger: 0.05,
+        normalizeScroll: true,
       },{
         delay: 4,
         fontSize: '2em',
-        stagger: 0.05
+        stagger: 0.05,
+        normalizeScroll: true,
       })
       gsap.to(".textStart", {
         position: "fixed", delay: 5
@@ -139,6 +146,7 @@ const AhLogo = () => {
         opacity: 0, 
         stagger: 0.5,
         yPercent: 100, 
+        normalizeScroll: true,
       },{
         // rotationY: 36, 
         delay: 1,

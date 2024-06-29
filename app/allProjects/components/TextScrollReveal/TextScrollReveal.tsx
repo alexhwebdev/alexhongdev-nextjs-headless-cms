@@ -25,9 +25,9 @@ export default function TextScrollReveal({companyDesc}: companyInfoDescProps) {
         scrub: true,
         // start: "100%+=2000 50%", // start, scroller-start
         // end: "100%+=2000 10%",   // end, scroller-end
-        start: "5% 50%",
+        start: "0% 50%",
         end: `+=${window.innerHeight / 1.5}`,
-        // markers: true
+        markers: true
       },
       opacity: 1,
       ease: "none",
@@ -36,13 +36,13 @@ export default function TextScrollReveal({companyDesc}: companyInfoDescProps) {
   }
 
   const splitWords = (companyDesc: string) => {
+    if (!companyDesc) return []; // Add a check here
     let description: JSX.Element[] = [];
 
     companyDesc.split(" ").forEach( (word, i) => {
       const letters = splitLetters(word);
       description.push(<p key={word + "_" + i}>{letters}</p>)
     })
-    console.log('description ', description)
     return description;
   }
   

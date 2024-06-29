@@ -6,6 +6,7 @@
   height: 0;
   display: flex;
   /* margin-top: 15%; */
+  mix-blend-mode: difference;
   opacity: 0;
   position: relative;
   /* z-index: 10000; */

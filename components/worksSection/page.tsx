@@ -21,8 +21,8 @@ const projects = [
     location: "Los Angeles, California",
     position: "Frontend / Wordpress Developer",
     tech: "React, GatsbyJS, NextJS, Wordpress",
-    src: "ibd-blue2.svg",
-    color: ""
+    src: "ibd-logo.png",
+    siteUrl: "https://investors.com/"
   },
   { 
     company: "MGA Entertainment",
@@ -31,15 +31,15 @@ const projects = [
     position: "Frontend Developer",
     tech: "React, AngularJS, EmberJS",
     src: "mga.png",
-    color: ""
+    siteUrl: "https://www.mgae.com/"
   },
-  { company: "Webpromo",
+  { company: "Lawpromo / Webpromo",
     date: "Feb 2016 - Dec 2017",
     location: "Los Angeles, California",
     position: "Frontend / Wordpress Developer",
     tech: "AngularJS, Wordpress",
-    src: "webpromo.png",
-    color: ""
+    src: "lawpromo.png",
+    siteUrl: "https://www.lawpromo.com/"
   },
   { 
     company: "Thunderbolt Studios",
@@ -48,7 +48,7 @@ const projects = [
     position: "Front End Developer",
     tech: "AngularJS, SailsJS",
     src: "thunderbolt.png",
-    color: ""
+    siteUrl: "https://www.behance.net/thunderboltstudios?locale=en_US"
   },
   { 
     company: "GPS / Charta Global",
@@ -57,7 +57,7 @@ const projects = [
     position: "SAP WM Engineer",
     tech: "SAP WMS",
     src: "chartaglobal.png",
-    color: "back"
+    siteUrl: "back"
   },
   // { 
   //   company: "SAP - Korea",
