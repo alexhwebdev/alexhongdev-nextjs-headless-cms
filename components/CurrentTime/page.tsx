@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { montserrat } from '@/app/fonts';
 import './page.css';

@@ -10,20 +10,31 @@ import { companyInfoTitleProps } from '../../page';
 const ProjectsAniFadeUpJS = ({ companyInfoTitle }: companyInfoTitleProps) => {
   // const companyTitle = [...companyInfoTitle];
   const companyTitle = Array.from(companyInfoTitle);
-  
+
   useGSAP(() => {
-    gsap.from(
-      ".eachCharH2", 
-      {
-        rotationY: 36, 
+    const deskTopSize = '(max-width: 1280px) and (min-width: 569px)';
+    const mobileSize = '(max-width: 568px) and (min-width: 375px)';
+    // const mobileSize = '(min-width: 430px)';
+    const mm = gsap.matchMedia();
+
+    // mm.add(deskTopSize, () => {
+      gsap.fromTo(".eachCharH2", {
+        delay: 3,
         opacity: 0, 
-        duration: 1, 
+        stagger: 0.5,
         yPercent: 100, 
+      },{
+        // rotationY: 36, 
+        delay: 1,
+        opacity: 1, 
+        duration: 1, 
+        yPercent: 0, 
         stagger: 0.05,
+        // stagger: 0.5,
         ease:"back.out",
         normalizeScroll: true,
-      }
-    )
+      })
+    // })
   }, []);
 
   return (
@@ -34,12 +45,11 @@ const ProjectsAniFadeUpJS = ({ companyInfoTitle }: companyInfoTitleProps) => {
         </h2> */}
 
         <div className="portOfProjectsH2">
-          {companyTitle.map( (eachChar, index) => (
-            <h2 key={index + "_0"} className="eachCharH2">
-              {eachChar}
+          {companyInfoTitle.split('').map((char, index) => (
+            <h2 key={index} className="eachCharH2">
+              {char === ' ' ? <span>&nbsp;</span> : char}
             </h2>
           ))}
-
         </div>
       </div>
     </div>

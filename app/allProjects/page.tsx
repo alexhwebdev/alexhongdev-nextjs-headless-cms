@@ -16,12 +16,15 @@ import './page.scss';
 import PageTransitionEffect from "../../components/PageTransEffect/page";
 import ContactHoriInfiniteScroll from '../../components/ContactHoriInfiniteScroll/page';
 import AhLogo from '@/components/AhLogo/AhLogo';
+import TextScrollReveal from './components/TextScrollReveal/TextScrollReveal';
 
 
 export interface companyInfoTitleProps {
   companyInfoTitle: string;
 }
-
+export interface companyInfoDescProps {
+  companyDesc: string;
+}
 interface SearchParams {
   id: string;
 }
@@ -41,51 +44,34 @@ export default async function AllProjects(
   console.log('searchParams ', searchParams)
 
   const allProjects = await allProjectsData();
-  // const allProjects = await allProjectsData() as { 
-  //   companyInfoJson: { 
-  //     pageTitle: string; 
-  //     companyName: string; 
-  //     companyName2: string 
-  //     slug: string;
-  //   }[];
-  //   companyProjectsJson: { 
-  //     slug: string;
-  //     gifUrl: string;
-  //     siteUrl: string;
-  //     bkgdImgUrl: string;
-  //     description: string;
-  //     projectName: string;
-  //   }[]; 
-  // }[];
 
-  // console.log(
-  //   'AllProjects allProjects.companyProjectsJson ', 
-  //   allProjects[0].companyInfoJson[0].slug
-  // )
-  // console.log(
-  //   'AllProjects allProjects.companyProjectsJson ', 
-  //   allProjects[1].companyInfoJson[0].slug
-  // )
   let companyProjects: companyProjectsProps[] = [];;
   let companyInfoTitle;
   let companyName;
   let companyName2;
+  let companyDesc;
 
   for (let i = 0; i < allProjects.length; i++) {
     // console.log('Slug ', allProjects[i].companyInfoJson[0].slug)
 
     if (allProjects[i].companyInfoJson[0].slug === searchParams.id) {
-        companyProjects = allProjects[i].companyProjectsJson;
-        companyInfoTitle = allProjects[i].companyInfoJson[0].pageTitle;
-        companyName = allProjects[i].companyInfoJson[0].companyName;
-        companyName2 = allProjects[i].companyInfoJson[0].companyName2;
+      companyProjects = allProjects[i].companyProjectsJson;
+      companyInfoTitle = allProjects[i].companyInfoJson[0].pageTitle;
+      companyName = allProjects[i].companyInfoJson[0].companyName;
+      companyName2 = allProjects[i].companyInfoJson[0].companyName2;
+      companyDesc = allProjects[i].companyInfoJson[0].description;
     }
   }
   // console.log(
-  //   'AllProjects companyProjects ', 
-  //   companyProjects
+  //   'AllProjects companyDesc ', 
+  //   companyDesc
   // )
-
+  const paragraph = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+  // const words = paragraph.split(" ")
+  console.log(
+    'AllProjects paragraph ', 
+    typeof paragraph
+  )
   return (
     <PageTransitionEffect>
     <div className="projectsPageWrapper">
@@ -100,11 +86,7 @@ export default async function AllProjects(
         companyInfoTitle={companyInfoTitle as string}
       />
 
-
-      <div 
-        // className="animateLeftToRightOnScroll line"
-        className=" line"
-      ></div>
+      <div className="line"></div>
 
       <div className="titleSection">
         <h5 className={`${montserrat.className}`}>{companyName}</h5>
@@ -112,15 +94,14 @@ export default async function AllProjects(
         <div className="titleSectionLine"></div>
       </div>
 
-      <ProjectsTextGradient />
-      {/* 
-      <ProjectPlx 
-        companyProjects={companyProjects} 
-      /> 
-      */}
+
+      <TextScrollReveal 
+        // paragraph={paragraph} 
+        companyDesc={companyDesc} 
+      />
+
+      {/* <ProjectPlx companyProjects={companyProjects} /> */}
       {companyProjects && <ProjectPlx companyProjects={companyProjects} />}
-
-
     </div>
 
     <ContactHoriInfiniteScroll />

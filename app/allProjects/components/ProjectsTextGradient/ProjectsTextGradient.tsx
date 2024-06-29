@@ -60,23 +60,23 @@ export default function ProjectsTextGradient() {
       {/* <div className="gradient_sec_line"></div> */}
 
       <h6>
-        Investor\u0027s Business Daily is an American newspaper and website covering the stock market, international business, finance and economics.
+        Investor&#39;s Business Daily is an American newspaper and website covering the stock market, international business, finance and economics.
       </h6>
       <br></br>
       <h6>
-        Founded in 1984 by William O\u0027Neil as a print news publication, it is owned by News Corp, headquartered in Los Angeles, California. IBD provides news and analysis on stocks, mutual funds, exchange-traded funds, commodities, and other financial instruments aimed at individual investors and financial professionals.
+        Founded in 1984 by William O&#39;Neil as a print news publication, it is owned by News Corp, headquartered in Los Angeles, California. IBD provides news and analysis on stocks, mutual funds, exchange-traded funds, commodities, and other financial instruments aimed at individual investors and financial professionals.
       </h6>
 
       <br></br>
 
       <h6>
-        Investor\u0027s Business Daily is an American newspaper and website
+        Investor&#39;s Business Daily is an American newspaper and website
       </h6>
       <h6>
         covering the stock market, international business, finance
       </h6>
       <h6>
-        and economics. Founded in 1984 by William O\u0027Neil as a print
+        and economics. Founded in 1984 by William O&#39;Neil as a print
       </h6>
 
       <br></br>
