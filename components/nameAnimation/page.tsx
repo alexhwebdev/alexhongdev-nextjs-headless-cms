@@ -10,7 +10,8 @@ const NameAnimation = () => {
   const { ref, replay } = useScramble({
     playOnMount: true,
     speed: 0.5,
-    text: "Alex Hong Web Development",
+    // text: "Alex Hong Web Development",
+    text: `Alex Hong Web Development`
   });
 
   useEffect(() => {

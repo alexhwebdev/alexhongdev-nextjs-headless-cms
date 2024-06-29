@@ -61,8 +61,8 @@ const AhLogo = () => {
     // const mobileSize = '(min-width: 430px)';
 
     // (min-width: 1351px) and (max-width: 630px)
-    const deskTopSize = '(max-width: 1280px) and (min-width: 431px)';
-    const mobileSize = '(max-width: 430px) and (min-width: 375px)';
+    const deskTopSize = '(max-width: 1280px) and (min-width: 569px)';
+    const mobileSize = '(max-width: 568px) and (min-width: 375px)';
     // const mobileSize = '(min-width: 430px)';
     const mm = gsap.matchMedia();
 
@@ -183,9 +183,9 @@ const AhLogo = () => {
         bottom: "unset"
       })
       gsap.to(".ah_wrapper", {
-        width: "100px",
+        width: "105px",
         height: "75px",
-        top: "55px",
+        top: "22px",
         delay: 4,
         duration: 0.6,
         stagger: 0.05
