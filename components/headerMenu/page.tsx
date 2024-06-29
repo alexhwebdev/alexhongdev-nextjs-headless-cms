@@ -46,10 +46,15 @@ const HeaderMenu = () => {
         toggleTheme={handleThemeToggle}
       />
       
-      <Menu 
-        menuIsActive={menuIsActive}
-        setMenuIsActive={handleMenuButtonClick}
-      />
+      <div className={`
+        ${styles.menu_wrapper}
+        ${menuIsActive ? `active` : ''}
+      `}>
+        <Menu 
+          menuIsActive={menuIsActive}
+          setMenuIsActive={handleMenuButtonClick}
+        />
+      </div>
       
       
       <HorizontalPixelTransition 

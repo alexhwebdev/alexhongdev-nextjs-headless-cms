@@ -53,9 +53,7 @@ export default function RootLayout({
 
           <div 
             // style={{mixBlendMode: 'exclusion'}} // Set : mix-blend-mode
-          >
-            {/* <LightDarkToggle /> */}
-            
+          > 
             <HeaderMenu />
             <NameAnimation />
 
@@ -137,4 +135,39 @@ https://github.com/shadcn/next-contentlayer/issues/7
 //       </body>
 //     </html>
 //   );
+// }
+
+
+
+
+
+// @media (max-width: 1280px) {
+
+// }
+// @media (max-width: 1024px) {
+
+// }
+// @media (max-width: 912px) {
+
+// }
+// @media (max-width: 820px) {
+
+// }
+// @media (max-width: 768px) {
+
+// }
+// @media (max-width: 568px) {
+
+// }
+// @media (max-width: 540px) {
+
+// }
+// @media (max-width: 430px) {
+
+// }
+// @media (max-width: 414px) {
+
+// }
+// @media (max-width: 390px) {
+
 // }

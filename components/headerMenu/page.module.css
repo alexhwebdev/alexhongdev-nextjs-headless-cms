@@ -1,13 +1,19 @@
 .headerMenuWrapper {
   width: 100vw;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: 0;
   background-color: gray;
   position: fixed;
   z-index: 10005;
 }
-/* Set : mix-blend-mode */
-/* CANNOT ADD THIS BC MENU WONT HIDE WHATS BEHIND */
-.headerMenuWrapper {
-  /* mix-blend-mode: exclusion; */
+.menu_wrapper {
+  /* border: 5px solid pink; */
+  /* width: 0vw; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 0%;
 }

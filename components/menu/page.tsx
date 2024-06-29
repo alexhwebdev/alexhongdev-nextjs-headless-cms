@@ -20,7 +20,7 @@ export interface Props {
 const menuLinks = [
   { path: "/", label: "Home", prefetching: false },
   { path: "/about", label: "About", prefetching: true },
-  { path: "/allProjects", label: "AllProjects", prefetching: false },
+  { path: "/allProjects", label: "Projects", prefetching: false },
   { path: "/contact", label: "Contact", prefetching: false },
   // { path: "/testpage", label: "TestPage", prefetching: false },
 ];

@@ -1,9 +1,12 @@
 'use client'
 import styles from './page.module.css'
-import { useEffect, useState } from 'react';  
+import { 
+  // useEffect, 
+  useState 
+} from 'react';  
 import { motion } from 'framer-motion';
-import { inter } from '@/app/fonts';
-import { montserrat } from '@/app/fonts';
+// import { inter } from '@/app/fonts';
+// import { montserrat } from '@/app/fonts';
 import { raleway } from '@/app/fonts';
 import useMousePosition from '@/app/utils/useMousePosition';
 import { LuArrowRight } from "react-icons/lu";
@@ -15,7 +18,7 @@ import HomeScrollArrow from "@/components/HomeScrollArrow/page";
 export default function HomeHoverMixBlend() {
   const [isHovered, setIsHovered] = useState(false);
   const { x, y } = useMousePosition();
-  const size = isHovered ? 1000 : 40;
+  const size = isHovered ? 550 : 40;
 
   // const [renderComponent, setRenderComponent] = useState(false);
   // useEffect(() => {

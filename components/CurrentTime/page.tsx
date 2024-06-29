@@ -5,6 +5,7 @@ import './page.css';
 
 const CurrentTime = () => {
   var time = new Date();
+  // console.log('time ', time)
   const currentTime = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 
   return (

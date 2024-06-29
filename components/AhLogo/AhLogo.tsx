@@ -49,7 +49,25 @@ const AhLogo = () => {
       return { x, y };
     });
 
-    gsap.fromTo(".eachLetter", {
+    // // Move AH top left
+    // gsap.to(textStart, {
+    //   motionPath: scrollItemPath,
+    //   align: 'self',
+    //   duration: 1,
+    //   delay: 5
+    // })
+
+    // const deskTopSize = '(max-width: 1280px)';
+    // const mobileSize = '(min-width: 430px)';
+
+    // (min-width: 1351px) and (max-width: 630px)
+    const deskTopSize = '(max-width: 1280px) and (min-width: 431px)';
+    const mobileSize = '(max-width: 430px) and (min-width: 375px)';
+    // const mobileSize = '(min-width: 430px)';
+    const mm = gsap.matchMedia();
+
+    mm.add(deskTopSize, () => {
+      gsap.fromTo(".eachLetter", {
         delay: 3,
         opacity: 0, 
         stagger: 0.5,
@@ -64,84 +82,135 @@ const AhLogo = () => {
         // stagger: 0.5,
         ease:"back.out",
         normalizeScroll: true,
-      }
-    )
-    gsap.to('.hide-char', {
-      delay: 2.4, duration: .6, ease: "ease.out",opacity: 0
-    })
-    gsap.to(
-      ".chars_wrapper",
-      {
+      })
+      gsap.to('.hide-char', {
+        delay: 2.4, duration: .6, ease: "ease.out",opacity: 0
+      })
+      gsap.to(".chars_wrapper",{
         width: "150px",
         delay: 3,
         stagger: 0.05
-      }
-    )
-    gsap.to(
-      ".ah_container",
-      {
+      })
+      gsap.to(".ah_container",{
         width: "130px",
         delay: 3,
         stagger: 0.05
-      }
-    )
-    gsap.to(".textStart", {
-      width: "50px",
-      height: "50px",
-      delay: 4,
-      duration: 0.6,
-      stagger: 0.05,
-      right: "unset",
-      bottom: "unset"
-    })
-    gsap.to(".ah_wrapper", {
-      width: "135px",
-      height: "50px",
-      top: "25px",
-      delay: 4,
-      duration: 0.6,
-      stagger: 0.05
-    })
-    // // Move AH top left
-    // gsap.to(textStart, {
-    //   motionPath: scrollItemPath,
-    //   align: 'self',
-    //   duration: 1,
-    //   delay: 5
-    // })
-    gsap.to(
-      ".ah_container",
-      {
+      })
+      gsap.to(".textStart", {
+        width: "50px",
+        height: "50px",
+        delay: 4,
+        duration: 0.6,
+        stagger: 0.05,
+        right: "unset",
+        bottom: "unset"
+      })
+      gsap.to(".ah_wrapper", {
+        width: "135px",
+        height: "50px",
+        top: "25px",
+        delay: 4,
+        duration: 0.6,
+        stagger: 0.05
+      })
+      gsap.to(".ah_container",{
         width: "50px",
         delay: 4,
         stagger: 0.05
-      }
-    )
-    // Scale down Font AH
-    gsap.fromTo(
-      [".charA", ".charH", ".remove_char"], 
-      {
+      })
+      // Scale down Font AH
+      gsap.fromTo([".charA", ".charH", ".remove_char"], {
         delay: 4,
         fontSize: '5em',
         stagger: 0.05
-      },
-      {
+      },{
         delay: 4,
         fontSize: '2em',
         stagger: 0.05
-      }
-    )
-    gsap.to(
-      ".textStart",
-      {
-        // margin: 'unset',
-        position: "fixed",
-        // top: "45px",
-        // left: "45px",
-        delay: 5,
-        // stagger: 0.05
-      }
-    )
+      })
+      gsap.to(".textStart", {
+        position: "fixed", delay: 5
+      })
+    })
+
+    mm.add(mobileSize, () => {
+      gsap.fromTo(".eachLetter", {
+        delay: 3,
+        opacity: 0, 
+        stagger: 0.5,
+        yPercent: 100, 
+      },{
+        // rotationY: 36, 
+        delay: 1,
+        opacity: 1, 
+        duration: 1, 
+        yPercent: 0, 
+        stagger: 0.05,
+        // stagger: 0.5,
+        ease:"back.out",
+        normalizeScroll: true,
+      })
+      gsap.to(".textStart", {
+        width: "297px"
+      })
+      gsap.to(".ah_container", {
+        width: "187px"
+      })
+      gsap.to(".chars_container2", {
+        left: "40px"
+      })
+      gsap.to('.hide-char', {
+        delay: 2.4, duration: .6, ease: "ease.out",opacity: 0
+      })
+      gsap.to(".chars_wrapper",{
+        width: "75px",
+        height: "75px",
+        delay: 3,
+        stagger: 0.05
+      })
+      gsap.to(".ah_container",{
+        width: "75px",
+        delay: 3,
+        stagger: 0.05
+      })
+      gsap.to(".textStart", {
+        width: "50px",
+        height: "75px",
+        delay: 4,
+        duration: 0.6,
+        stagger: 0.05,
+        right: "unset",
+        bottom: "unset"
+      })
+      gsap.to(".ah_wrapper", {
+        width: "100px",
+        height: "75px",
+        top: "55px",
+        delay: 4,
+        duration: 0.6,
+        stagger: 0.05
+      })
+      gsap.to(".ah_container",{
+        width: "37px",
+        delay: 4,
+        stagger: 0.05
+      })
+      // Scale down Font AH
+      gsap.fromTo([".charA", ".charH", ".remove_char"], {
+        delay: 4,
+        fontSize: '3em',
+        stagger: 0.05
+      },{
+        delay: 4,
+        fontSize: '1.5em',
+        stagger: 0.05
+      })
+      gsap.to(".textStart", {
+        position: "fixed", delay: 5
+      })
+    })
+
+
     // function removeElement(element) {
     //   if (typeof(element) === "string") {
     //     element = document.querySelector(element);
@@ -188,9 +257,6 @@ const AhLogo = () => {
             </p>
           </div>
           <div className={`chars_container1`}>
-            {/* <p className="eachLetter a_move_right" > 
-              <span className={`charA ${inter.className}`}>A</span>
-            </p> */}
             <p className="eachLetter hide-char">
               <span className={`remove_char remove_char1 ${inter.className}`}>L</span>
             </p>
@@ -202,9 +268,6 @@ const AhLogo = () => {
             </p>
           </div>
           <div className="chars_container2">
-            {/* <p className="eachLetter h_move_left">
-              <span className={`charH ${inter.className}`}>H</span>
-            </p> */}
             <p className="eachLetter hide-char">
               <span className={`remove_char remove_char4 ${inter.className}`}>O</span>
             </p>
@@ -221,7 +284,6 @@ const AhLogo = () => {
     </div>
   )
 }
-
 export default AhLogo;
 // https://codepen.io/insane_jarvis_01/pen/eYaYXdM?editors=0010
 
