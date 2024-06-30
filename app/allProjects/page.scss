@@ -117,6 +117,10 @@
   .projectsPageWrapper .titleSection {
     width: calc(100% - 50px);
   }
+  .projectsPageWrapper .titleSectionLine {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+  }
 }
 @media (max-width: 912px) {}
 @media (max-width: 820px) {}
@@ -133,6 +137,9 @@
   }
   .projectsPageWrapper .titleSection h3 {
     font-size: 2em;
+  }
+  .projectsPageWrapper .titleSectionLine {
+    margin-bottom: 50px;
   }
   .projectsPageWrapper .titleSection .time_spent_container {
     padding-bottom: 50px;

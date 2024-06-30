@@ -118,9 +118,6 @@ export default async function AllProjects(
             <li>{companyTechUsed}</li>
           </ul>
         </div>
-
-
-
         <div className="titleSectionLine"></div>
       </div>
 

@@ -66,9 +66,7 @@ export default function TextScrollReveal(
   return (
     <div ref={container} className={styles.text_scroll_reveal_wrapper}>
       <div ref={description} className={styles.description}>
-        {
-          splitWords(companyDesc)
-        }
+        { splitWords(companyDesc) }
       </div>
 
       <div className={styles.company_imgs_container}>

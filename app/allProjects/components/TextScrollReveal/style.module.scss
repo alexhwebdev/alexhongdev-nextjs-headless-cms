@@ -102,6 +102,7 @@
 @media (max-width: 1024px) {
   .text_scroll_reveal_wrapper {
     width: calc(100% - 50px);
+    margin: 50px auto 0;
   }
 }
 @media (max-width: 912px) {}
@@ -127,11 +128,23 @@
   }
 }
 @media (max-width: 568px) {
-
+  .description {
+    margin-bottom: 50px;
+  }
+  .description p {
+    font-size: 1em;
+  }
+  .company_imgs_container .img_one {
+    width: 130px;
+    height: 205px;
+    margin-right: 0;
+  }
 }
 @media (max-width: 540px) {}
 @media (max-width: 430px) {
-
+  .description p {
+    font-size: 0.8em;
+  }
 }
 @media (max-width: 414px) {}
 @media (max-width: 390px) {}
