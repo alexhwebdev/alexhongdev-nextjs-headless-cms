@@ -32,6 +32,10 @@ export default function ProjectPlx(
 ) {
   // console.log('companyProjects ', companyProjects)
 
+  const mobileSize = '(max-width: 568px) and (min-width: 375px)';
+  const mm = gsap.matchMedia();
+
+
   // TEXT SECTION
   useLayoutEffect( () => {
     gsap.utils
@@ -58,6 +62,32 @@ export default function ProjectPlx(
           }
         );
       });
+      mm.add(mobileSize, () => {
+        gsap.utils
+          .toArray<HTMLElement>("[data-module-parallax]")
+          .forEach((section) => {
+            const parallax = section.querySelector("[data-parallax]");
+    
+            gsap.fromTo(
+              parallax,
+              { y: 0 },
+              {
+                y: -100,
+                ease: "none",
+                normalizeScroll: true,
+                scrollTrigger: {
+                  trigger: section,
+                  start: "10% 50%",
+                  end: "50%+=100 0%",
+                  // start: "10% 50%",
+                  // end: "50% 0%",
+                  scrub: true,
+                  // markers: true
+                }
+              }
+            );
+          });
+      })
   }, [])
 
   // IMAGE SECTION

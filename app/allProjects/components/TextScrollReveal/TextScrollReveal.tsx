@@ -29,7 +29,7 @@ export default function TextScrollReveal(
         // end: "100%+=2000 10%",   // end, scroller-end
         start: "-20% 50%",
         end: `+=${window.innerHeight / 1.5}`,
-        markers: true
+        // markers: true
       },
       opacity: 1,
       ease: "none",
