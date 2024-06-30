@@ -54,8 +54,8 @@ export default async function Home() {
       style={{overflow: 'hidden'}}
       // className={styles.main}
     >
-      {/* <PreloaderContainer />
-      <AhLogo /> */}
+      <PreloaderContainer />
+      <AhLogo />
 
       {/* <InfiniteScroll /> */}
       {/* <CircularLogoText /> */}
