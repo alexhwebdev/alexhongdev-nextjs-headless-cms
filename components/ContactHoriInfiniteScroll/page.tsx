@@ -22,33 +22,33 @@ export default function ContactHoriInfiniteScroll() {
   let direction = -1;
   
   // -------------------- INFINITE SCROLL
-  // useEffect( () => {
-  //   gsap.registerPlugin(ScrollTrigger);
-  //   gsap.to(slider.current, {
-  //     scrollTrigger: {
-  //       trigger: document.documentElement,
-  //       scrub: 0.25,
-  //       start: 0,
-  //       end: window.innerHeight,
-  //       onUpdate: event => direction = event.direction * -1
-  //     },
-  //     x: "-500px",
-  //   })
-  //   requestAnimationFrame(animate);
-  // }, [])
+  useEffect( () => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(slider.current, {
+      scrollTrigger: {
+        trigger: document.documentElement,
+        scrub: 0.25,
+        start: 0,
+        end: window.innerHeight,
+        onUpdate: event => direction = event.direction * -1
+      },
+      x: "-500px",
+    })
+    requestAnimationFrame(animate);
+  }, [])
 
-  // const animate = () => {
-  //   if(xPercent < -100){
-  //     xPercent = 0;
-  //   }
-  //   else if(xPercent > 0){
-  //     xPercent = -100;
-  //   }
-  //   gsap.set(firstText.current, {xPercent: xPercent})
-  //   gsap.set(secondText.current, {xPercent: xPercent})
-  //   xPercent += 0.02 * direction;   // Speed control
-  //   requestAnimationFrame(animate);
-  // }
+  const animate = () => {
+    if(xPercent < -100){
+      xPercent = 0;
+    }
+    else if(xPercent > 0){
+      xPercent = -100;
+    }
+    gsap.set(firstText.current, {xPercent: xPercent})
+    gsap.set(secondText.current, {xPercent: xPercent})
+    xPercent += 0.02 * direction;   // Speed control
+    requestAnimationFrame(animate);
+  }
 
   // -------------------- CONTACT CIRCLE
   useEffect(() => {

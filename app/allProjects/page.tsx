@@ -24,6 +24,9 @@ export interface companyInfoTitleProps {
 }
 export interface companyInfoDescProps {
   companyDesc: string;
+  companyImgs: {
+    url: string
+  }[]
 }
 interface SearchParams {
   id: string;
@@ -41,7 +44,7 @@ interface companyProjectsProps {
 export default async function AllProjects(
   { searchParams }: { searchParams: SearchParams }
 ) {
-  console.log('searchParams ', searchParams)
+  // console.log('searchParams ', searchParams)
 
   const allProjects = await allProjectsData();
 
@@ -50,6 +53,12 @@ export default async function AllProjects(
   let companyName;
   let companyName2;
   let companyDesc;
+  let companyImgs;
+
+  let companyRole;
+  let companyFromTo;
+  let companyLocation;
+  let companyTechUsed;
 
   for (let i = 0; i < allProjects.length; i++) {
     // console.log('Slug ', allProjects[i].companyInfoJson[0].slug)
@@ -60,18 +69,21 @@ export default async function AllProjects(
       companyName = allProjects[i].companyInfoJson[0].companyName;
       companyName2 = allProjects[i].companyInfoJson[0].companyName2;
       companyDesc = allProjects[i].companyInfoJson[0].description;
+      companyImgs = allProjects[i].pageImagesCollection.items;
+      companyRole = allProjects[i].companyInfoJson[0].role;
+      companyFromTo = allProjects[i].companyInfoJson[0].fromTo;
+      companyLocation = allProjects[i].companyInfoJson[0].location;
+      companyTechUsed = allProjects[i].companyInfoJson[0].techUsed;
     }
   }
   // console.log(
-  //   'AllProjects companyDesc ', 
-  //   companyDesc
+  //   'AllProjects allProjects ', 
+  //   allProjects[0].pageImagesCollection.items
   // )
-  const paragraph = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-  // const words = paragraph.split(" ")
-  console.log(
-    'AllProjects paragraph ', 
-    typeof paragraph
-  )
+  // console.log(
+  //   'AllProjects allProjects ', 
+  //   allProjects[0].companyInfoJson
+  // )
   return (
     <PageTransitionEffect>
     <div className="projectsPageWrapper">
@@ -88,9 +100,27 @@ export default async function AllProjects(
 
       <div className="line"></div>
 
-      <div className="titleSection">
-        <h5 className={`${montserrat.className}`}>{companyName}</h5>
-        <h3 className={`${montserrat.className}`}>{companyName2}</h3>
+      <div className={`titleSection ${montserrat.className}`}>
+        <h5>{companyName}</h5>
+        <h3>{companyName2}</h3>
+
+        <div className={`time_spent_container`}>
+          <ul>
+            <li>From / To</li>
+            <li>Location</li>
+            <li>Role</li>
+            <li>Tech Used</li>
+          </ul>
+          <ul>
+            <li>{companyFromTo}</li>
+            <li>{companyLocation}</li>
+            <li>{companyRole}</li>
+            <li>{companyTechUsed}</li>
+          </ul>
+        </div>
+
+
+
         <div className="titleSectionLine"></div>
       </div>
 
@@ -98,7 +128,10 @@ export default async function AllProjects(
       <TextScrollReveal 
         // paragraph={paragraph} 
         companyDesc={companyDesc} 
+        companyImgs={companyImgs}
       />
+
+      <div className="titleSectionLine"></div>
 
       {/* <ProjectPlx companyProjects={companyProjects} /> */}
       {companyProjects && <ProjectPlx companyProjects={companyProjects} />}

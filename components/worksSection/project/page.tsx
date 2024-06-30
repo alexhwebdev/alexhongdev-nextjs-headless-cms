@@ -15,7 +15,8 @@ interface ProjectProps {
     position: string;
     tech: string;
     src: string;
-    color: string;
+    siteUrl: string;
+    // color: string;
   };
 }
 

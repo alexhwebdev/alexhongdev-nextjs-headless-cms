@@ -21,7 +21,7 @@
   .titleSection {
     width: calc(100% - 100px);
     margin: 0 auto;
-    padding: 75px 0px 50px;
+    padding: 75px 0 0;
 
     h5 {
       font-size: 2em;
@@ -36,12 +36,35 @@
       font-size: 3em;
       font-weight: 400;
       letter-spacing: -2px;
-      padding-bottom: 50px;
+      padding-bottom: 25px;
       position: relative;
       left: -200%;
 
       animation: animateFromLeft 1s ease-in-out forwards;
       animation-delay: 2.3s;
+    }
+    .time_spent_container {
+      display: flex;
+      padding-bottom: 75px;
+
+      ul {
+        position: relative;
+        left: -200%;
+          
+        animation: animateFromLeft 1s ease-in-out forwards;
+        animation-delay: 2.5s;
+
+        &:first-of-type {
+          font-weight: 600;
+          margin-right: 50px;
+          text-transform: uppercase;
+        }
+
+        li {
+          letter-spacing: 2px;
+          padding-bottom: 10px;
+        }
+      }
     }
     .titleSectionLine {
       width: 100%;
@@ -51,8 +74,19 @@
       left: -200%;
 
       animation: animateFromLeft 1s ease-in-out forwards;
-      animation-delay: 2.5s;
+      animation-delay: 2.7s;
     }
+  }
+
+  .titleSectionLine {
+    width: 100%;
+    border-bottom: 2px solid gray;
+    margin-bottom: 100px;
+    position: relative;
+    z-index: 1;
+
+    // animation: animateFromLeft 1s ease-in-out forwards;
+    // animation-delay: 2.5s;
   }
 }
 

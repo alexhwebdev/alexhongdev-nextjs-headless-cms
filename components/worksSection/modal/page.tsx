@@ -16,7 +16,7 @@ interface ModalProps {
     position: string;
     tech: string;
     src: string;
-    color: string;
+    siteUrl: string;
   }[];
 }
 
@@ -85,11 +85,11 @@ export default function Modal({modal, projects}: ModalProps) {
         >
         {
           projects.map( (project, index) => {
-            const { src, color } = project;
+            const { src } = project;
 
             return (
               <div className={styles.modal} 
-                style={{backgroundColor: color}} 
+                // style={{backgroundColor: color}} 
                 key={`modal_${index}`}
               >
                 <Image 
