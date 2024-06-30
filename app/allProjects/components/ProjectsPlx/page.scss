@@ -3,6 +3,7 @@
     // border: 1px solid red;
     width: 100vw;
     height: 105vh;
+    max-width: 100%;
     position: relative;
 
     &:last-of-type {
@@ -53,7 +54,7 @@
       }
     }
     .project {
-      width: 35vw;
+      width: 40%;
       height: 90vh;
       margin: auto;
       position: absolute;
