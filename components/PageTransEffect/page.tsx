@@ -16,7 +16,8 @@ const variants = {
       duration: 1,
 
       // delay: 0.25, // WORKS
-      delay: 0.3,
+      // delay: 0.3,
+      delay: 3,
 
       when: "afterChildren",
     },
@@ -24,11 +25,12 @@ const variants = {
   exit: {
     opacity: 0,
     transition: { 
-      delay: 1,
+      delay: 2,
       // delay: 0.5,
 
       // duration: 0.25,
-      duration: 1, // WORKS
+      // duration: 1, // WORKS
+      duration: 2, // WORKS
       when: "beforeChildren",
     },
   },

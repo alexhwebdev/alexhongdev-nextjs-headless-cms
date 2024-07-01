@@ -1,42 +1,21 @@
-"use client"
-import React, { useRef, useContext } from 'react'
-// import Picture from '../../../public/images/3.jpg'
-import Image from 'next/image';
-import { TransitionContext, TransitionContextType } from '../context/TransitionContext';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+// "use client"
+
+import React from 'react'
+import Link from 'next/link'
+import TransitionLink from '@/components/TransitionLink/TransitionLink'
 
 
-
-const PageTwo = () => {
-  // const { timeline } = useContext(TransitionContext);
-  const { timeline } = useContext<TransitionContextType>(TransitionContext);
-  const container = useRef(null);
-  const image = useRef<HTMLDivElement>(null);
-
-  useGSAP( () => {
-    const targets = gsap.utils.toArray(["p", image.current])
-    gsap.fromTo(targets, {scale: 0.85, opacity: 0}, {scale: 1, opacity: 1, stagger: 0.25})
-    timeline.add(gsap.to(container.current, { opacity: 0 }))
-  }, {scope: container})
-
+const pageTwo = () => {
   return (
-    <div ref={container} className='h-[200vh] flex'>
-      <div className="h-[100vh] w-full flex flex-col justify-center items-center gap-5">
-        <p className="text-[5vw]">About</p>
-        <p className="max-w-[50%] text-center">Sed ut rhoncus nibh. Cras eleifend tellus a enim sodales, a efficitur odio euismod. Aenean non consequat lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce quis eleifend ipsum, sit amet posuere ligula.</p>
-        <div ref={image} className='relative w-[50%] h-[40vh]'>
-          {/* <Image 
-            src={Picture}
-            placeholder='blur'
-            fill
-            style={{objectFit: "cover"}}
-          /> */}
-          PageTwo
-        </div>
-      </div>
+    <div style={{width: "100vw", height: "100vh", background: "gray"}}>
+      pageTwo
+      <br></br>
+      <br></br>
+      <br></br>
+      <Link href={`/pageOne`}>Button pageOne</Link>
+      <TransitionLink href="/pageOne" label="pageOne ->" />
     </div>
   )
 }
 
-export default PageTwo
+export default pageTwo

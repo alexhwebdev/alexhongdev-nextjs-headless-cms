@@ -12,7 +12,7 @@
 
     .project_title {
       // border: 1px solid red;
-      width: 60%;
+      width: 65%;
       mix-blend-mode: difference;
       position: absolute;
       z-index: 2;
@@ -34,7 +34,7 @@
     }
     .project_desc {
       // border: 1px solid red;
-      width: 20vw;
+      width: 25vw;
       // background: rgba(000, 000, 000, 0.6);
       border-radius: 5px;
       color: white;
@@ -159,9 +159,9 @@
   .project_section_wrapper:nth-of-type(6),
   .project_section_wrapper:nth-of-type(8) {
     .project_title {
-      width: 75%;
+      width: 80%;
       text-align: right;
-      right: 10%;
+      right: 5%;
 
       p {}
     }

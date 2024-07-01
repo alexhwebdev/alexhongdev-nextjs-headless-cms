@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'next/link';
 // import { useRouter } from 'next/navigation';
-
 import CursorComponent from './components/CursorComponent/CursorComponent';
 import ProjectsAniFadeUpJS from './components/ProjectsAniFadeUpJS/ProjectsAniFadeUpJS';
-import ProjectsTextGradient from './components/ProjectsTextGradient/ProjectsTextGradient';
 import ProjectPlx from './components/ProjectsPlx/ProjectsPlx';
+import ContactHoriInfiniteScroll from '../../components/ContactHoriInfiniteScroll/page';
+import TextScrollReveal from './components/TextScrollReveal/TextScrollReveal';
 
 import { allProjectsData } from '../../lib/contentfulApi';
 
@@ -13,10 +13,7 @@ import { inter } from '../../app/fonts';
 import { montserrat } from '../../app/fonts';
 import { raleway } from '../../app/fonts';
 import './page.scss';
-import PageTransitionEffect from "../../components/PageTransEffect/page";
-import ContactHoriInfiniteScroll from '../../components/ContactHoriInfiniteScroll/page';
-import AhLogo from '@/components/AhLogo/AhLogo';
-import TextScrollReveal from './components/TextScrollReveal/TextScrollReveal';
+import { GetAllProjectsData } from './components/GetAllProjectsData/GetAllProjectsData';
 
 
 export interface companyInfoTitleProps {
@@ -47,6 +44,29 @@ export default async function AllProjects(
   // console.log('searchParams ', searchParams)
 
   const allProjects = await allProjectsData();
+  // console.log(
+  //   'AllProjects allProjects ', 
+  //   allProjects
+  // )
+
+  // const [allProjects, setData] = useState([]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const result = await allProjectsData();
+  //       setData(result);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+  console.log(
+    'AllProjects allProjects ', 
+    allProjects
+  )
 
   let companyProjects: companyProjectsProps[] = [];;
   let companyInfoTitle;
@@ -85,7 +105,7 @@ export default async function AllProjects(
   //   allProjects[0].companyInfoJson
   // )
   return (
-    <PageTransitionEffect>
+    <>
     <div className="projectsPageWrapper">
       <Link href="/">AH</Link>
 
@@ -135,7 +155,6 @@ export default async function AllProjects(
     </div>
 
     <ContactHoriInfiniteScroll />
-
-    </PageTransitionEffect>
+    </>
   )
 }

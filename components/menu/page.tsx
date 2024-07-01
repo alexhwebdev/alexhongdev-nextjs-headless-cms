@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import { raleway } from '@/app/fonts';
 import { montserrat } from '@/app/fonts';
 import { inter } from '@/app/fonts';
+import TransitionLinkNoQuery from '../TransitionLink/TransitionLinkNoQuery';
 
 export interface Props {
   menuIsActive: boolean;
@@ -21,7 +22,8 @@ const menuLinks = [
   { path: "/", label: "Home", prefetching: false },
   { path: "/about", label: "About", prefetching: true },
   { path: "/allProjects", label: "Projects", prefetching: false },
-  { path: "/contact", label: "Contact", prefetching: false },
+  { path: "/pageOne", label: "pageOne", prefetching: false },
+  { path: "/pageTwo", label: "pageTwo", prefetching: false },
   // { path: "/testpage", label: "TestPage", prefetching: false },
 ];
 
@@ -70,18 +72,82 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
     <div className={`menu_container ${menuIsActive ? `menuActive` : ''}`} ref={container}>
 
       <div className="menu-links">
+          <div className="menu-link-item">
+            <div className="menu-link-item-holder" 
+              onClick={toggleMenu}
+            >
+              <div onClick={handleButtonClick} 
+                className={`menu-link ${raleway.className}`} 
+                style={{
+                  width: "200px",
+                  height: "50px",
+                }}
+              >
+                <TransitionLinkNoQuery href="/" label="home ->" />
+              </div>
+            </div>
+          </div>
+          <div className="menu-link-item">
+            <div className="menu-link-item-holder" 
+              onClick={toggleMenu}
+            >
+              <div onClick={handleButtonClick} 
+                className={`menu-link ${raleway.className}`} 
+                style={{
+                  width: "200px",
+                  height: "50px",
+                }}
+              >
+                <TransitionLinkNoQuery href="/pageOne" label="pageOne ->" />
+              </div>
+            </div>
+          </div>
+          <div className="menu-link-item">
+            <div className="menu-link-item-holder" 
+              onClick={toggleMenu}
+            >
+              <div onClick={handleButtonClick} 
+                className={`menu-link ${raleway.className}`}
+                style={{
+                  width: "200px",
+                  height: "50px",
+                }}
+              >
+                <TransitionLinkNoQuery href="/pageTwo" label="pageTwo ->" />
+              </div>
+            </div>
+          </div>
+          <div className="menu-link-item">
+            <div className="menu-link-item-holder" 
+              onClick={toggleMenu}
+            >
+              <div onClick={handleButtonClick} 
+                className={`menu-link ${raleway.className}`}
+                style={{
+                  width: "200px",
+                  height: "50px",
+                }}
+              >
+                <TransitionLinkNoQuery href="/projects" label="projects ->" />
+              </div>
+            </div>
+          </div>
+
+
         {menuLinks.map((link, index) => (
           <div className="menu-link-item" key={index}>
             <div className="menu-link-item-holder" 
               onClick={toggleMenu}
             >
-              <Link className={`menu-link ${raleway.className}`} 
+              {/* <Link className={`menu-link ${raleway.className}`} 
                 href={link.path}
                 onClick={handleButtonClick}
                 prefetch={link.prefetching}
               >
-                {link.label}                      
-              </Link>
+                {link.label}
+              </Link> */}
+
+
             </div>
           </div>
         ))}

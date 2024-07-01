@@ -20,6 +20,7 @@ import {
 import { testGetImg } from '../../lib/testGetImg'
 
 import { getPortfolioPageDocuments } from "../../lib/contentfulApi";
+import TransitionLink from '../TransitionLink/TransitionLink';
 
 
 const works = [
@@ -114,12 +115,13 @@ export default function HoriParallaxGsap(
   return (
     <div className={`triggerRef ${styles.horiParallaxGsapContainer}`}>
       <section className={`sectionRef ${styles.boxContainer}`}>
+
         {
           companyData.map((company, index) => {
             // console.log('index ', index)
             return (
               <div key={index} className={styles.undo_mix_blend_mode}>
-                <Link 
+                {/* <Link 
                   // href={`/reviews/${review.slug}`}
                   href={{
                     pathname: '/allProjects',
@@ -127,10 +129,26 @@ export default function HoriParallaxGsap(
                   }}
                   className={`${styles.box} ${montserrat.className}`}
                   
-                >
+                > */}
+
+
+
+                <div className={`${styles.box} ${montserrat.className}`}>
                   <h5>{ company.company }</h5>
+                  
+                  {/* <TransitionLink href="/pageOne" label="pageOne" /> */}
+                  
                   <h3>
-                    View
+                    {/* View */}
+                    <TransitionLink
+                      // href="/allProjects" 
+                      href={{
+                        pathname: '/allProjects',
+                        // query: {"id": `${companyData[index].slug}`}
+                        query: { id: companyData[index].slug }
+                      }}
+                      label="View"
+                    />
                   </h3>
                   <Image 
                     // fill={true}
@@ -143,8 +161,9 @@ export default function HoriParallaxGsap(
                     // placeholder="blur"
                     // sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                   />
-                  <p>{ company.cardDesc }</p>
-                </Link>
+                  <p>{ company.cardDesc }</p>                  
+                </div>
+                {/* </Link> */}
               </div>
             )
           })

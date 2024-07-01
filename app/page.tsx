@@ -22,10 +22,10 @@ import NameAnimation from "@/components/nameAnimation/page";
 import { getPortfolioPageDocuments } from "../lib/contentfulApi";
 import getPageData from "../lib/getPageData";
 import getImgCollection from "../lib/getImgCollection";
-import PageTransitionEffect from "@/components/PageTransEffect/page";
 import CursorComponent from "@/components/CursorComponent/CursorComponent";
 import AhLogo from "@/components/AhLogo/AhLogo";
 import PreloaderContainer from "@/components/PreloaderContainer/PreloaderContainer";
+import TransitionLink from "@/components/TransitionLink/TransitionLink";
 // import CircularLogoText from "@/components/CircularLogoText/page";
 
 // import styles from './page.module.css'
@@ -49,13 +49,17 @@ export default async function Home() {
   //   pageImagesCollection.items
   // )
   return (
-    <PageTransitionEffect>
     <main 
-      style={{overflow: 'hidden'}}
+    style={{
+      // background: 'brown', 
+      width: '100vw',
+      // height: '100vh',
+      overflow: 'hidden'
+    }}
       // className={styles.main}
     >
-      <PreloaderContainer />
-      <AhLogo />
+      {/* <PreloaderContainer />
+      <AhLogo /> */}
 
       {/* <InfiniteScroll /> */}
       {/* <CircularLogoText /> */}
@@ -63,6 +67,7 @@ export default async function Home() {
       {/* <CursorComponent /> */}
       
       <HomeHoverMixBlend />
+      {/* <TransitionLink href="http://localhost:3000/allProjects?id=ibd-projects" label="allProjects ->" /> */}
 
       <HomeHoriScroll 
         companyData={companyData} 
@@ -88,6 +93,5 @@ export default async function Home() {
         <VerticalInfiniteScroll />
       </div> */}
     </main>
-    </PageTransitionEffect>
   )
 };

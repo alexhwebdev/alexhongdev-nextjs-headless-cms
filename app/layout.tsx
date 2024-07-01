@@ -9,12 +9,8 @@ import CurrentTime from "@/components/CurrentTime/page";
 import styles from './page.module.css'
 import { FaLinkedinIn } from "react-icons/fa";
 import NameAnimation from "@/components/nameAnimation/page";
-import LightDarkToggle from "@/components/LightDarkToggle/page";
 import SmoothScroll from "@/components/smoothScroll/page";
-import PageTransitionEffect from "@/components/PageTransEffect/page";
-import {TransitionProvider} from "./context/TransitionContext"
-import Transition from "./context/Transition"
-import Link from "next/link";
+
 
 export const metadata: Metadata = {
   title: "Alex Hong - Next.js Portfolio",
@@ -27,18 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // NOTES - suppressHydrationWarning
     <html lang="en" id="htmlId" suppressHydrationWarning> 
-      <body 
-        // className={inter.className}
-      >
-{/* <Link style={{color: "black"}}scroll={false} href="/pageOne">PageOne</Link>
-<Link style={{color: "black"}}scroll={false} href="/pageTwo">PageTwo</Link> */}
-
-
-        {/* <PageTransitionEffect> */}
-        {/* <TransitionProvider>
-        <Transition> */}
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -55,14 +41,10 @@ export default function RootLayout({
             // style={{mixBlendMode: 'exclusion'}} // Set : mix-blend-mode
           > 
             <HeaderMenu />
-            <NameAnimation />
+            {/* <NameAnimation /> */}
 
             <SmoothScroll>
-              {/* <PageTransitionEffect> */}
-              
-                {children}
-              
-              {/* </PageTransitionEffect> */}
+              {children}
             </SmoothScroll>
 
             {/* LINKEDIN */}
@@ -78,9 +60,6 @@ export default function RootLayout({
           </div>
 
         </ThemeProvider>
-        {/* </PageTransitionEffect> */}
-        {/* </Transition>
-        </TransitionProvider> */}
       </body>
     </html>
   );

@@ -1,14 +1,13 @@
 "use client"
-
 import React, { useState, useEffect } from 'react'
-import styles from './style.module.scss';
 import { motion } from 'framer-motion';
+import styles from './style.module.scss';
+
 
 interface Props {
   menuIsActive: boolean;
   theme: string | undefined;
 }
-
 interface WindowSize {
   width?: number; // optional properties
   height?: number; // optional properties
@@ -77,6 +76,7 @@ export default function HoriPixel({menuIsActive, theme}: Props) {
   const getBlocks = (indexOfColum: number): JSX.Element[] => {
     if (!windowSize.width || !windowSize.height) return []; // If window size is not available, return an empty array
     // const { innerWidth, innerHeight } = window;
+    // const blockSize = innerWidth * 0.05;
     const blockSize = innerWidth * 0.05;
     const numOfBlocks = Math.ceil(innerHeight / blockSize);
     const shuffledIndexes = shuffle([...Array(numOfBlocks)].map( (_, i) => i));
@@ -99,6 +99,7 @@ export default function HoriPixel({menuIsActive, theme}: Props) {
             variants={animation}
             initial="initial"
             animate={menuIsActive ? "open" : "closed"}
+            // custom={[indexOfColum + randomIndex, (20 - indexOfColum + randomIndex)]}
             custom={[indexOfColum + randomIndex, (20 - indexOfColum + randomIndex)]}
           />
         )
