@@ -18,6 +18,7 @@ export interface Props {
   setMenuIsActive: (isActive: boolean) => void;
 }
 
+
 const menuLinks = [
   { path: "/", label: "Home", prefetching: false },
   { path: "/about", label: "About", prefetching: true },
@@ -28,16 +29,23 @@ const menuLinks = [
 ];
 
 export default function Menu({menuIsActive, setMenuIsActive}: Props) {
-  const handleButtonClick = () => {
-    setMenuIsActive(!menuIsActive);
-  };
+  // const handleButtonClick = () => {
+  //   setMenuIsActive(!menuIsActive);
+  // };
   const container = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(menuIsActive);
   const tl = useRef<gsap.core.Timeline | null>(null);
-  
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+
+  const handleButtonClick = () => {
+    console.log('handleButtonClick menuIsActive ', menuIsActive)
+    console.log('handleButtonClick isMenuOpen ', isMenuOpen)
+
+    setMenuIsActive(!menuIsActive);
+    setIsMenuOpen(!isMenuOpen);
+  };
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen)
+  // }
 
   useGSAP(() => {
     gsap.set(".menu-link-item-holder", { y: 100 });
@@ -72,7 +80,7 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
     <div className={`menu_container ${menuIsActive ? `menuActive` : ''}`} ref={container}>
 
       <div className="menu-links">
-          <div className="menu-link-item">
+          {/* <div className="menu-link-item">
             <div className="menu-link-item-holder" 
               onClick={toggleMenu}
             >
@@ -131,14 +139,24 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
                 <TransitionLinkNoQuery href="/projects" label="projects ->" />
               </div>
             </div>
-          </div>
+          </div> */}
 
 
         {menuLinks.map((link, index) => (
           <div className="menu-link-item" key={index}>
             <div className="menu-link-item-holder" 
-              onClick={toggleMenu}
+              // onClick={toggleMenu}
+              onClick={handleButtonClick}
             >
+              <TransitionLinkNoQuery 
+                className={`menu-link`} 
+                href={link.path}
+                label={link.label}
+                prefetch={link.prefetching}
+              >
+                {link.label}
+              </TransitionLinkNoQuery>
+
               {/* <Link className={`menu-link ${raleway.className}`} 
                 href={link.path}
                 onClick={handleButtonClick}
@@ -146,26 +164,10 @@ export default function Menu({menuIsActive, setMenuIsActive}: Props) {
               >
                 {link.label}
               </Link> */}
-
-
             </div>
           </div>
         ))}
-
       </div>
-      {/* <div className="menu-links">
-        <Link href="/" onClick={toggleMenu}>
-          Home
-        </Link>
-        <Link href="/about" prefetch={true} onClick={toggleMenu}>
-          About Prefetching
-        </Link>
-        <Link href="/contact" onClick={toggleMenu}>
-          Contact
-        </Link>          
-      </div> */}
-
-
     </div>
   )
 }

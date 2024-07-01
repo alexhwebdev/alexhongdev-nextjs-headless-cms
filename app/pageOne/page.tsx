@@ -2,7 +2,12 @@
 
 import React from 'react'
 import Link from 'next/link'
-import TransitionLink from '@/components/TransitionLink/TransitionLink'
+import TransitionLinkNoQuery from '@/components/TransitionLink/TransitionLinkNoQuery'
+
+const menuLinks = [
+  // { path: "/pageOne", label: "pageOne", prefetching: false },
+  { path: "/pageTwo", label: "pageTwo", prefetching: false },
+];
 
 const pageOne = () => {
   return (
@@ -11,8 +16,18 @@ const pageOne = () => {
       <br></br>
       <br></br>
       <br></br>
-      <Link href={`/pageTwo`}>Button pageTwo</Link>
-      <TransitionLink href="/pageTwo" label="pageTwo ->" />
+      {
+        // menuLinks.map((link) => (
+          <TransitionLinkNoQuery 
+            className={`menu-link`} 
+            href={menuLinks[0].path}
+            label={menuLinks[0].label}
+            prefetch={menuLinks[0].prefetching}
+          >
+            {menuLinks[0].label}
+          </TransitionLinkNoQuery>
+        // ))
+      }
     </div>
   )
 }

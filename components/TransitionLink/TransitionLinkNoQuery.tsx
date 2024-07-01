@@ -1,7 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { animatePageOut } from "@/lib/animationsNoQuery";
-
+import { raleway } from '@/app/fonts';
+import { montserrat } from '@/app/fonts';
+import { inter } from '@/app/fonts';
 
 // interface Query {
 //   id: string;
@@ -15,11 +17,29 @@ import { animatePageOut } from "@/lib/animationsNoQuery";
 //   label: string;
 // }
 
+interface TransitionLinkNoQueryProps {
+  children: React.ReactNode;
+  className: string;
+  href: string;
+  label: string;
+  // onClick: () => void;
+  prefetch: boolean;
+}
+
 export default function TransitionLinkNoQuery(
-  { href, label }: {
-    href: string;
-    label: string;
-  }
+  { 
+    children,
+    className,
+    href,
+    label,
+    // onClick,
+    prefetch,
+  }: TransitionLinkNoQueryProps
+  // : {
+  //   className: string;
+  //   href: string;
+  //   label: string;
+  // }
 ) {
   // console.log('TransitionLink href ', href)
 
@@ -31,10 +51,10 @@ export default function TransitionLinkNoQuery(
 
   return (
     <button
-      className=""
+      className={`${raleway.className}`}
       onClick={handleClick}
       style={{
-        color: 'silver',
+        // color: 'silver',
         position: 'absolute',
         zIndex: '10005'
       }}
